@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Cucumber_grpId</groupId>
+  <artifactId>Cucumber-jvm</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+  
+  	<dependency>
+  	<groupId>info.cukes</groupId>
+	<artifactId>cucumber-picocontainer</artifactId>
+	<version>1.1.5</version>
+	<scope>test</scope>
+	</dependency>
+	
+	<dependency>
+	<groupId>info.cukes</groupId>
+	<artifactId>cucumber-junit</artifactId>
+	<version>1.1.5</version>
+	<scope>test</scope>
+	</dependency>
+	
+	<dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>4.11</version>
+	<scope>test</scope>
+	</dependency>
+
+<!-- These are the selenium api dependencies -->	
+	<dependency>
+	<groupId>org.seleniumhq.selenium</groupId>
+	<artifactId>selenium-java</artifactId>
+	<version>2.44.0</version>
+	</dependency>
+
+	<dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-server</artifactId>
+        <version>2.44.0</version>
+    </dependency>  
+
+	</dependencies>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+		<resource>
+			<directory>src/html</directory>
+		</resource>
+	</resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
