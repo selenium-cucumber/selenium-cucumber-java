@@ -1,22 +1,18 @@
-package sc_java_methods;
+package scJavaMethods;
 
-class TestCaseFailed extends Exception 
+import java.util.Arrays;
+
+public class MiscMethods 
 {
-	String message=null;
-	public TestCaseFailed() 
+	//method to validate locator
+	public boolean valid_locator_type(String type)
 	{
-		super();
+		return Arrays.asList("id","class","css","name","xpath").contains(type);
 	}
-	 
-	public TestCaseFailed(String message) 
+
+	public void validateLocator(String type) throws Exception
 	{
-	    super(message);
-	    this.message = message;
+		if(!valid_locator_type(type))
+			throw new Exception("Invalid locator type - "+type);
 	}
-	 
-}
-
-public class miscMethods 
-{
-
 }

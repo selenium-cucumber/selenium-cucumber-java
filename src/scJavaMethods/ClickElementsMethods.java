@@ -1,4 +1,4 @@
-package sc_java_methods;
+package scJavaMethods;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import features.env.CucumberRunner;
 
-public class click_elements_methods 
+public class ClickElementsMethods 
 {
 	SelectElementByType eletype= new SelectElementByType();
 	

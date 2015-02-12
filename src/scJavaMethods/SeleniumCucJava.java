@@ -1,4 +1,4 @@
-package sc_java_methods;
+package scJavaMethods;
 
 import org.openqa.selenium.By;
 import features.env.CucumberRunner;

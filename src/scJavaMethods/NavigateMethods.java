@@ -1,4 +1,4 @@
-package sc_java_methods;
+package scJavaMethods;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
@@ -10,7 +10,7 @@ import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
 
 import features.env.CucumberRunner;
 
-public class navigate_methods 
+public class NavigateMethods 
 {
 	SelectElementByType eletype= new SelectElementByType();
 	WebElement element=null;

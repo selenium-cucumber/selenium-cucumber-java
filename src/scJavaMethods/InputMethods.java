@@ -1,11 +1,11 @@
-package sc_java_methods;
+package scJavaMethods;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import features.env.CucumberRunner;
 
-public class input_methods 
+public class InputMethods 
 {
 	SelectElementByType eletype= new SelectElementByType();
 	WebElement dropdown =null;
@@ -98,13 +98,13 @@ public class input_methods
 	}
 	
 	//method to select option from radio button group
-	public void select_option_from_radio_button_group(String access_type, String by, String option, String access_name)
+	/*public void select_option_from_radio_button_group(String access_type, String by, String option, String access_name)
 	{
 		WebElement radio_button_group = CucumberRunner.driver.findElement(eletype.getelementbytype(access_type, access_name));
 		
 
 	/*  getter = ->(rb, by) { by == 'value' ? rb.attribute('value') : rb.text }
 	  ele = radio_button_group.find { |rb| getter.call(rb, by) == option }
-	  ele.click unless ele.selected?*/
-	}
+	  ele.click unless ele.selected?
+	}*/
 }
