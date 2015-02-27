@@ -3,34 +3,39 @@ package scJavaMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import features.env.CucumberRunner;
 
 public class ClickElementsMethods 
 {
-	SelectElementByType eletype= new SelectElementByType();
+	SelectElementByType eleType= new SelectElementByType();
+	WebElement element=null;
 	
-	public void click(String access_type, String access_name)
+	public void click(String accessType, String accessName)
 	{
-		CucumberRunner.driver.findElement(eletype.getelementbytype(access_type, access_name)).click();
+		element = CucumberRunner.wait.until(ExpectedConditions.presenceOfElementLocated(eleType.getelementbytype(accessType, accessName)));
+		element.click();
 	}
 	
-	public void click_forcefully(String access_type, String access_name)
+	public void clickForcefully(String accessType, String accessName)
 	{
+		element = CucumberRunner.wait.until(ExpectedConditions.presenceOfElementLocated(eleType.getelementbytype(accessType, accessName)));
 		JavascriptExecutor executor = (JavascriptExecutor)CucumberRunner.driver;
-		executor.executeScript("arguments[0].click();",CucumberRunner.driver.findElement(eletype.getelementbytype(access_type, access_name)));
+		executor.executeScript("arguments[0].click();",element);
 	}
 	
-	public void double_click(String access_type, String access_value)
+	public void doubleClick(String accessType, String accessValue)
 	{
+		element = CucumberRunner.wait.until(ExpectedConditions.presenceOfElementLocated(eleType.getelementbytype(accessType, accessValue)));
+
 		Actions action = new Actions(CucumberRunner.driver);
-		WebElement element=CucumberRunner.driver.findElement(eletype.getelementbytype(access_type, access_value));
-		
 		action.moveToElement(element).doubleClick().perform();
 	}
 	
+	//This method is not used in click steps
 	public void submit(String access_type, String access_name)
 	{
-		CucumberRunner.driver.findElement(eletype.getelementbytype(access_type, access_name)).submit();
+		CucumberRunner.driver.findElement(eleType.getelementbytype(access_type, access_name)).submit();
 	}
 }

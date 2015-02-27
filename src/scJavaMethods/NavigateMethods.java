@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
 
@@ -12,12 +13,12 @@ import features.env.CucumberRunner;
 
 public class NavigateMethods 
 {
-	SelectElementByType eletype= new SelectElementByType();
+	SelectElementByType eleType= new SelectElementByType();
 	WebElement element=null;
 	String old_win = null;
 	
 	// method to open link
-	public void navigate_to(String url) 
+	public void navigateTo(String url) 
 	{
 		CucumberRunner.driver.get(url);
 	}
@@ -32,7 +33,7 @@ public class NavigateMethods
 	}
 	
 	// method to quite webdriver instance
-	public void close_driver()
+	public void closeDriver()
 	{
 		CucumberRunner.driver.quit();
 	}
@@ -60,10 +61,10 @@ public class NavigateMethods
 	}
 	
 	// Method to zoom in/out page
-	public void zoom_in_out(String in_out)
+	public void zoomInOut(String inOut)
 	{
 		Actions action = new Actions(CucumberRunner.driver);
-		action.keyDown(get_key()).sendKeys(in_out).keyUp(get_key()).perform();
+		action.keyDown(get_key()).sendKeys(inOut).keyUp(get_key()).perform();
 		
 		/*Actions action = new Actions(driver);
 		action.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();*/
@@ -72,15 +73,16 @@ public class NavigateMethods
 	}
 	
 	// Method to zoom in/out web page until web element displays
-	public void zoom_in_out_till_element_display(String access_type,String in_out,String access_name)
+	public void zoomInOutTillElementDisplay(String accessType,String inOut,String accessName)
 	{
 		Actions action = new Actions(CucumberRunner.driver);
+		element = CucumberRunner.wait.until(ExpectedConditions.presenceOfElementLocated(eleType.getelementbytype(accessType, accessName)));
 		while(true)
 		{
-			if (CucumberRunner.driver.findElement(eletype.getelementbytype(access_type, access_name)).isDisplayed())
+			if (element.isDisplayed())
 				break;
 			else
-				action.keyDown(get_key()).sendKeys(in_out).keyUp(get_key()).perform();
+				action.keyDown(get_key()).sendKeys(inOut).keyUp(get_key()).perform();
 		}
 	  /*while true
 	    if WAIT.until { $driver.find_element(:"#{access_type}" => "#{access_name}") }.displayed?
@@ -92,31 +94,31 @@ public class NavigateMethods
 	}
 	
 	// Method to resize browser
-	public void resize_browser(int width, int height)
+	public void resizeBrowser(int width, int height)
 	{
 		CucumberRunner.driver.manage().window().setSize(new Dimension(width,height));
 	  //$driver.manage.window.resize_to(width, height)
 	}
 	
 	// Method to maximize browser
-	public void maximize_browser()
+	public void maximizeBrowser()
 	{
 		CucumberRunner.driver.manage().window().maximize();
 	}
 	
 	// Method to hover on element
-	public void hover_over_element(String access_type, String access_name)
+	public void hoverOverElement(String accessType, String accessName)
 	{
 		Actions action = new Actions(CucumberRunner.driver);
-		element = CucumberRunner.driver.findElement(eletype.getelementbytype(access_type, access_name));
+		element = CucumberRunner.wait.until(ExpectedConditions.presenceOfElementLocated(eleType.getelementbytype(accessType, accessName)));
 		
 		action.moveToElement(element).perform();
 	}
 	
 	// Method to scroll page to particular element
-	public void scroll_to_element(String access_type, String access_name)
+	public void scrollToElement(String accessType, String accessName)
 	{
-		element = CucumberRunner.driver.findElement(eletype.getelementbytype(access_type, access_name));
+		element = CucumberRunner.wait.until(ExpectedConditions.presenceOfElementLocated(eleType.getelementbytype(accessType, accessName)));
 	//	((JavascriptExecutor)CucumberRunner.driver).
 		
 		JavascriptExecutor executor = (JavascriptExecutor)CucumberRunner.driver;
@@ -126,19 +128,19 @@ public class NavigateMethods
 	}
 	
 	// Method to scroll page to top or end
-	public void scroll_page(String to)
+	public void scrollPage(String to) throws Exception
 	{
 		JavascriptExecutor executor = (JavascriptExecutor)CucumberRunner.driver;
 		if (to.equals("end"))
 			executor.executeScript("window.scrollTo(0,Math.max(document.documentElement.scrollHeight,document.body.scrollHeight,document.documentElement.clientHeight));");
 		else if (to.equals("top"))
             executor.executeScript("window.scrollTo(Math.max(document.documentElement.scrollHeight,document.body.scrollHeight,document.documentElement.clientHeight),0);");
-	    /*else
-	       raise "Exception : Invalid Direction (only scroll \"top\" or \"end\")"*/
+		else
+			throw new Exception("Exception : Invalid Direction (only scroll \"top\" or \"end\")");
 	}
 	
 	//Method to switch to new window
-    public void switch_to_new_window()
+    public void switchToNewWindow()
     {
     	String old_win = CucumberRunner.driver.getWindowHandle();
     //	CucumberRunner.driver.switchTo().window(CucumberRunner.driver.WindowHandles[1]);
@@ -146,4 +148,16 @@ public class NavigateMethods
 			  /*$old_win = $driver.window_handle
 			  $driver.switch_to.window($driver.window_handles[1])
 			end*/
+    
+    // Method to switch to old window
+    public void switchToOldWindow()
+    {
+    	CucumberRunner.driver.switchTo().window(old_win);
+    }
+
+    //Method to close new window
+    public void closeNewWindow()
+    {
+    	CucumberRunner.driver.close();
+    }
 }

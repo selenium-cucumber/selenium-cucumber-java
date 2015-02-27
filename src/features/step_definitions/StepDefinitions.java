@@ -1,21 +1,30 @@
 package features.step_definitions;
 
-import scJavaMethods.AssertionMethods;
-import scJavaMethods.MiscMethods;
-import scJavaMethods.NavigateMethods;
-import scJavaMethods.TestCaseFailed;
+import scJavaMethods.*;
 import cucumber.api.java.en.Then;
+import features.env.CucumberRunner;
 
 public class StepDefinitions
 {
 	private MiscMethods miscmethods = new MiscMethods();
-	private NavigateMethods navmethod = new NavigateMethods();
-	private AssertionMethods assertmethod = new AssertionMethods();
+	private NavigateMethods navmethod = null;
+	private AssertionMethods assertmethod = null;
+	private ClickElementsMethods clickmethod=null;
+	private ConfigurationMethods confgmethod=null;
+	private InputMethods inputmethod=null;
+	private ProgressMethods progressmethod=null;
+	private JavascriptHandlingMethods  javascriptmethod = null;
 	
 	public StepDefinitions()
 	{
 		System.out.println("In constructor");
 		assertmethod = new AssertionMethods();
+		clickmethod = new ClickElementsMethods();
+		confgmethod=new ConfigurationMethods();
+		inputmethod= new InputMethods();
+		progressmethod=new ProgressMethods();
+		javascriptmethod = new JavascriptHandlingMethods();
+		navmethod = new NavigateMethods();
 	}
 	
 									//Assertion steps
@@ -119,30 +128,276 @@ public class StepDefinitions
 		assertmethod.checkAlertText(actualValue);
 	}
 	  
-					//Navigation Steps
+				//Click element Steps 
+	
+	// click on web element
+	@Then("^I click on element having (.+) \"(.*?)\"$") 
+	public void click(String type,String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		clickmethod.click(type, accessName);
+	}
+	  
+	//Forcefully click on element
+	@Then("^I forcefully click on element having (.+) \"(.*?)\"$")
+	public void click_forcefully(String type,String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		clickmethod.clickForcefully(type,accessName);
+	}
+	  
+	// double click on web element
+	@Then("^I double click on element having (.+) \"(.*?)\"$") 
+	public void double_click(String type, String accessValue) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		clickmethod.doubleClick(type, accessValue);
+	}
+	
+	// steps to click on link
+	@Then("^I click on link having text \"(.*?)\"$")
+	public void click_link(String accessName)
+	{
+		clickmethod.click("linkText", accessName);
+	}
+	
+	//Step to click on partial link
+	@Then("^I click on link having partial text \"(.*?)\"$")
+	public void click_partial_link(String accessName)
+	{
+		clickmethod.click("partialLinkText", accessName);
+	}
+	
+				//Configuration steps
+	// step to print configuration
+	@Then("^I print configuration$") 
+	public void print_config()
+	{
+		confgmethod.printConfiguration();
+	}
+	  
+				//Input steps
+	// enter text into input field steps
+	@Then("^I enter \"([^\"]*)\" into input field having (.+) \"([^\"]*)\"$")
+	public void enter_text(String text, String type,String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		inputmethod.enterText(type, text, accessName);
+	}
+	
+	// clear input field steps
+	@Then("^I clear input field having (.+) \"([^\"]*)\"$") 
+	public void clear_text(String type, String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		inputmethod.clearText(type, accessName);
+	}
+	  
+	// select option by text/value from dropdown/multiselect
+	@Then("^I select \"(.*?)\" option by (.+) from\\s*((?:multiselect)?)\\sdropdown having (.+) \"(.*?)\"$")
+	public void select_option_from_dropdown(String option,String optionBy, String present,String type,String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		miscmethods.validateOptionBy(optionBy);
+		inputmethod.selectOptionFromDropdown(type, optionBy, option, accessName);
+	}
+	
+	// select option by index from dropdown/multiselect
+	@Then("^I select (\\d+) option by index from\\s*((?:multiselect)?)\\sdropdown having (.+) \"(.*?)\"$")
+	public void select_option_from_dropdown(String option, String present, String type, String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		inputmethod.selectOptionFromDropdown(type,"selectByIndex", option, accessName);
+	}
+	
+	// step to select option from mutliselect dropdown list
+	@Then("^I select all options from multiselect dropdown having (.+) \"(.*?)\"$")
+	public void select_all_option_from_multiselect_dropdown(String type,String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		//inputmethod.
+		//select_all_option_from_multiselect_dropdown(type, access_name)
+	}
+	
+	// step to unselect option from mutliselect dropdown list
+	@Then("^I unselect all options from multiselect dropdown having (.+) \"(.*?)\"$")
+	public void unselect_all_option_from_multiselect_dropdown(String type, String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		inputmethod.unselectAllOptionFromMultiselectDropdown(type, accessName);
+	}
+	
+	//check checkbox steps
+	@Then("^I check the checkbox having (.+) \"(.*?)\"$") 
+	public void check_checkbox(String type, String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		inputmethod.checkCheckbox(type, accessName);
+	}
+	  
+	
+				//Progress methods
+	// wait for specific period of time
+	@Then("^I wait for (\\d+) sec$")
+	public void wait(String time) throws NumberFormatException, InterruptedException
+	{
+		progressmethod.wait(time);
+	}
+	
+	//wait for specific element to display for specific period of time
+	@Then("^I wait (\\d+) seconds for element having (.+) \"(.*?)\" to display$")
+	public void wait_for_ele_to_display(String duration, String type, String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		progressmethod.waitForElementToDisplay(type, accessName, duration);
+	}
+	  
+	// wait for specific element to enable for specific period of time
+	@Then("^I wait (\\d+) seconds for element having (.+) \"(.*?)\" to click$")
+	public void wait_for_ele_to_click(String duration, String type, String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		progressmethod.waitForElementToClick(type, accessName, duration);
+	}
+	  
+					//JavaScript handling steps
+	//Step to handle java script
+	@Then("^I accept alert$")
+	public void handle_alert()
+	{
+		javascriptmethod.handleAlert("accept");
+	}
+	
+	//Steps to dismiss java script
+	@Then("^I dismiss alert$")
+	public void dismiss_alert()
+	{
+		javascriptmethod.handleAlert("dismiss");
+	}
+	
+							//Navigation Steps
 	//Step to navigate to specified URL
 	@Then("^I navigate to \"([^\"]*)\"$")
 	public void navigate_to(String link)
 	{
-		navmethod.navigate_to(link);
+		navmethod.navigateTo(link);
 	}
 	
-	/*@Then("^I navigate to \"([^\"]*)\"$")
-	public void navigate_to_0(String url) throws Throwable 
+	//Step to navigate forward
+	@Then("^I navigate forward")
+	public void navigate_forward()
 	{
-		//navmethod.navigate_to(url);
-	}
-
-	@Then("^I enter \"([^\"]*)\" into input field having (.+) \"([^\"]*)\"$")
-	public void I_enter_into_input_field_having_id(String text,String access_type, String access_name) throws Throwable 
-	{
-	    inputmethods.enter_text(access_type, text, access_name);
+		navmethod.navigate("forward");
 	}
 	
-	@Then("^I click on element having (.+) \"([^\"]*)\"$")
-	public void I_click_on_element_having_id(String access_type, String access_name) throws Throwable 
+	//Step to navigate backward
+	@Then("^I navigate back")
+	public void navigate_back()
 	{
-		clickmethods.click(access_type, access_name);
-	}*/
+		navmethod.navigate("back");
+	}
+		  
+	//Step to close the browser
+	@Then("^I close browser$")
+	public void close_browser()
+	{
+		navmethod.closeDriver();
+	}
+	
+	// step to resize browser
+	@Then("^I resize browser window size to width (\\d+) and height (\\d+)$")
+	public void resize_browser(int width, int heigth)
+	{
+		navmethod.resizeBrowser(width, heigth);
+	}
+	
+	// step to maximize browser
+	@Then("^I maximize browser window$")
+	public void maximize_browser()
+	{
+		navmethod.maximizeBrowser();
+	}
+	 
+	// steps to refresh page
+	@Then("^I refresh page$")
+	public void refresh_page()
+	{
+		CucumberRunner.driver.navigate().refresh();
+	}
+	
+	//Switch to new window
+	@Then("^I switch to new window$")
+	public void switch_to_new_window()
+	{
+		navmethod.switchToNewWindow();
+	}
+	 
+	//Switch to old window
+	@Then("^I switch to previous window$")
+	public void switch_to_old_window()
+	{
+		navmethod.switchToOldWindow();
+	}
+	
+	//Close new window
+	@Then("^I close new window$")
+	public void close_new_window()
+	{
+		navmethod.closeNewWindow();
+	}
+	
+	//steps to scroll to element
+	@Then("^I scroll to element having (.+) \"(.*?)\"$")
+	public void scroll_to_element(String type, String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		navmethod.scrollToElement(type, accessName);
+	}
+	
+	// steps to scroll web page to top or end
+	@Then("^I scroll to (top|end) of page$")
+	public void scroll_page(String to) throws Exception
+	{
+		navmethod.scrollPage(to);
+	}
+	
+	// step to hover over a element       Note: Doesn't work on Windows firefox
+	@Then("^I hover over element having (.+) \"(.*?)\"$")
+	public void hover_over_element(String type, String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		navmethod.hoverOverElement(type, accessName);
+	}
+	
+	// steps to zoom in page
+	@Then("^I zoom in page$") 
+	public void zoom_in()
+	{
+		navmethod.zoomInOut("add");
+	}
+	
+	// steps to zoom out page
+	@Then("^I zoom out page$")
+	public void zoom_out()
+	{
+		navmethod.zoomInOut("substract");
+	}
+	
+	// steps to zoom out till element displays
+	@Then("^I zoom out page till I see element having (.+) \"(.*?)\"$")
+	public void zoom_till_element_display(String type, String accessName) throws Exception
+	{
+		miscmethods.validateLocator(type);
+		navmethod.zoomInOutTillElementDisplay(type,"substract", accessName);
+	}
+	
+	//Reset browser to default zoom
+	@Then("^I reset page view$")
+	public void reset_page_zoom()
+	{
+		navmethod.zoomInOut("numpad0");
+	}
+	
+	
 }
 

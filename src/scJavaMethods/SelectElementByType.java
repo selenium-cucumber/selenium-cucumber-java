@@ -16,6 +16,10 @@ public class SelectElementByType
 			return By.xpath(access_name);
 		else if (type.equals("css"))
 			return By.cssSelector(access_name);
+		else if(type.equals("linkText"))
+			return By.linkText(access_name);
+		else if(type.equals("partialLinkText"))
+			return By.partialLinkText(access_name);
 		else
 			return null;
 	}
