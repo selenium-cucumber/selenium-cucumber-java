@@ -20,6 +20,8 @@ public class SelectElementByType
 			return By.linkText(access_name);
 		else if(type.equals("partialLinkText"))
 			return By.partialLinkText(access_name);
+		else if(type.equals("tagName"))
+			return By.tagName(access_name);
 		else
 			return null;
 	}

@@ -1,19 +1,41 @@
 Feature: Assertion Steps
-        As a user I should able to verify using assert steps
+        As a user I should able to verify using assert steps //Should have attribute steps are not present here
 
- 	Scenario: Open test page
- 		Given I navigate to "file:///C:/Users/Vaishnavi/Documents/SC/example/test_page.html"
+ Scenario: Open test page
+   Given I navigate to "file:\\\D:\sc_ruby\selenium-cucumber-ruby\tests\test_page.html"
 
  	Scenario: verify page title
-		Then I should see page title as "Test Page for selenium-cucumber"
+		Then I should see page title as "Test Page for selenium–cucumber"
+		Then I should not see page title as "wrong title"
 
+	Scenario: verify partial page title
+		Then I should see page title having partial text as "selenium–cucumber"
+		Then I should not see page title having partial text as "Wrong title"
+
+	@allow-rescue
+	Scenario: verify page title - negative test
+		Then I should see page title as "wrong title"
+
+	@allow-rescue
+	Scenario: verify page title - negative test	
+		Then I should not see page title as "Test Page for selenium–cucumber"
+
+	@allow-rescue
+	Scenario: verify partial page title - negative test
+		Then I should see page title having partial text as "Wrong title"
+
+	@allow-rescue
+	Scenario: verify partial page title - negative test
+		Then I should not see page title having partial text as "selenium–cucumber"
 
 	Scenario: verify element text
+
+		Then I scroll to end of page
 		Then element having id "dbClick" should have text as "Double-click this paragraph to trigger a function."
  		Then element having name "javascript_alert_msg" should have text as "Click the button to display a confirm box."
  		Then element having class "form_name" should have text as "Simple sample form with input elements"
  		Then element having xpath ".//*[@id='frm']/fieldset/p[1]/label" should have text as "Text input (first name)"
- 	
+
 	Scenario: verify element should not text
 
  		Then element having id "dbClick" should not have text as "Double-click this"
@@ -28,6 +50,18 @@ Feature: Assertion Steps
 	Scenario: verify element text - negative test 2
 
 		Then element having name "javascript_alert_msg" should not have text as "Click the button to display a confirm box."
+
+	Scenario: Partial text present
+ 	  Then element having id "frm" should have partial text as "last"
+
+ 	Scenario: Partial text present - negative test
+ 	  Then element having id "frm" should have partial text as "selenium"  
+ 	
+        Scenario: Partial text not present
+ 	  Then element having id "frm" should not have partial text as "selenium"
+
+    Scenario: Partial text not present - negative test 
+ 	  Then element having id "frm" should not have partial text as "last"	
 
  	Scenario: verify element accesibility
 

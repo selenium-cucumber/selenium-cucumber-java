@@ -63,13 +63,13 @@ public class NavigateMethods
 	// Method to zoom in/out page
 	public void zoomInOut(String inOut)
 	{
-		Actions action = new Actions(CucumberRunner.driver);
-		action.keyDown(get_key()).sendKeys(inOut).keyUp(get_key()).perform();
-		
-		/*Actions action = new Actions(driver);
-		action.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();*/
-		
-	  //$driver.action.key_down(:"#{get_key}").send_keys(:"#{in_out}").key_up(:"#{get_key}").perform
+		WebElement Sel= CucumberRunner.driver.findElement(eleType.getelementbytype("tagName","html"));
+		if(inOut.equals("ADD"))
+			Sel.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
+		else if(inOut.equals("SUBTRACT"))
+			Sel.sendKeys(Keys.chord(Keys.CONTROL, Keys.SUBTRACT));
+		else if(inOut.equals("reset"))
+			Sel.sendKeys(Keys.chord(Keys.CONTROL, Keys.NUMPAD0));
 	}
 	
 	// Method to zoom in/out web page until web element displays
@@ -84,13 +84,6 @@ public class NavigateMethods
 			else
 				action.keyDown(get_key()).sendKeys(inOut).keyUp(get_key()).perform();
 		}
-	  /*while true
-	    if WAIT.until { $driver.find_element(:"#{access_type}" => "#{access_name}") }.displayed?
-	      break
-	    else
-	      $driver.action.key_down(:"#{get_key}").send_keys(:"#{in_out}").key_up(:"#{get_key}").perform
-	    end
-	  end*/
 	}
 	
 	// Method to resize browser
@@ -119,12 +112,10 @@ public class NavigateMethods
 	public void scrollToElement(String accessType, String accessName)
 	{
 		element = CucumberRunner.wait.until(ExpectedConditions.presenceOfElementLocated(eleType.getelementbytype(accessType, accessName)));
-	//	((JavascriptExecutor)CucumberRunner.driver).
 		
 		JavascriptExecutor executor = (JavascriptExecutor)CucumberRunner.driver;
 		executor.executeScript("arguments[0].scrollIntoView();", element);
 		
-	  //ele_scroll.location_once_scrolled_into_view
 	}
 	
 	// Method to scroll page to top or end
@@ -143,7 +134,7 @@ public class NavigateMethods
     public void switchToNewWindow()
     {
     	String old_win = CucumberRunner.driver.getWindowHandle();
-    //	CucumberRunner.driver.switchTo().window(CucumberRunner.driver.WindowHandles[1]);
+   CucumberRunner.driver.switchTo().window("newwindow");
     }
 			  /*$old_win = $driver.window_handle
 			  $driver.switch_to.window($driver.window_handles[1])

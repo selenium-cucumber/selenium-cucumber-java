@@ -2,6 +2,7 @@ package scJavaMethods;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
 import features.env.CucumberRunner;
 
@@ -23,9 +24,24 @@ public class AssertionMethods
 	# param 2 : Boolean : test case [true or false]*/
 	public void checkTitle(String title,boolean testCase) throws TestCaseFailed
 	{
+		System.out.println("Title "+ title+"\n TestCase "+testCase);
 		String pageTitle = getPageTitle();
+		
+//		String pageTitle = "abc";
+//		title = "abc";
+		System.out.println("**"+pageTitle+"**"+title+"**");
+		System.out.println("++"+ pageTitle.equals(title));
+	/*char[] ch1=pageTitle.toCharArray();
+	char[] ch2=title.toCharArray();
+	
+	for (int i=0; i< ch1.length ; i++)
+	{
+		System.out.println(" i :"+i+"*"+ch1[i]+"*"+ch2[i]+"*");
+	}*/
+		//System.out.println("++"+ title.length());
 		if (testCase)
 		{
+			System.out.println("In if \n----"+pageTitle.equals(title));
 			if(!pageTitle.equals(title))
 				throw new TestCaseFailed("Page Title Not Matched, Actual Page Title : "+pageTitle);
 		}
@@ -33,6 +49,24 @@ public class AssertionMethods
 		{
 			if(pageTitle.equals(title))
 				throw new TestCaseFailed("Page Title Matched, Actual Page Title : "+pageTitle);
+		}
+	}
+	
+	/* Method to verify partial title
+	# param 1 : String : partial title string
+	# param 2 : Boolean : test case [true or flase] */
+	public void checkPartialTitle(String partialTitle,boolean testCase) throws TestCaseFailed
+	{
+		String pageTitle = getPageTitle();
+		if(testCase)
+		{
+			if(!pageTitle.contains(partialTitle))
+				throw new TestCaseFailed("Partial Page Title Not Present, Actual Page Title : "+pageTitle);
+		}
+		else
+		{
+			if(pageTitle.contains(partialTitle))
+				throw new TestCaseFailed("Partial Page Title Present, Actual Page Title : "+pageTitle);
 		}
 	}
 
@@ -79,12 +113,12 @@ public class AssertionMethods
 
 	    if (testCase)
 	    {
-	    	if (!elementText.equals(actualValue))
+	    	if (!elementText.contains(actualValue))
 	    		throw new TestCaseFailed("Text Not Matched");
 	    }
 	    else
 	    {
-	    	if (elementText.equals(actualValue))
+	    	if (elementText.contains(actualValue))
 	    		throw new TestCaseFailed("Text Matched");
 	    }
 	}
@@ -256,4 +290,38 @@ public class AssertionMethods
 	def get_alert_text
 	  $driver.switch_to.alert.text
 	end*/
+	
+	public void isOptionFromDropdownSelected(String accessType,String by,String option,String accessName,boolean shouldBeSelected) throws TestCaseFailed
+	{
+		Select selectList=null;
+		WebElement dropdown = CucumberRunner.wait.until(ExpectedConditions.presenceOfElementLocated(eleType.getelementbytype(accessType, accessName)));
+		selectList = new Select(dropdown);
+		
+		String actualValue=null;
+		if(by.equals("text"))
+			actualValue = selectList.getFirstSelectedOption().getText();
+		else
+			actualValue = selectList.getFirstSelectedOption().getAttribute("value");
+		
+		if((!actualValue.equals(option))&&(shouldBeSelected))
+			throw new TestCaseFailed("Option Not Selected From Dropwdown");
+		else if ((actualValue.equals(option))&&(!shouldBeSelected))
+			throw new TestCaseFailed("Option Selected From Dropwdown");
+	}
+//	  dropdown = WAIT.until { $driver.find_element(:"#{access_type}" => "#{access_name}") }
+//	  select_list = Selenium::WebDriver::Support::Select.new(dropdown)
+//
+//	  if by == 'text'
+//	    actual_value = select_list.first_selected_option.text
+//	  else
+//	    actual_value = select_list.first_selected_option.attribute('value')
+//	  end
+//
+//	  if !actual_value == option && should_be_selected
+//	    raise TestCaseFailed, 'Option Not Selected From Dropwdown'
+//	  elsif actual_value == option && !should_be_selected
+//	    raise TestCaseFailed, 'Option Selected From Dropwdown'
+//	  end
+//	end
+
 }

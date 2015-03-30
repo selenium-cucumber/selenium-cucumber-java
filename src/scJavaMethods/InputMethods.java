@@ -1,10 +1,13 @@
 package scJavaMethods;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import features.env.CucumberRunner;
+import scJavaMethods.SelectElementByType;
 
 public class InputMethods 
 {
@@ -28,15 +31,18 @@ public class InputMethods
 	
 	public void selectelementfromdropdownbytype (Select select_list, String bytype, String option)
 	{
+		System.out.println("**"+bytype+"++"+option);
 		if(bytype.equals("selectByIndex"))
 		{
 			int index = Integer.parseInt(option);
 			select_list.selectByIndex(index-1);
 		}
-		else if (bytype.equals("selectByValue"))
+		else if (bytype.equals("value"))
 			select_list.selectByValue(option);
-		else if (bytype.equals("selectByVisibleText"))
-			select_list.selectByValue(option);
+		else if (bytype.equals("text"))
+			select_list.selectByVisibleText(option);
+		/*else if (bytype.equals("selectByVisibleText"))
+			select_list.selectByValue(option);*/
 	}
 	
 	//method to select option from dropdown list
@@ -80,31 +86,60 @@ public class InputMethods
 	}
 	
 	//method to uncheck checkbox
-	public void uncheck_checkbox(String access_type, String access_name)
+	public void uncheckCheckbox(String accessType, String accessName)
 	{
-		WebElement checkbox = CucumberRunner.driver.findElement(eleType.getelementbytype(access_type, access_name));
+		WebElement checkbox= CucumberRunner.wait.until(ExpectedConditions.presenceOfElementLocated(eleType.getelementbytype(accessType, accessName)));
+		//WebElement checkbox = CucumberRunner.driver.findElement(eleType.getelementbytype(access_type, access_name));
 		if (checkbox.isSelected())
 			checkbox.click();
 	}
 	
 	//method to select radio button
-	public void toggle_checkbox(String access_type, String access_name)
+	public void toggleCheckbox(String accessType, String accessName)
 	{
-		CucumberRunner.driver.findElement(eleType.getelementbytype(access_type, access_name)).click();
+		CucumberRunner.wait.until(ExpectedConditions.presenceOfElementLocated(eleType.getelementbytype(accessType, accessName))).click();
+		//CucumberRunner.driver.findElement(eleType.getelementbytype(access_type, access_name)).click();
 	}
 	
 	//method to select radio button
-	public void select_radio_button(String access_type, String access_name)
+	public void selectRadioButton(String accessType, String accessName)
 	{
-		WebElement radio_button = CucumberRunner.driver.findElement(eleType.getelementbytype(access_type, access_name));
-		if(!radio_button.isSelected())
-			radio_button.click();
+		WebElement radioButton = CucumberRunner.wait.until(ExpectedConditions.presenceOfElementLocated(eleType.getelementbytype(accessType, accessName)));
+		if(!radioButton.isSelected())
+			radioButton.click();
 	}
 	
 	//method to select option from radio button group
-	/*public void select_option_from_radio_button_group(String access_type, String by, String option, String access_name)
+	public void selectOptionFromRadioButtonGroup(String accessType, String by, String option, String accessName)
 	{
-		WebElement radio_button_group = CucumberRunner.driver.findElement(eletype.getelementbytype(access_type, access_name));
+		List<WebElement> radioButtonGroup = CucumberRunner.driver.findElements(eleType.getelementbytype(accessType, accessName));
+		String getoption = null;
+		
+		/*System.out.println("cnt : "+radioButtonGroup.size());
+		for(int i =0; i < radioButtonGroup.size() ; i++ ){
+			System.out.println("In loop i: "+i);
+			System.out.println(radioButtonGroup.get(i).isSelected());
+		}*/
+		
+		for(WebElement temp : radioButtonGroup)
+		{
+			if(by.equals("value"))
+			{
+				System.out.println("+++"+temp.getAttribute("value"));
+				getoption = temp.getAttribute("value");
+			}
+			else
+			{
+				System.out.println("***"+temp.getText());
+				getoption = temp.getText();
+			}
+			System.out.println("Element : "+getoption);
+			if(getoption.equals(option) && !temp.isSelected())
+				temp.click();
+		}
+		
+	}
+	//	List<WebElement> radioButtonGroup = CucumberRunner.driver.findElement(eletype.getelementbytype(access_type, access_name));
 		
 
 	/*  getter = ->(rb, by) { by == 'value' ? rb.attribute('value') : rb.text }

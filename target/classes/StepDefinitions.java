@@ -1,7 +1,5 @@
 package features.step_definitions;
 
-import java.io.IOException;
-
 import scJavaMethods.*;
 import cucumber.api.java.en.Then;
 import features.env.CucumberRunner;
@@ -16,7 +14,6 @@ public class StepDefinitions
 	private InputMethods inputmethod=null;
 	private ProgressMethods progressmethod=null;
 	private JavascriptHandlingMethods  javascriptmethod = null;
-	private ScreenShotMethod screenshotmethod = null;
 	
 	public StepDefinitions()
 	{
@@ -29,7 +26,6 @@ public class StepDefinitions
 		progressmethod = new ProgressMethods();
 		javascriptmethod = new JavascriptHandlingMethods();
 		navmethod = new NavigateMethods();
-		screenshotmethod = new ScreenShotMethod();
 	}
 	
 									//Assertion steps
@@ -223,7 +219,7 @@ public class StepDefinitions
 	{
 		miscmethod.validateLocator(type);
 		miscmethod.validateOptionBy(optionBy);
-		inputmethod.selectOptionFromDropdown(type,optionBy, option, accessName);
+		inputmethod.selectOptionFromDropdown(type, optionBy, option, accessName);
 	}
 	
 	// select option by index from dropdown/multiselect
@@ -235,13 +231,13 @@ public class StepDefinitions
 	}
 	
 	// step to select option from mutliselect dropdown list
-	/*@Then("^I select all options from multiselect dropdown having (.+) \"(.*?)\"$")
+	@Then("^I select all options from multiselect dropdown having (.+) \"(.*?)\"$")
 	public void select_all_option_from_multiselect_dropdown(String type,String accessName) throws Exception
 	{
 		miscmethod.validateLocator(type);
 		//inputmethod.
 		//select_all_option_from_multiselect_dropdown(type, access_name)
-	}*/
+	}
 	
 	// step to unselect option from mutliselect dropdown list
 	@Then("^I unselect all options from multiselect dropdown having (.+) \"(.*?)\"$")
@@ -258,39 +254,7 @@ public class StepDefinitions
 		miscmethod.validateLocator(type);
 		inputmethod.checkCheckbox(type, accessName);
 	}
-	
-	//uncheck checkbox steps
-	@Then("^I uncheck the checkbox having (.+) \"(.*?)\"$")
-	public void uncheck_checkbox(String type,String accessName) throws Exception
-	{
-		miscmethod.validateLocator(type);
-		inputmethod.uncheckCheckbox(type, accessName);
-	}
 	  
-	//steps to toggle checkbox
-	@Then("^I toggle checkbox having (.+) \"(.*?)\"$")
-	public void toggle_checkbox(String type,String accessName) throws Exception
-	{
-		miscmethod.validateLocator(type);
-		inputmethod.toggleCheckbox(type, accessName);
-	}
-
-	// step to select radio button
-	@Then("^I select radio button having (.+) \"(.*?)\"$")
-	public void select_radio_button(String type, String accessName) throws Exception
-	{
-		miscmethod.validateLocator(type);
-		inputmethod.selectRadioButton(type, accessName);
-	}
-	
-	// steps to select option by text from radio button group
-	@Then("^I select \"(.*?)\" option by (.+) from radio button group having (.+) \"(.*?)\"$")
-	public void select_option_from_radio_btn_group(String option, String optionBy, String type, String accessName) throws Exception
-	{
-		miscmethod.validateLocator(type);
-		miscmethod.validateOptionBy(optionBy);
-		inputmethod.selectOptionFromRadioButtonGroup(type, optionBy, option, accessName);
-	}
 	
 				//Progress methods
 	// wait for specific period of time
@@ -309,7 +273,7 @@ public class StepDefinitions
 	}
 	  
 	// wait for specific element to enable for specific period of time
-	@Then("^I wait (\\d+) seconds for element having (.+) \"(.*?)\" to be clickable$")
+	@Then("^I wait (\\d+) seconds for element having (.+) \"(.*?)\" to click$")
 	public void wait_for_ele_to_click(String duration, String type, String accessName) throws Exception
 	{
 		miscmethod.validateLocator(type);
@@ -429,14 +393,14 @@ public class StepDefinitions
 	@Then("^I zoom in page$") 
 	public void zoom_in()
 	{
-		navmethod.zoomInOut("ADD");
+		navmethod.zoomInOut("add");
 	}
 	
 	// steps to zoom out page
 	@Then("^I zoom out page$")
 	public void zoom_out()
 	{
-		navmethod.zoomInOut("SUBTRACT");
+		navmethod.zoomInOut("substract");
 	}
 	
 	// steps to zoom out till element displays
@@ -451,15 +415,9 @@ public class StepDefinitions
 	@Then("^I reset page view$")
 	public void reset_page_zoom()
 	{
-		navmethod.zoomInOut("reset");
+		navmethod.zoomInOut("numpad0");
 	}
 	
-						//Screen shot methods
 	
-	@Then("^I take screenshot$")
-	public void take_screenshot() throws IOException
-	{
-		screenshotmethod.takeScreenShot();
-	}
 }
 

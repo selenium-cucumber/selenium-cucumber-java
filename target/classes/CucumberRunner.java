@@ -15,9 +15,8 @@ import org.openqa.selenium.support.ui.*;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-//		format = {"pretty","html:target/cucumber-htmlreport","json-pretty:target/cucumber-report.json"},
-		format = {"pretty","html:target/cucumber"},
-		features = {"classpath : src/features/"}
+		format = {"pretty","html:target/cucumber-htmlreport","json-pretty:target/cucumber-report.json"},
+		features = {"src/features/"}
 		)
 
 public class CucumberRunner 
