@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.013" errors="2" skipped="0" tests="2" name="skeleton.RunCukeTest">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
+    <property name="java.vm.version" value="24.51-b03"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\Vaishnavi\workspace\testscj"/>
+    <property name="java.runtime.version" value="1.7.0_51-b13"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\VAISHN~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\apache-maven-3.2.5-bin\apache-maven-3.2.5\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Ruby21\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\apache-ant-1.9.3-bin\apache-ant-1.9.3\bin;C:\webdrivers;C:\Program Files (x86)\Git\bin;C:\Program Files\Java\jdk1.7.0_51\bin;C:\Program Files\Java\jre7\bin;C:\apache-maven-3.2.5-bin\apache-maven-3.2.5\bin;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\Vaishnavi"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="Vaishnavi"/>
+    <property name="java.class.path" value="C:\apache-maven-3.2.5-bin\apache-maven-3.2.5\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_51\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_51"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_51\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\apache-maven-3.2.5-bin\apache-maven-3.2.5"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase time="0.005" classname="Scenario: Open test page" name="Given I navigate to &quot;file:\\\D:\sc_ruby\selenium-cucumber-ruby\tests\test_page.html&quot;">
+    <error type="java.lang.ExceptionInInitializerError">java.lang.ExceptionInInitializerError
+	at skeleton.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:21)
+	at ✽.Given I navigate to &quot;file:\\\D:\sc_ruby\selenium-cucumber-ruby\tests\test_page.html&quot;(skeleton/belly.feature:5)
+Caused by: org.openqa.selenium.WebDriverException: Failed to connect to binary FirefoxBinary(C:\Program Files (x86)\Mozilla Firefox\firefox.exe) on port 7055; process output follows: 
+ed add-ons
+1427985751836	addons.xpi-utils	DEBUG	Updating add-on states
+1427985751837	addons.xpi-utils	DEBUG	Writing add-ons list
+1427985751841	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1427985751841	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1427985751842	addons.manager	DEBUG	Registering shutdown blocker for OpenH264Provider
+1427985751842	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1427985752513	DeferredSave.extensions.json	DEBUG	Starting timer
+1427985752541	DeferredSave.extensions.json	DEBUG	Starting write
+1427985752548	addons.manager	DEBUG	shutdown
+1427985752548	addons.manager	DEBUG	Calling shutdown blocker for XPIProvider
+1427985752548	addons.xpi	DEBUG	shutdown
+1427985752548	addons.xpi-utils	DEBUG	shutdown
+1427985752548	addons.manager	DEBUG	Calling shutdown blocker for LightweightThemeManager
+1427985752549	addons.manager	DEBUG	Calling shutdown blocker for OpenH264Provider
+1427985752549	addons.manager	DEBUG	Calling shutdown blocker for PluginProvider
+1427985752697	DeferredSave.extensions.json	DEBUG	Write succeeded
+1427985752697	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 16
+1427985752698	addons.xpi	DEBUG	Notifying XPI shutdown observers
+1427985752700	addons.manager	DEBUG	Async provider shutdown done
+1427985753477	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: [&quot;XPIProvider&quot;]
+1427985753478	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: [&quot;LightweightThemeManager&quot;]
+1427985753480	addons.xpi	DEBUG	startup
+1427985753480	addons.xpi	INFO	Mapping fxdriver@googlecode.com to C:\Users\VAISHN~1\AppData\Local\Temp\anonymous8881161401773965632webdriver-profile\extensions\fxdriver@googlecode.com
+1427985753480	addons.xpi	DEBUG	Ignoring file entry whose name is not a valid add-on ID: C:\Users\VAISHN~1\AppData\Local\Temp\anonymous8881161401773965632webdriver-profile\extensions\webdriver-staging
+1427985753481	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files (x86)\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}
+1427985753481	addons.xpi	DEBUG	Skipping unavailable install location app-system-share
+1427985753481	addons.xpi	DEBUG	Skipping unavailable install location app-system-local
+1427985753482	addons.xpi	DEBUG	checkForChanges
+1427985753482	addons.xpi	DEBUG	Loaded add-on state from prefs: {&quot;app-profile&quot;:{&quot;fxdriver@googlecode.com&quot;:{&quot;d&quot;:&quot;C:\\Users\\VAISHN~1\\AppData\\Local\\Temp\\anonymous8881161401773965632webdriver-profile\\extensions\\fxdriver@googlecode.com&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;2.45.0&quot;,&quot;st&quot;:1427985751117,&quot;mt&quot;:1427985751099}},&quot;app-global&quot;:{&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;:{&quot;d&quot;:&quot;C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;36.0.4&quot;,&quot;st&quot;:1427172458292,&quot;mt&quot;:1427172458199}}}
+1427985753482	addons.xpi	DEBUG	getModTime: Recursive scan of fxdriver@googlecode.com
+1427985753489	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1427985753489	addons.xpi	DEBUG	getInstallState changed: false, state: {&quot;app-profile&quot;:{&quot;fxdriver@googlecode.com&quot;:{&quot;d&quot;:&quot;C:\\Users\\VAISHN~1\\AppData\\Local\\Temp\\anonymous8881161401773965632webdriver-profile\\extensions\\fxdriver@googlecode.com&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;2.45.0&quot;,&quot;st&quot;:1427985751117,&quot;mt&quot;:1427985751099}},&quot;app-global&quot;:{&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;:{&quot;d&quot;:&quot;C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;36.0.4&quot;,&quot;st&quot;:1427172458292,&quot;mt&quot;:1427172458199}}}
+1427985753490	addons.xpi	DEBUG	No changes found
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for OpenH264Provider
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+
+Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;
+System info: host: &apos;VI-D043&apos;, ip: &apos;10.10.9.78&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_51&apos;
+Driver info: driver.version: FirefoxDriver
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:130)
+	at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:246)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:114)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:191)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:186)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:182)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:99)
+	at env.Env.CreateWebDriver(Env.java:38)
+	at env.BaseTest.&lt;clinit&gt;(BaseTest.java:6)
+	at skeleton.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at cucumber.runtime.Utils$1.call(Utils.java:34)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:30)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:35)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.openqa.selenium.firefox.NotConnectedException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+ed add-ons
+1427985751836	addons.xpi-utils	DEBUG	Updating add-on states
+1427985751837	addons.xpi-utils	DEBUG	Writing add-ons list
+1427985751841	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1427985751841	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1427985751842	addons.manager	DEBUG	Registering shutdown blocker for OpenH264Provider
+1427985751842	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1427985752513	DeferredSave.extensions.json	DEBUG	Starting timer
+1427985752541	DeferredSave.extensions.json	DEBUG	Starting write
+1427985752548	addons.manager	DEBUG	shutdown
+1427985752548	addons.manager	DEBUG	Calling shutdown blocker for XPIProvider
+1427985752548	addons.xpi	DEBUG	shutdown
+1427985752548	addons.xpi-utils	DEBUG	shutdown
+1427985752548	addons.manager	DEBUG	Calling shutdown blocker for LightweightThemeManager
+1427985752549	addons.manager	DEBUG	Calling shutdown blocker for OpenH264Provider
+1427985752549	addons.manager	DEBUG	Calling shutdown blocker for PluginProvider
+1427985752697	DeferredSave.extensions.json	DEBUG	Write succeeded
+1427985752697	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 16
+1427985752698	addons.xpi	DEBUG	Notifying XPI shutdown observers
+1427985752700	addons.manager	DEBUG	Async provider shutdown done
+1427985753477	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: [&quot;XPIProvider&quot;]
+1427985753478	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: [&quot;LightweightThemeManager&quot;]
+1427985753480	addons.xpi	DEBUG	startup
+1427985753480	addons.xpi	INFO	Mapping fxdriver@googlecode.com to C:\Users\VAISHN~1\AppData\Local\Temp\anonymous8881161401773965632webdriver-profile\extensions\fxdriver@googlecode.com
+1427985753480	addons.xpi	DEBUG	Ignoring file entry whose name is not a valid add-on ID: C:\Users\VAISHN~1\AppData\Local\Temp\anonymous8881161401773965632webdriver-profile\extensions\webdriver-staging
+1427985753481	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files (x86)\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}
+1427985753481	addons.xpi	DEBUG	Skipping unavailable install location app-system-share
+1427985753481	addons.xpi	DEBUG	Skipping unavailable install location app-system-local
+1427985753482	addons.xpi	DEBUG	checkForChanges
+1427985753482	addons.xpi	DEBUG	Loaded add-on state from prefs: {&quot;app-profile&quot;:{&quot;fxdriver@googlecode.com&quot;:{&quot;d&quot;:&quot;C:\\Users\\VAISHN~1\\AppData\\Local\\Temp\\anonymous8881161401773965632webdriver-profile\\extensions\\fxdriver@googlecode.com&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;2.45.0&quot;,&quot;st&quot;:1427985751117,&quot;mt&quot;:1427985751099}},&quot;app-global&quot;:{&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;:{&quot;d&quot;:&quot;C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;36.0.4&quot;,&quot;st&quot;:1427172458292,&quot;mt&quot;:1427172458199}}}
+1427985753482	addons.xpi	DEBUG	getModTime: Recursive scan of fxdriver@googlecode.com
+1427985753489	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1427985753489	addons.xpi	DEBUG	getInstallState changed: false, state: {&quot;app-profile&quot;:{&quot;fxdriver@googlecode.com&quot;:{&quot;d&quot;:&quot;C:\\Users\\VAISHN~1\\AppData\\Local\\Temp\\anonymous8881161401773965632webdriver-profile\\extensions\\fxdriver@googlecode.com&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;2.45.0&quot;,&quot;st&quot;:1427985751117,&quot;mt&quot;:1427985751099}},&quot;app-global&quot;:{&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;:{&quot;d&quot;:&quot;C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;36.0.4&quot;,&quot;st&quot;:1427172458292,&quot;mt&quot;:1427172458199}}}
+1427985753490	addons.xpi	DEBUG	No changes found
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for OpenH264Provider
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:118)
+	... 53 more
+</error>
+    <system-out>Feature: Screenshot Step
+        As a user I should able to take screenshot
+Browser: ff
+Firefox is selected
+</system-out>
+    <system-err>org.openqa.selenium.firefox.NotConnectedException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+ed add-ons
+1427985751836	addons.xpi-utils	DEBUG	Updating add-on states
+1427985751837	addons.xpi-utils	DEBUG	Writing add-ons list
+1427985751841	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1427985751841	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1427985751842	addons.manager	DEBUG	Registering shutdown blocker for OpenH264Provider
+1427985751842	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1427985752513	DeferredSave.extensions.json	DEBUG	Starting timer
+1427985752541	DeferredSave.extensions.json	DEBUG	Starting write
+1427985752548	addons.manager	DEBUG	shutdown
+1427985752548	addons.manager	DEBUG	Calling shutdown blocker for XPIProvider
+1427985752548	addons.xpi	DEBUG	shutdown
+1427985752548	addons.xpi-utils	DEBUG	shutdown
+1427985752548	addons.manager	DEBUG	Calling shutdown blocker for LightweightThemeManager
+1427985752549	addons.manager	DEBUG	Calling shutdown blocker for OpenH264Provider
+1427985752549	addons.manager	DEBUG	Calling shutdown blocker for PluginProvider
+1427985752697	DeferredSave.extensions.json	DEBUG	Write succeeded
+1427985752697	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 16
+1427985752698	addons.xpi	DEBUG	Notifying XPI shutdown observers
+1427985752700	addons.manager	DEBUG	Async provider shutdown done
+1427985753477	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: [&quot;XPIProvider&quot;]
+1427985753478	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: [&quot;LightweightThemeManager&quot;]
+1427985753480	addons.xpi	DEBUG	startup
+1427985753480	addons.xpi	INFO	Mapping fxdriver@googlecode.com to C:\Users\VAISHN~1\AppData\Local\Temp\anonymous8881161401773965632webdriver-profile\extensions\fxdriver@googlecode.com
+1427985753480	addons.xpi	DEBUG	Ignoring file entry whose name is not a valid add-on ID: C:\Users\VAISHN~1\AppData\Local\Temp\anonymous8881161401773965632webdriver-profile\extensions\webdriver-staging
+1427985753481	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files (x86)\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}
+1427985753481	addons.xpi	DEBUG	Skipping unavailable install location app-system-share
+1427985753481	addons.xpi	DEBUG	Skipping unavailable install location app-system-local
+1427985753482	addons.xpi	DEBUG	checkForChanges
+1427985753482	addons.xpi	DEBUG	Loaded add-on state from prefs: {&quot;app-profile&quot;:{&quot;fxdriver@googlecode.com&quot;:{&quot;d&quot;:&quot;C:\\Users\\VAISHN~1\\AppData\\Local\\Temp\\anonymous8881161401773965632webdriver-profile\\extensions\\fxdriver@googlecode.com&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;2.45.0&quot;,&quot;st&quot;:1427985751117,&quot;mt&quot;:1427985751099}},&quot;app-global&quot;:{&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;:{&quot;d&quot;:&quot;C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;36.0.4&quot;,&quot;st&quot;:1427172458292,&quot;mt&quot;:1427172458199}}}
+1427985753482	addons.xpi	DEBUG	getModTime: Recursive scan of fxdriver@googlecode.com
+1427985753489	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1427985753489	addons.xpi	DEBUG	getInstallState changed: false, state: {&quot;app-profile&quot;:{&quot;fxdriver@googlecode.com&quot;:{&quot;d&quot;:&quot;C:\\Users\\VAISHN~1\\AppData\\Local\\Temp\\anonymous8881161401773965632webdriver-profile\\extensions\\fxdriver@googlecode.com&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;2.45.0&quot;,&quot;st&quot;:1427985751117,&quot;mt&quot;:1427985751099}},&quot;app-global&quot;:{&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;:{&quot;d&quot;:&quot;C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;36.0.4&quot;,&quot;st&quot;:1427172458292,&quot;mt&quot;:1427172458199}}}
+1427985753490	addons.xpi	DEBUG	No changes found
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for OpenH264Provider
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:118)
+	at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:246)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:114)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:191)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:186)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:182)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:99)
+	at env.Env.CreateWebDriver(Env.java:38)
+	at env.BaseTest.&lt;clinit&gt;(BaseTest.java:6)
+	at skeleton.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at cucumber.runtime.Utils$1.call(Utils.java:34)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:30)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:35)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</system-err>
+  </testcase>
+  <testcase time="0.008" classname="Scenario: Open test page" name="Scenario: Open test page">
+    <error type="java.lang.ExceptionInInitializerError">java.lang.ExceptionInInitializerError
+	at skeleton.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:21)
+	at ✽.Given I navigate to &quot;file:\\\D:\sc_ruby\selenium-cucumber-ruby\tests\test_page.html&quot;(skeleton/belly.feature:5)
+Caused by: org.openqa.selenium.WebDriverException: Failed to connect to binary FirefoxBinary(C:\Program Files (x86)\Mozilla Firefox\firefox.exe) on port 7055; process output follows: 
+ed add-ons
+1427985751836	addons.xpi-utils	DEBUG	Updating add-on states
+1427985751837	addons.xpi-utils	DEBUG	Writing add-ons list
+1427985751841	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1427985751841	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1427985751842	addons.manager	DEBUG	Registering shutdown blocker for OpenH264Provider
+1427985751842	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1427985752513	DeferredSave.extensions.json	DEBUG	Starting timer
+1427985752541	DeferredSave.extensions.json	DEBUG	Starting write
+1427985752548	addons.manager	DEBUG	shutdown
+1427985752548	addons.manager	DEBUG	Calling shutdown blocker for XPIProvider
+1427985752548	addons.xpi	DEBUG	shutdown
+1427985752548	addons.xpi-utils	DEBUG	shutdown
+1427985752548	addons.manager	DEBUG	Calling shutdown blocker for LightweightThemeManager
+1427985752549	addons.manager	DEBUG	Calling shutdown blocker for OpenH264Provider
+1427985752549	addons.manager	DEBUG	Calling shutdown blocker for PluginProvider
+1427985752697	DeferredSave.extensions.json	DEBUG	Write succeeded
+1427985752697	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 16
+1427985752698	addons.xpi	DEBUG	Notifying XPI shutdown observers
+1427985752700	addons.manager	DEBUG	Async provider shutdown done
+1427985753477	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: [&quot;XPIProvider&quot;]
+1427985753478	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: [&quot;LightweightThemeManager&quot;]
+1427985753480	addons.xpi	DEBUG	startup
+1427985753480	addons.xpi	INFO	Mapping fxdriver@googlecode.com to C:\Users\VAISHN~1\AppData\Local\Temp\anonymous8881161401773965632webdriver-profile\extensions\fxdriver@googlecode.com
+1427985753480	addons.xpi	DEBUG	Ignoring file entry whose name is not a valid add-on ID: C:\Users\VAISHN~1\AppData\Local\Temp\anonymous8881161401773965632webdriver-profile\extensions\webdriver-staging
+1427985753481	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files (x86)\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}
+1427985753481	addons.xpi	DEBUG	Skipping unavailable install location app-system-share
+1427985753481	addons.xpi	DEBUG	Skipping unavailable install location app-system-local
+1427985753482	addons.xpi	DEBUG	checkForChanges
+1427985753482	addons.xpi	DEBUG	Loaded add-on state from prefs: {&quot;app-profile&quot;:{&quot;fxdriver@googlecode.com&quot;:{&quot;d&quot;:&quot;C:\\Users\\VAISHN~1\\AppData\\Local\\Temp\\anonymous8881161401773965632webdriver-profile\\extensions\\fxdriver@googlecode.com&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;2.45.0&quot;,&quot;st&quot;:1427985751117,&quot;mt&quot;:1427985751099}},&quot;app-global&quot;:{&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;:{&quot;d&quot;:&quot;C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;36.0.4&quot;,&quot;st&quot;:1427172458292,&quot;mt&quot;:1427172458199}}}
+1427985753482	addons.xpi	DEBUG	getModTime: Recursive scan of fxdriver@googlecode.com
+1427985753489	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1427985753489	addons.xpi	DEBUG	getInstallState changed: false, state: {&quot;app-profile&quot;:{&quot;fxdriver@googlecode.com&quot;:{&quot;d&quot;:&quot;C:\\Users\\VAISHN~1\\AppData\\Local\\Temp\\anonymous8881161401773965632webdriver-profile\\extensions\\fxdriver@googlecode.com&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;2.45.0&quot;,&quot;st&quot;:1427985751117,&quot;mt&quot;:1427985751099}},&quot;app-global&quot;:{&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;:{&quot;d&quot;:&quot;C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;36.0.4&quot;,&quot;st&quot;:1427172458292,&quot;mt&quot;:1427172458199}}}
+1427985753490	addons.xpi	DEBUG	No changes found
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for OpenH264Provider
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+
+Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;
+System info: host: &apos;VI-D043&apos;, ip: &apos;10.10.9.78&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_51&apos;
+Driver info: driver.version: FirefoxDriver
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:130)
+	at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:246)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:114)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:191)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:186)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:182)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:99)
+	at env.Env.CreateWebDriver(Env.java:38)
+	at env.BaseTest.&lt;clinit&gt;(BaseTest.java:6)
+	at skeleton.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at cucumber.runtime.Utils$1.call(Utils.java:34)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:30)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:35)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.openqa.selenium.firefox.NotConnectedException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+ed add-ons
+1427985751836	addons.xpi-utils	DEBUG	Updating add-on states
+1427985751837	addons.xpi-utils	DEBUG	Writing add-ons list
+1427985751841	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1427985751841	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1427985751842	addons.manager	DEBUG	Registering shutdown blocker for OpenH264Provider
+1427985751842	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1427985752513	DeferredSave.extensions.json	DEBUG	Starting timer
+1427985752541	DeferredSave.extensions.json	DEBUG	Starting write
+1427985752548	addons.manager	DEBUG	shutdown
+1427985752548	addons.manager	DEBUG	Calling shutdown blocker for XPIProvider
+1427985752548	addons.xpi	DEBUG	shutdown
+1427985752548	addons.xpi-utils	DEBUG	shutdown
+1427985752548	addons.manager	DEBUG	Calling shutdown blocker for LightweightThemeManager
+1427985752549	addons.manager	DEBUG	Calling shutdown blocker for OpenH264Provider
+1427985752549	addons.manager	DEBUG	Calling shutdown blocker for PluginProvider
+1427985752697	DeferredSave.extensions.json	DEBUG	Write succeeded
+1427985752697	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 16
+1427985752698	addons.xpi	DEBUG	Notifying XPI shutdown observers
+1427985752700	addons.manager	DEBUG	Async provider shutdown done
+1427985753477	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: [&quot;XPIProvider&quot;]
+1427985753478	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: [&quot;LightweightThemeManager&quot;]
+1427985753480	addons.xpi	DEBUG	startup
+1427985753480	addons.xpi	INFO	Mapping fxdriver@googlecode.com to C:\Users\VAISHN~1\AppData\Local\Temp\anonymous8881161401773965632webdriver-profile\extensions\fxdriver@googlecode.com
+1427985753480	addons.xpi	DEBUG	Ignoring file entry whose name is not a valid add-on ID: C:\Users\VAISHN~1\AppData\Local\Temp\anonymous8881161401773965632webdriver-profile\extensions\webdriver-staging
+1427985753481	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to C:\Program Files (x86)\Mozilla Firefox\browser\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}
+1427985753481	addons.xpi	DEBUG	Skipping unavailable install location app-system-share
+1427985753481	addons.xpi	DEBUG	Skipping unavailable install location app-system-local
+1427985753482	addons.xpi	DEBUG	checkForChanges
+1427985753482	addons.xpi	DEBUG	Loaded add-on state from prefs: {&quot;app-profile&quot;:{&quot;fxdriver@googlecode.com&quot;:{&quot;d&quot;:&quot;C:\\Users\\VAISHN~1\\AppData\\Local\\Temp\\anonymous8881161401773965632webdriver-profile\\extensions\\fxdriver@googlecode.com&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;2.45.0&quot;,&quot;st&quot;:1427985751117,&quot;mt&quot;:1427985751099}},&quot;app-global&quot;:{&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;:{&quot;d&quot;:&quot;C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;36.0.4&quot;,&quot;st&quot;:1427172458292,&quot;mt&quot;:1427172458199}}}
+1427985753482	addons.xpi	DEBUG	getModTime: Recursive scan of fxdriver@googlecode.com
+1427985753489	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1427985753489	addons.xpi	DEBUG	getInstallState changed: false, state: {&quot;app-profile&quot;:{&quot;fxdriver@googlecode.com&quot;:{&quot;d&quot;:&quot;C:\\Users\\VAISHN~1\\AppData\\Local\\Temp\\anonymous8881161401773965632webdriver-profile\\extensions\\fxdriver@googlecode.com&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;2.45.0&quot;,&quot;st&quot;:1427985751117,&quot;mt&quot;:1427985751099}},&quot;app-global&quot;:{&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;:{&quot;d&quot;:&quot;C:\\Program Files (x86)\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;e&quot;:true,&quot;v&quot;:&quot;36.0.4&quot;,&quot;st&quot;:1427172458292,&quot;mt&quot;:1427172458199}}}
+1427985753490	addons.xpi	DEBUG	No changes found
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for OpenH264Provider
+1427985753491	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:118)
+	... 53 more
+</error>
+  </testcase>
+</testsuite>
