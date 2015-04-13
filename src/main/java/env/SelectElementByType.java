@@ -4,6 +4,11 @@ import org.openqa.selenium.By;
 
 public class SelectElementByType 
 {
+	/**Method to select element 'by' type
+	 * @param type : String : 'By' type
+	 * @param access_name : String : Locator value
+	 * @return By
+	 */
 	public By getelementbytype(String type,String access_name)
 	{
 		if(type.equals("id"))

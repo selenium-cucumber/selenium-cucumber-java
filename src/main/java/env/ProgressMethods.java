@@ -10,6 +10,12 @@ public class ProgressMethods extends SelectElementByType implements BaseTest
 {
 	//SelectElementByType eleType= new SelectElementByType();
 	
+	/** Method to wait 
+	 * @param time : String : Time to wait
+	 * @param method : String : wait by sleep or implicit method 
+	 * @throws NumberFormatException
+	 * @throws InterruptedException
+	 */
 	public void wait(String time, String method) throws NumberFormatException, InterruptedException
 	{
 		//sleep method takes parameter in milliseconds
@@ -19,7 +25,11 @@ public class ProgressMethods extends SelectElementByType implements BaseTest
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
-	//Explicitly wait for element to be displayed
+	/**Method to Explicitly wait for element to be displayed
+	 * @param accessType : String : Locator type (id, name, class, xpath, css)
+	 * @param accessName : String : Locator value
+	 * @param duration : String : Time to wait for element to be displayed
+	 */
 	public void waitForElementToDisplay(String accessType,String accessName,String duration)
 	{
 		By byEle = getelementbytype(accessType, accessName);
@@ -30,7 +40,11 @@ public class ProgressMethods extends SelectElementByType implements BaseTest
 		wait.until(ExpectedConditions.visibilityOfElementLocated(byEle));
 	}
 		
-	//Explicitly wait for element to be enabled=click
+	/** Method to Explicitly wait for element to be enabled=click
+	 * @param accessType : String : Locator type (id, name, class, xpath, css)
+	 * @param accessName : String : Locator value
+	 * @param duration : String : Time to wait for element to be clickable
+	 */
 	public void waitForElementToClick(String accessType,String accessName,String duration)
 	{
 		By byEle = getelementbytype(accessType, accessName);

@@ -1,25 +1,24 @@
 package env;
 
-import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class ConfigurationMethods 
-{
-
-	// method to print configuration
-	public void printConfiguration()
+public class ConfigurationMethods implements BaseTest
+{	  
+	/** Method to print desktop configuration	 */
+	public void printDesktopConfiguration()
 	{
-		Date date= new Date();
-		System.out.println("");
-		System.out.println("Date : "+date.toString());
+		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss");
+		Calendar cal = Calendar.getInstance();
+		
+		System.out.println("Following are machine configurations : \n");
+		System.out.println("Date (MM/DD/YYYY) and Time (HH:MM:SS) : "+dateFormat.format(cal.getTime()));
+		
+		Capabilities cap = (Capabilities)((RemoteWebDriver) driver).getCapabilities();
+		System.out.println("Browser : "+cap.getBrowserName());
+		System.out.println("Platform : "+cap.getPlatform());
 	}
-	  /*puts ''
-	  puts "Date : #{Time.now.strftime("%d-%B-%Y")}"
-	  puts "Time : #{Time.now.strftime("%I:%M:%S:%p")}"
-
-	  if $platform == 'android' or $platform == 'ios'
-	  	print_mobile_configuration
-	  else
-	  	print_desktop_configuration
-	  end
-	end*/
 }

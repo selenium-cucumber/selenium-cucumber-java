@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class ErrorHandlingMethods 
 {
-	Process p=null;
 	//Method to check browser type
 	public void validateParameters(String platform, String browserType, String appPath)
 	{

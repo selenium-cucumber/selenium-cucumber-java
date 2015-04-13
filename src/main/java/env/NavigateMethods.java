@@ -10,16 +10,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class NavigateMethods extends SelectElementByType implements BaseTest
 {
 	//SelectElementByType eleType= new SelectElementByType();
-	WebElement element=null;
-	String old_win = null;
+	private WebElement element=null;
+	private String old_win = null;
 	
-	// method to open link
+	/** Method to open link
+	 * @param url : String : URL for navigation
+	 */
 	public void navigateTo(String url) 
 	{
 		driver.get(url);
 	}
 	
-	//method to navigate back & forward
+	/** Method to navigate back & forward
+	 * @param direction : String : Navigate to forward or backward
+	 */
 	public void navigate(String direction)
 	{
 		if (direction.equals("back"))
@@ -28,13 +32,15 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 			driver.navigate().forward();
 	}
 	
-	// method to quite webdriver instance
+	/** Method to quite webdriver instance */
 	public void closeDriver()
 	{
 		driver.quit();
 	}
 	
-	// method to return key by os wise
+	/** Method to return key by OS wise
+	 * @return Keys : Return cntrl or command key as per OS
+	 */
 	public Keys get_key()
 	{
 		String os = System.getProperty("os.name").toLowerCase();
@@ -56,7 +62,9 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 			  end*/
 	}
 	
-	// Method to zoom in/out page
+	/** Method to zoom in/out page
+	 * @param inOut : String : Zoom in or out
+	 */
 	public void zoomInOut(String inOut)
 	{
 		WebElement Sel= driver.findElement(getelementbytype("tagName","html"));
@@ -68,7 +76,11 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 			Sel.sendKeys(Keys.chord(Keys.CONTROL, Keys.NUMPAD0));
 	}
 	
-	// Method to zoom in/out web page until web element displays
+	/** Method to zoom in/out web page until web element displays
+	 * @param accessType : String : Locator type (id, name, class, xpath, css)
+	 * @param inOut : String : Zoom in or out
+	 * @param accessName : String : Locator value
+	 */
 	public void zoomInOutTillElementDisplay(String accessType,String inOut,String accessName)
 	{
 		Actions action = new Actions(driver);
@@ -82,20 +94,25 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 		}
 	}
 	
-	// Method to resize browser
+	/** Method to resize browser
+	 * @param width : int : Width for browser resize
+	 * @param height : int : Height for browser resize
+	 */
 	public void resizeBrowser(int width, int height)
 	{
 		driver.manage().window().setSize(new Dimension(width,height));
-	  //$driver.manage.window.resize_to(width, height)
 	}
 	
-	// Method to maximize browser
+	/** Method to maximize browser	 */
 	public void maximizeBrowser()
 	{
 		driver.manage().window().maximize();
 	}
 	
-	// Method to hover on element
+	/** Method to hover on element
+	 * @param accessType : String : Locator type (id, name, class, xpath, css)
+	 * @param accessName : String : Locator value
+	 */
 	public void hoverOverElement(String accessType, String accessName)
 	{
 		Actions action = new Actions(driver);
@@ -104,7 +121,10 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 		action.moveToElement(element).perform();
 	}
 	
-	// Method to scroll page to particular element
+	/** Method to scroll page to particular element
+	 * @param accessType : String : Locator type (id, name, class, xpath, css)
+	 * @param accessName : String : Locator value
+	 */
 	public void scrollToElement(String accessType, String accessName)
 	{
 		element = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
@@ -114,7 +134,10 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 		
 	}
 	
-	// Method to scroll page to top or end
+	/** Method to scroll page to top or end
+	 * @param to : String : Scroll page to Top or End
+	 * @throws Exception
+	 */
 	public void scrollPage(String to) throws Exception
 	{
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -126,7 +149,7 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 			throw new Exception("Exception : Invalid Direction (only scroll \"top\" or \"end\")");
 	}
 	
-	//Method to switch to new window
+	/**Method to switch to new window */
     public void switchToNewWindow()
     {
     	String old_win = driver.getWindowHandle();
@@ -136,13 +159,13 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 			  $driver.switch_to.window($driver.window_handles[1])
 			end*/
     
-    // Method to switch to old window
+    /** Method to switch to old window */
     public void switchToOldWindow()
     {
     	driver.switchTo().window(old_win);
     }
 
-    //Method to close new window
+    /**Method to close new window*/
     public void closeNewWindow()
     {
     	driver.close();

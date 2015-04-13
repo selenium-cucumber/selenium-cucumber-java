@@ -11,7 +11,9 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 	//SelectElementByType eleType= new SelectElementByType();
 	private WebElement element=null;
 		
-	/** Method to get page title*/
+	/** Method to get page title
+	 * @return String
+	 * */
 	public String getPageTitle()
 	{
 		return driver.getTitle();
@@ -26,8 +28,8 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 		System.out.println("Title "+ title+"\n TestCase "+testCase);
 		String pageTitle = getPageTitle();
 		
-		System.out.println("**"+pageTitle+"**"+title+"**");
-		System.out.println("++"+ pageTitle.equals(title));
+		/*System.out.println("**"+pageTitle+"**"+title+"**");
+		System.out.println("++"+ pageTitle.equals(title));*/
 
 		if (testCase)
 		{
@@ -64,6 +66,7 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 	/** Method to get element text
 	 * @param accessType : String : Locator type (id, name, class, xpath, css)
 	 * @param accessName : String : Locator value
+	 * @return String
 	 */
 	public String getElementText(String accessType, String accessName)
 	{
@@ -72,12 +75,12 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 		
 	}
 	
-	/*Method to check element text
-	# param 1 : String : Locator type (id, name, class, xpath, css)
-	# param 2 : String : Expected element text
-	# param 3 : String : Locator value
-	# param 4 : Boolean : test case [true or false]*/
-
+	/** Method to check element text
+	* @param accessType : String : Locator type (id, name, class, xpath, css)
+	* @param actualValue : String : Expected element text
+	* @param accessName : String : Locator value
+	* @param testCase : Boolean : test case [true or false]
+	*/
 	public void checkElementText(String accessType,String actualValue,String accessName,boolean testCase) throws TestCaseFailed
 	{
 		String elementText = getElementText(accessType, accessName);
@@ -94,12 +97,12 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 		}
 	}
 	
-	/* Method to check partial element text
-	param 1 : String : Locator type (id, name, class, xpath, css)
-	param 2 : String : Expected element partial text
-	param 3 : String : Locator value
-	param 4 : Boolean : test case [true or false]*/
-	
+	/** Method to check partial element text
+	* @param accessType : String : Locator type (id, name, class, xpath, css)
+	* @param actualValue : String : Expected element text
+	* @param accessName : String : Locator value
+	* @param testCase : Boolean : test case [true or false]
+	*/
 	public void checkElementPartialText(String accessType,String actualValue,String accessName,boolean testCase) throws TestCaseFailed
 	{
 		String elementText = getElementText(accessType, accessName);
@@ -116,23 +119,22 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 	    }
 	}
 	
-	/*Method to return element status - enabled?
-	# param 1 : String : Locator type (id, name, class, xpath, css)
-	# param 2 : String : Locator value*/
-	
+	/** Method to return element status - enabled?
+	* @param accessType : String : Locator type (id, name, class, xpath, css)
+	* @param accessName : String : Locator value
+	* @return Boolean
+	*/
 	public boolean isElementEnabled(String accessType, String accessName)
 	{
 		element = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
 		return element.isEnabled();
-		
-		//return WAIT.until{$driver.find_element(:"#{access_type}" => "#{access_name}")}.enabled?
 	}
 	
-	/*Element enabled checking
-	# param 1 : String : Locator type (id, name, class, xpath, css)
-	# param 2 : String : Expected element text
-	# param 4 : Boolean : test case [true or false]*/
-			
+	/** Element enabled checking
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	@param testCase : Boolean : test case [true or false]
+	*/
 	public void checkElementEnable(String accessType, String accessName, boolean testCase) throws TestCaseFailed
 	{
 		boolean result=isElementEnabled(accessType,accessName);
@@ -148,25 +150,25 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 		}
 	}	  
 	
-	/*# method to get attribute value
-	# param 1 : String : Locator type (id, name, class, xpath, css)
-	# param 2 : String : Expected element text
-	# param 3 : String : atrribute name*/
-	
+	/** method to get attribute value
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	@param attributeName : String : attribute name
+	@return String
+	*/
 	public String getElementAttribute(String accessType,String accessName,String attributeName)
 	{
 		element = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
 		return element.getAttribute(attributeName);
-		//return WAIT.until{$driver.find_element(:"#{access_type}" => "#{access_name}")}.attribute("#{attribute_name}")
 	}
 	
-	/*# method to check attribute value
-	# param 1 : String : Locator type (id, name, class, xpath, css)
-	# param 2 : String : atrribute name
-	# param 3 : String : atrribute value
-	# param 4 : String : Locator value
-	# param 5 : Boolean : test case [true or false]*/
-	
+	/** method to check attribute value
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param attributeName : String : attribute name
+	@param attributeValue : String : attribute value
+	@param accessName : String : Locator value
+	@param testCase : Boolean : test case [true or false]
+	*/
 	public void checkElementAttribute(String accessType, String attributeName, String attributeValue, String accessName, boolean testCase) throws TestCaseFailed
 	{
 		String attrVal = getElementAttribute(accessType, accessName, attributeName);
@@ -182,21 +184,22 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 		}
 	}
 	
-	/*# method to get element status - displayed?
-	# param 1 : String : Locator type (id, name, class, xpath, css)
-	# param 2 : String : Locator value*/
-	
+	/** method to get element status - displayed?
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	@return Boolean
+	*/
 	public boolean isElementDisplayed(String accessType,String accessName)
 	{
 		element = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
 		return element.isDisplayed();
 	}
 	
-	/*# method to check element presence
-	# param 1 : String : Locator type (id, name, class, xpath, css)
-	# param 2 : String : Locator value
-	# param 3 : Boolean : test case [true or false]*/
-	
+	/** method to check element presence
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	@param testCase : Boolean : test case [true or false]
+	*/
 	public void checkElementPresence(String accessType,String accessName,boolean testCase) throws TestCaseFailed
 	{
 		if (testCase)
@@ -219,11 +222,11 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 		}
 	}
 	
-	/*method to assert checkbox check/uncheck
-	# param 1 : String : Locator type (id, name, class, xpath, css)
-	# param 2 : String : Locator value
-	# param 3 : Boolean : test case [true or false]*/
-	
+	/** method to assert checkbox check/uncheck
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	@param shouldBeChecked : Boolean : test case [true or false]
+	*/
 	public void isCheckboxChecked(String accessType,String accessName,boolean shouldBeChecked) throws TestCaseFailed
 	{
 		WebElement checkbox = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
@@ -233,11 +236,11 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 			throw new TestCaseFailed("Checkbox is checked");
 	}
 	
-	/*# method to assert radio button selected/unselected
-	# param 1 : String : Locator type (id, name, class, xpath, css)
-	# param 2 : String : Locator value
-	# param 3 : Boolean : test case [true or false]*/
-	
+	/** method to assert radio button selected/unselected
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	@param shouldBeChecked : Boolean : test case [true or false]
+	*/
 	public void isRadioButtonSelected(String accessType,String accessName,boolean shouldBeSelected) throws TestCaseFailed
 	{
 		WebElement radioButton = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
@@ -253,13 +256,18 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 		WebElement radioButtonGroup = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
 	}
 	
-	//method to get javascript pop-up alert text
+	/** method to get javascript pop-up alert text
+	 * @return String
+	 */
 	public String getAlertText()
 	{
 		return driver.switchTo().alert().getText();
 	}
 	  
-	//method to check javascript pop-up alert text
+	/**method to check javascript pop-up alert text
+	 * @param text : String : Text to verify in Alert
+	 * @throws TestCaseFailed
+	 */
 	public void checkAlertText(String text) throws TestCaseFailed
 	{
 		if(!getAlertText().equals(text))
@@ -284,6 +292,14 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 	  $driver.switch_to.alert.text
 	end*/
 	
+	/** Method to verify if the particular option is Selected from Dropdown
+	 * @param accessType : String : Locator type (id, name, class, xpath, css)
+	 * @param by : String : Select element from dropdown by text or value
+	 * @param option : String : Element to select from dropdown  
+	 * @param accessName : String : Locator value
+	 * @param shouldBeSelected : Boolean : test case [true or false]
+	 * @throws TestCaseFailed
+	 */
 	public void isOptionFromDropdownSelected(String accessType,String by,String option,String accessName,boolean shouldBeSelected) throws TestCaseFailed
 	{
 		Select selectList=null;

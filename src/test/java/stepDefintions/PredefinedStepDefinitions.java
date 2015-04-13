@@ -177,7 +177,7 @@ public class PredefinedStepDefinitions implements BaseTest
 	@Then("^I print configuration$") 
 	public void print_config()
 	{
-		configObj.printConfiguration();
+		configObj.printDesktopConfiguration();
 	}
 		
 							//Input steps

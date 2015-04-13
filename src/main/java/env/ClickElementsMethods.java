@@ -8,14 +8,22 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class ClickElementsMethods extends SelectElementByType implements BaseTest
 {
 	//SelectElementByType eleType= new SelectElementByType();
-	WebElement element=null;
+	private WebElement element=null;
 	
+	/** Method to click on an element
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	*/
 	public void click(String accessType, String accessName)
 	{
 		element = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
 		element.click();
 	}
 	
+	/** Method to forcefully click on an element
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	*/
 	public void clickForcefully(String accessType, String accessName)
 	{
 		element = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
@@ -23,17 +31,15 @@ public class ClickElementsMethods extends SelectElementByType implements BaseTes
 		executor.executeScript("arguments[0].click();",element);
 	}
 	
+	/** Method to Double click on an element
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	*/
 	public void doubleClick(String accessType, String accessValue)
 	{
 		element = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessValue)));
 
 		Actions action = new Actions(driver);
 		action.moveToElement(element).doubleClick().perform();
-	}
-	
-	//This method is not used in click steps
-	public void submit(String access_type, String access_name)
-	{
-		driver.findElement(getelementbytype(access_type, access_name)).submit();
 	}
 }

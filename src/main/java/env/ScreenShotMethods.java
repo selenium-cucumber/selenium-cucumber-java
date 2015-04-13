@@ -12,6 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class ScreenShotMethods implements BaseTest
 {
+	/** Method to take screen shot and save in ./Screenshots folder*/
 	public void takeScreenShot() throws IOException
 	{
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);

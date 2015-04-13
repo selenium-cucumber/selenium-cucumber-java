@@ -9,23 +9,35 @@ import org.openqa.selenium.support.ui.Select;
 public class InputMethods extends SelectElementByType implements BaseTest
 {
 	//SelectElementByType eleType= new SelectElementByType();
-	WebElement dropdown,element =null;
-	Select selectList=null;
+	private WebElement dropdown =null;
+	private Select selectList=null;
 	
-	//method to enter text into textfield
+	/** Method to enter text into text field
+	 * @param accessType : String : Locator type (id, name, class, xpath, css)
+	 * @param text : String : Text value to enter in field
+	   @param accessName : String : Locator value
+	 */
 	public void enterText(String accessType,String text,String accessName)
 	{
 		wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
 		driver.findElement(getelementbytype(accessType, accessName)).sendKeys(text);
 	}
 	
-	//method to clear text from textfield
+	/** Method to clear text of text field
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	*/
 	public void clearText(String accessType, String accessName)
 	{
 		wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
 		driver.findElement(getelementbytype(accessType, accessName)).clear();
 	}
 	
+	/** Method to select element from Dropdown by type
+	 * @param select_list : Select : Select variable
+	 * @param bytype : String : Name of by type
+	 * @param option : String : Option to select
+	 */
 	public void selectelementfromdropdownbytype (Select select_list, String bytype, String option)
 	{
 		System.out.println("**"+bytype+"++"+option);
@@ -38,21 +50,19 @@ public class InputMethods extends SelectElementByType implements BaseTest
 			select_list.selectByValue(option);
 		else if (bytype.equals("text"))
 			select_list.selectByVisibleText(option);
-		/*else if (bytype.equals("selectByVisibleText"))
-			select_list.selectByValue(option);*/
 	}
 	
-	//method to select option from dropdown list
+	/** Method to select option from dropdown list
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param by : String : Name of by type
+	@param option : String : Option to select
+	@param accessName : String : Locator value
+	*/
 	public void selectOptionFromDropdown(String accessType, String by, String option, String accessName)
 	{
 		dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
-		//dropdown = CucumberRunner.driver.findElement(eleType.getelementbytype(accessType, accessName));
 		selectList = new Select(dropdown);
 		selectelementfromdropdownbytype(selectList,by,option);
-		
-	  /*dropdown = WAIT.until { $driver.find_element(:"#{access_type}" => "#{access_name}") }
-	  select_list = Selenium::WebDriver::Support::Select.new(dropdown)
-	  select_list.select_by(:"#{by}", "#{option}")*/
 	}
 	
 	//method to select all option from dropdwon list
@@ -64,41 +74,52 @@ public class InputMethods extends SelectElementByType implements BaseTest
 		Select all method not present in JAVA
 	}*/
 	
-	//method to unselect all option from dropdwon list
+	/** Method to unselect all option from dropdwon list
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	*/
 	public void unselectAllOptionFromMultiselectDropdown(String accessType, String accessName)
 	{
 		dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
-		//dropdown = CucumberRunner.driver.findElement(eleType.getelementbytype(access_type, access_name));
 		selectList = new Select(dropdown);
 		selectList.deselectAll();
 	}
 	
-	//method to check checkbox
+	/** Method to check check-box
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	*/
 	public void checkCheckbox(String accessType, String accessName)
 	{
 		WebElement checkbox= wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
-		//WebElement checkbox = CucumberRunner.driver.findElement(eleType.getelementbytype(access_type, access_name));
 		if (!checkbox.isSelected())
 			checkbox.click();
 	}
 	
-	//method to uncheck checkbox
+	/** Method to uncheck check-box
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	*/
 	public void uncheckCheckbox(String accessType, String accessName)
 	{
 		WebElement checkbox= wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
-		//WebElement checkbox = CucumberRunner.driver.findElement(eleType.getelementbytype(access_type, access_name));
 		if (checkbox.isSelected())
 			checkbox.click();
 	}
 	
-	//method to select radio button
+	/** Method to toggle check-box status
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	*/
 	public void toggleCheckbox(String accessType, String accessName)
 	{
 		wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName))).click();
-		//CucumberRunner.driver.findElement(eleType.getelementbytype(access_type, access_name)).click();
 	}
 	
-	//method to select radio button
+	/** Method to select radio button
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	*/
 	public void selectRadioButton(String accessType, String accessName)
 	{
 		WebElement radioButton = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
@@ -106,7 +127,12 @@ public class InputMethods extends SelectElementByType implements BaseTest
 			radioButton.click();
 	}
 	
-	//method to select option from radio button group
+	/** Method to select option from radio button group
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param by : String : Name of by type
+	@param option : String : Option to select
+	@param accessName : String : Locator value
+	*/
 	public void selectOptionFromRadioButtonGroup(String accessType, String by, String option, String accessName)
 	{
 		List<WebElement> radioButtonGroup = driver.findElements(getelementbytype(accessType, accessName));
