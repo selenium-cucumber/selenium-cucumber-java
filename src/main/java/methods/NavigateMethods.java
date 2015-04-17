@@ -230,14 +230,14 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
     	{
     		case "index" : switchFrameByIndex(Integer.parseInt(value));
     						break;
-    		case "name or id" :
+    		case "name	 or id" :
     					switchFrameByNameorId(value);
     					break;
     		case "id" :
     		case "name" :
     		case "xpath" :
     		case "css" :
-    		case "tagName" : 
+    		case "class" : 
     						switchFrameByWebElement(method,value);
 						break;
     	}

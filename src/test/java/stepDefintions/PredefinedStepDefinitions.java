@@ -451,7 +451,7 @@ public class PredefinedStepDefinitions implements BaseTest
 	@Then("^I wait for (\\d+) sec$")
 	public void wait(String time) throws NumberFormatException, InterruptedException
 	{
-		progressObj.wait(time,"sleep");
+		progressObj.wait(time);
 	}
 
 	//wait for specific element to display for specific period of time

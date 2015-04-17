@@ -68,13 +68,13 @@ public class InputMethods extends SelectElementByType implements BaseTest
 	}
 	
 	//method to select all option from dropdwon list
-	/*public void select_all_option_from_multiselect_dropdown(String access_type, String access_name)
-	{
-		dropdown = CucumberRunner.driver.findElement(eletype.getelementbytype(access_type, access_name));
-		select_list = new Select(dropdown);
-		select_list.select_all
-		Select all method not present in JAVA
-	}*/
+//	public void select_all_option_from_multiselect_dropdown(String access_type, String access_name)
+//	{
+//		dropdown = driver.findElement(getelementbytype(access_type, access_name));
+//		selectList = new Select(dropdown);
+//		
+//		//Select all method not present in JAVA
+//	}
 	
 	/** Method to unselect all option from dropdwon list
 	@param accessType : String : Locator type (id, name, class, xpath, css)

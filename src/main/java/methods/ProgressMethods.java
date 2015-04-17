@@ -18,13 +18,11 @@ public class ProgressMethods extends SelectElementByType implements BaseTest
 	 * @throws NumberFormatException
 	 * @throws InterruptedException
 	 */
-	public void wait(String time, String method) throws NumberFormatException, InterruptedException
+	public void wait(String time) throws NumberFormatException, InterruptedException
 	{
 		//sleep method takes parameter in milliseconds
-		if (method.equals("sleep"))
-			Thread.sleep(Integer.parseInt(time)*1000);
-		else if (method.equals("implicit"))
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
 	}
 	
 	/**Method to Explicitly wait for element to be displayed
