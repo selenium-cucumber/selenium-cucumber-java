@@ -21,7 +21,6 @@ public class Env
 		
 		if(browserName == null)
 			browserName = "ff";
-		
 		return browserName;
 	}
 	
@@ -57,6 +56,7 @@ public class Env
 				
 			 default:
 				 System.out.println("Invalid browser name "+browser);
+				 System.exit(0);
 					break;	
 			}//switch
 				

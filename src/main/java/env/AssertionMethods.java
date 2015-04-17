@@ -317,5 +317,4 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 		else if ((actualValue.equals(option))&&(!shouldBeSelected))
 			throw new TestCaseFailed("Option Selected From Dropwdown");
 	}
-
 }

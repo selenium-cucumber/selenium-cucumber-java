@@ -12,6 +12,7 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 	//SelectElementByType eleType= new SelectElementByType();
 	private WebElement element=null;
 	private String old_win = null;
+	private String lastWinHandle;
 	
 	/** Method to open link
 	 * @param url : String : URL for navigation
@@ -152,22 +153,97 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 	/**Method to switch to new window */
     public void switchToNewWindow()
     {
-    	String old_win = driver.getWindowHandle();
-    	driver.switchTo().window("newwindow");
+    	old_win = driver.getWindowHandle();
+    	
+    	for(String winHandle : driver.getWindowHandles())
+    		lastWinHandle = winHandle;
+    	driver.switchTo().window(lastWinHandle);
     }
-			  /*$old_win = $driver.window_handle
-			  $driver.switch_to.window($driver.window_handles[1])
-			end*/
     
     /** Method to switch to old window */
     public void switchToOldWindow()
     {
     	driver.switchTo().window(old_win);
+    	//System.out.println("++"+driver.switchTo().window(old_win).getTitle());
+    }
+    
+    /** Method to switch to window by title
+     * @param windowTitle : String : Name of window title to switch
+     * @throws Exception */
+    public void switchToWindowByTitle(String windowTitle) throws Exception
+    {
+    	System.out.println("++"+windowTitle+"++");
+    	old_win = driver.getWindowHandle();
+    	boolean winFound = false;
+    	for(String winHandle : driver.getWindowHandles())
+    	{
+    		String str = driver.switchTo().window(winHandle).getTitle();
+    		System.out.println("**"+str+"**");
+    		if (str.equals(windowTitle))
+    		{
+    			winFound = true;
+    			break;
+    		}
+    	}
+    	if (!winFound)
+    		throw new Exception("Window having title "+windowTitle+" not found");
     }
 
     /**Method to close new window*/
     public void closeNewWindow()
     {
     	driver.close();
+    	//System.out.println("Closed driver");
+    }
+    
+    /** Method to switch frame using frame index
+     * @param index : Integer : Switch to frame by index
+     * */
+    public void switchFrameByIndex(int index)
+    {
+    	driver.switchTo().frame(index);
+    }
+      
+    /** Method to switch frame using frame name or id
+     * @param nameorid : String : Switch to frame by Name or ID
+     * */
+    public void switchFrameByNameorId(String nameorid)
+    {
+    	driver.switchTo().frame(nameorid);
+    }
+    
+    /** Method to switch frame using web element frame
+     * @param accessType : String : Locator type (id, name, class, xpath, css)
+	 * @param accessName : String : Locator value
+     * */
+    public void switchFrameByWebElement(String accessType, String accessName)
+    {
+    	element = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
+    	driver.switchTo().frame(element);
+    }
+    
+    public void switchFrameByMethods(String method, String value)
+    {
+    	switch(method)
+    	{
+    		case "index" : switchFrameByIndex(Integer.parseInt(value));
+    						break;
+    		case "name or id" :
+    					switchFrameByNameorId(value);
+    					break;
+    		case "id" :
+    		case "name" :
+    		case "xpath" :
+    		case "css" :
+    		case "tagName" : 
+    						switchFrameByWebElement(method,value);
+						break;
+    	}
+    }
+
+    /** method to switch to default content*/
+    public void switchToDefaultContent()
+    {
+    	driver.switchTo().defaultContent();
     }
 }

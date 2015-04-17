@@ -53,3 +53,43 @@ Feature: Navigation Steps
 		
 		Then I resize browser window size to width 400 and height 400
 		Then I maximize browser window
+		
+	Scenario: Switching to new window by handle
+	
+	Then I click on link having text "selenium-cucumber website"
+   
+   	Then I switch to new window
+   	Then I click on link having text "Blogs"
+   	Then I close new window
+   
+   	Then I switch to previous window
+   	Then I click on link having text "selenium-cucumber gem "
+   	Then I naviagate back
+   	
+   	Scenario: Switching to new window by Title
+   
+   Then I click on link having text "selenium-cucumber website"
+   
+   Then I switch to window having title "Selenium-Cucumber | Code Less… Test More…"
+   Then I click on link having text "Source Code"
+   Then I close new window
+   
+   Then I switch to previous window
+   Then I click on link having text "selenium-cucumber gem "
+   	Then I naviagate back
+   
+   Scenarion: Moving to frames 
+   
+   Then I switch to frame having name or id "one"
+   Then element having id "name" should be present
+   
+    Then I switch to default content
+   
+   Then I switch to frame having xpath "//iframe[@name='two']"
+   Then element having id "email" should be present
+   
+   Then I switch to default content
+   Then element having xpath "//iframe[@name='one']" should be present
+   
+   
+   
