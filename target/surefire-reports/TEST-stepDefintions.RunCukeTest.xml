@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.003" errors="0" skipped="0" tests="2" name="stepDefintions.RunCukeTest">
+<testsuite failures="0" time="0.012" errors="0" skipped="0" tests="8" name="stepDefintions.RunCukeTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="cucumber.options" value="classpath:features/featuretest.feature"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
     <property name="java.vm.version" value="24.51-b03"/>
+    <property name="browser" value="ch"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
@@ -15,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\Vaishnavi\workspace\testscj"/>
+    <property name="user.dir" value="E:\selenium-cucumber-java"/>
     <property name="java.runtime.version" value="1.7.0_51-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\endorsed"/>
@@ -28,7 +30,7 @@
     <property name="os.name" value="Windows 7"/>
     <property name="classworlds.conf" value="C:\apache-maven-3.2.5-bin\apache-maven-3.2.5\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Ruby21\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\apache-ant-1.9.3-bin\apache-ant-1.9.3\bin;C:\webdrivers;C:\Program Files (x86)\Git\bin;C:\Program Files\Java\jdk1.7.0_51\bin;C:\Program Files\Java\jre7\bin;C:\apache-maven-3.2.5-bin\apache-maven-3.2.5\bin;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Ruby21\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\apache-ant-1.9.3-bin\apache-ant-1.9.3\bin;C:\webdrivers;C:\Program Files (x86)\Git\cmd;C:\Program Files\Java\jdk1.7.0_51\bin;C:\Program Files\Java\jre7\bin;C:\apache-maven-3.2.5-bin\apache-maven-3.2.5\bin;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -43,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_51\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dbrowser=ch test -Dcucumber.options=classpath:features/featuretest.feature"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -60,6 +62,12 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.001" classname="Scenario: Open test page" name="Given I navigate to &quot;file:\\\D:\sc_ruby\selenium-cucumber-ruby\tests\test_page.html&quot;"/>
-  <testcase time="0.002" classname="Scenario: Open test page" name="Scenario: Open test page"/>
+  <testcase time="0.005" classname="Scenario: Open test page" name="Given I navigate to &quot;file:\\\D:\sc_ruby\selenium-cucumber-ruby\tests\test_page.html&quot;"/>
+  <testcase time="0.006" classname="Scenario: Open test page" name="Scenario: Open test page"/>
+  <testcase time="0" classname="Scenario: verify element text" name="Then I scroll to end of page"/>
+  <testcase time="0.001" classname="Scenario: verify element text" name="Then element having id &quot;dbClick&quot; should have text as &quot;Double-click this paragraph to trigger a function.&quot;"/>
+  <testcase time="0" classname="Scenario: verify element text" name="Then element having name &quot;javascript_alert_msg&quot; should have text as &quot;Click the button to display a confirm box.&quot;"/>
+  <testcase time="0" classname="Scenario: verify element text" name="Then element having class &quot;form_name&quot; should have text as &quot;Simple sample form with input elements&quot;"/>
+  <testcase time="0" classname="Scenario: verify element text" name="Then element having xpath &quot;.//*[@id=&apos;frm&apos;]/fieldset/p[1]/label&quot; should have text as &quot;Text input (first name)&quot;"/>
+  <testcase time="0" classname="Scenario: verify element text" name="Scenario: verify element text"/>
 </testsuite>

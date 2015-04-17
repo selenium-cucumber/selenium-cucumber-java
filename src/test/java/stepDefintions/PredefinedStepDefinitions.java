@@ -2,6 +2,7 @@ package stepDefintions;
 
 import java.io.IOException;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import env.BaseTest;
 import env.TestCaseFailed;
@@ -177,7 +178,7 @@ public class PredefinedStepDefinitions implements BaseTest
 	@Then("^I print configuration$") 
 	public void print_config()
 	{
-		configObj.printConfiguration();
+		configObj.printDesktopConfiguration();
 	}
 		
 							//Input steps
@@ -375,6 +376,13 @@ public class PredefinedStepDefinitions implements BaseTest
 		navigationObj.switchToOldWindow();
 	}
 		
+	//Switch to new window by window title
+	@Then("^I switch to window having title \"(.*?)\"$")
+	public void switch_to_window_by_title(String windowTitle) throws Exception
+	{
+		navigationObj.switchToWindowByTitle(windowTitle);
+	}
+	  
 	//Close new window
 	@Then("^I close new window$")
 	public void close_new_window()
@@ -382,6 +390,39 @@ public class PredefinedStepDefinitions implements BaseTest
 		navigationObj.closeNewWindow();
 	}
 		
+	/*@Then("^I switch to frame having name or id \"(.*?)\"$")
+	public void switch_frame_by_nameorid(String nameorid) {
+	    // Write code here that turns the phrase above into concrete actions
+		navigationObj.switchFrameByNameorid(nameorid);
+	}
+	// Step to switch to frame by index
+	@Then("^I switch to frame having index \"(.*?)\" $") 
+	public void switch_frame_by_index(int index)
+	{
+		navigationObj.switchFrameByIndex(index);
+	}
+	  
+	// Step to switch to frame by name or id
+	@Then("^I switch to frame having name or id \"(.*?)\"$") 
+	public void switch_frame_by_nameorid(String nameorid)
+	{
+		navigationObj.switchFrameByNameorid(nameorid);
+	}*/
+	
+	// Step to switch to frame by web element
+	@Then("^I switch to frame having (.+) \"(.*?)\"$") 
+	public void switch_frame_by_element(String method, String value)
+	{
+		navigationObj.switchFrameByMethods(method, value);
+	}
+		
+	// step to switch to main content
+	@Then("^I switch to default content$")
+	public void switch_to_default_content()
+	{
+		navigationObj.switchToDefaultContent();
+	}
+	
 	//steps to scroll to element
 	@Then("^I scroll to element having (.+) \"(.*?)\"$")
 	public void scroll_to_element(String type, String accessName) throws Exception
