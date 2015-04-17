@@ -9,7 +9,7 @@ You can add your own steps or change the ones you see here.
 * [Click Steps](https://github.com/selenium-cucumber/selenium-cucumber-java/blob/master/doc/canned_steps.md#click-steps)
 * [Progress Steps](https://github.com/selenium-cucumber/selenium-cucumber-java/blob/master/doc/canned_steps.md#progress-steps)
 * [Screenshot Steps](https://github.com/selenium-cucumber/selenium-cucumber-java/blob/master/doc/canned_steps.md#screenshot-steps)
-* [Configuration Steps](https://github.com/selenium-cucumber/selenium-cucumber-java/blob/master/doc/canned_steps.md#configuration-steps)
+* [Configuration Steps](https://github.com/selenium/selenium-cucumber-java/blob/master/doc/canned_steps.md#configuration-steps)
 
 
 ## Navigation Steps
