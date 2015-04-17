@@ -27,14 +27,11 @@ To switch between windows use following steps :
 	Then I switch to previous window
 	Then I switch to window having title "(.*?)"
 	Then I close new window
-	Then I switch to main window - Not Implemented
+	Then I switch to main window
 
 To switch between frames use following steps :	
 
 	Then I switch to frame having index \"(.*?)
-	Then I switch to frame having name or id \"(.*?)
-	
-	Need Modifiaction 
 	Then I switch to frame having id \"(.*?)
 	Then I switch to frame having name \"(.*?)
 	Then I switch to frame having xpath \"(.*?)
@@ -255,7 +252,7 @@ To assert that radio button group selected by text use any of the following step
 	Then option "(.*?)" by text from radio button group having xpath "(.*?)" should be selected
 	Then option "(.*?)" by text from radio button group having css "(.*?)" should be selected
 	
-To assert that radio button group selected by value use any of the following steps :
+To assert that radio button group selected by value use any of the following steps : Not Implemented
 
 	Then option "(.*?)" by value from radio button group having id "(.*?)" should be selected
 	Then option "(.*?)" by value from radio button group having name "(.*?)" should be selected
@@ -263,7 +260,7 @@ To assert that radio button group selected by value use any of the following ste
 	Then option "(.*?)" by value from radio button group having xpath "(.*?)" should be selected
 	Then option "(.*?)" by value from radio button group having css "(.*?)" should be selected
 
-To assert that radio button group not selected by text use any of the following steps :
+To assert that radio button group not selected by text use any of the following steps : Not Implemented
 
 	Then option "(.*?)" by text from radio button group having id "(.*?)" should be unselected
 	Then option "(.*?)" by text from radio button group having name "(.*?)" should be unselected
@@ -297,7 +294,7 @@ To assert text on javascipt pop-up alert use following step :
 
 	Then I should see alert text as "(.*?)"
 
-#### Steps For Asserting Difference in images : NOT IMPLEMENTED
+#### Steps For Asserting Difference in images : Not Implemented
 
 To assert difference in actual image and expected image (from remotely hosted) use following steps :
 
@@ -348,7 +345,7 @@ To clear input field use following steps :
 	Then I clear input field having xpath "([^\"]*)"
 	Then I clear input field having css "([^\"]*)"
 
-#### Steps For Dropdown List : By Which ??
+#### Steps For Dropdown List :
 
 To select option by text from dropdown use following steps :
 
@@ -374,7 +371,7 @@ To select option by value from dropdown use following steps :
 	Then I select "(.*?)" option by value from dropdown having xpath "(.*?)"
 	Then I select "(.*?)" option by value from dropdown having css "(.*?)"
 
-#### Steps For Multiselect List : By Which ??
+#### Steps For Multiselect List :
 
 To select option by text from multiselect dropdown use following steps :
 
@@ -400,7 +397,7 @@ To select option by value from multiselect dropdown use following steps :
 	Then I select "(.*?)" option by value from multiselect dropdown having xpath "(.*?)"
 	Then I select "(.*?)" option by value from multiselect dropdown having css "(.*?)"
 	
-To select all options from multiselect use following steps : Commented in code
+To select all options from multiselect use following steps : Not Implemented
 
 	Then I select all options from multiselect dropdown having id "(.*?)"
 	Then I select all options from multiselect dropdown having name "(.*?)"
@@ -503,7 +500,7 @@ To click on links use following steps :
 
 Progress Steps
 --------------
-To wait for specific time use following step :
+To implicitly wait for specific time use following step :
 
 	Then I wait for (\d+) sec
 	
