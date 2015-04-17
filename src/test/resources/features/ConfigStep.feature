@@ -4,4 +4,4 @@ Feature: Configuration Printing Step
  	Scenario: Print Configuration
  	
         Given I print configuration
- 		Given I navigate to "file:\\\D:\sc_ruby\selenium-cucumber-ruby\tests\test_page.html"
+ 		Given I navigate to "http://www.googledrive.com/host/0B9vZ2s1ustr6eTZDbWlTcThveXM"

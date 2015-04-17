@@ -1,9 +1,11 @@
-package env;
+package methods;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import env.BaseTest;
 
 public class ClickElementsMethods extends SelectElementByType implements BaseTest
 {

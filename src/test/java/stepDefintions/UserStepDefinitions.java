@@ -1,5 +1,5 @@
 package stepDefintions;
 
-public class UserStepDefinitions {
+public class UserStepDefinitions{
 
 }
