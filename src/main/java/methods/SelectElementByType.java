@@ -1,4 +1,4 @@
-package env;
+package methods;
 
 import org.openqa.selenium.By;
 

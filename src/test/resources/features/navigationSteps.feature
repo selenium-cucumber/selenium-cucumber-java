@@ -2,7 +2,7 @@ Feature: Navigation Steps
         As a user I should able to navigate on web page
  
  	Scenario: Open test page
- 		Given I navigate to "file:\\\D:\sc_ruby\selenium-cucumber-ruby\tests\test_page.html"
+ 		Given I navigate to "http://www.googledrive.com/host/0B9vZ2s1ustr6eTZDbWlTcThveXM"
 
  	Scenario: navigating back/forward and refresh page
  		
@@ -78,17 +78,17 @@ Feature: Navigation Steps
    Then I click on link having text "selenium-cucumber gem "
    	Then I naviagate back
    
-   Scenarion: Moving to frames 
+   Scenario: Moving to frames 
    
    Then I switch to frame having name or id "one"
    Then element having id "name" should be present
    
-    Then I switch to default content
+   Then I switch to main content
    
    Then I switch to frame having xpath "//iframe[@name='two']"
    Then element having id "email" should be present
    
-   Then I switch to default content
+   Then I switch to main content
    Then element having xpath "//iframe[@name='one']" should be present
    
    

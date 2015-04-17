@@ -2,7 +2,7 @@ Feature: Assertion Steps
         As a user I should able to verify using assert steps //Should have attribute steps are not present here
 
  Scenario: Open test page
-   Given I navigate to "file:\\\D:\sc_ruby\selenium-cucumber-ruby\tests\test_page.html"
+   Given I navigate to "http://www.googledrive.com/host/0B9vZ2s1ustr6eTZDbWlTcThveXM"
 
  	Scenario: verify page title
 		Then I should see page title as "Test Page for selenium–cucumber"
