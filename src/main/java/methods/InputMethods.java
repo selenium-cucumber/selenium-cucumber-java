@@ -135,7 +135,7 @@ public class InputMethods extends SelectElementByType implements BaseTest
 	@param option : String : Option to select
 	@param accessName : String : Locator value
 	*/
-	public void selectOptionFromRadioButtonGroup(String accessType, String by, String option, String accessName)
+	public void selectOptionFromRadioButtonGroup(String accessType, String option, String accessName)
 	{
 		List<WebElement> radioButtonGroup = driver.findElements(getelementbytype(accessType, accessName));
 		String getoption = null;
@@ -148,16 +148,9 @@ public class InputMethods extends SelectElementByType implements BaseTest
 		
 		for(WebElement temp : radioButtonGroup)
 		{
-			if(by.equals("value"))
-			{
-				System.out.println("+++"+temp.getAttribute("value"));
-				getoption = temp.getAttribute("value");
-			}
-			else
-			{
-				System.out.println("***"+temp.getText());
-				getoption = temp.getText();
-			}
+			System.out.println("+++"+temp.getAttribute("value"));
+			getoption = temp.getAttribute("value");
+			
 			System.out.println("Element : "+getoption);
 			if(getoption.equals(option) && !temp.isSelected())
 				temp.click();

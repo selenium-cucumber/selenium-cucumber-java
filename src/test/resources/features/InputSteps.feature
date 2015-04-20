@@ -82,5 +82,5 @@ Feature: Input Step
 		
 	Scenario: selecting radio button from group
  		
- 		Then I select "rdb2" option by id from radio button group having class "rdb2_class"
- 		Then radio button having id "rdb2" should be selected
+ 		Then I select "F" option by value from radio button group having name "radio_gender"
+ 		Then radio button having xpath ".//*[@id='frm']/fieldset/p[6]/input[2]" should be selected
