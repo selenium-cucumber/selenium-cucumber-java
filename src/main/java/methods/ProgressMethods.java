@@ -21,7 +21,8 @@ public class ProgressMethods extends SelectElementByType implements BaseTest
 	public void wait(String time) throws NumberFormatException, InterruptedException
 	{
 		//sleep method takes parameter in milliseconds
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(Integer.parseInt(time)*1000);
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	}
 	
