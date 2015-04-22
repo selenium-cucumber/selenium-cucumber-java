@@ -2,7 +2,7 @@ Feature: Navigation Steps
         As a user I should able to navigate on web page
  
  	Scenario: Open test page
- 		Given I navigate to "http://www.googledrive.com/host/0B9vZ2s1ustr6eTZDbWlTcThveXM"
+ 		Given I navigate to "http://selenium-cucumber.github.io/"
 
  	Scenario: navigating back/forward and refresh page
  		
@@ -10,27 +10,27 @@ Feature: Navigation Steps
  		Then I should see page title as "selenium-cucumber | RubyGems.org | your community gem host"
 
  		Then I navigate back
-		Then I should see page title as "Test Page for selenium–cucumber"	
+		Then I should see page title as "Test Page for seleniumï¿½cucumber"	
 
  		Then I navigate forward
  		Then I should see page title as "selenium-cucumber | RubyGems.org | your community gem host"
 
  		Then I navigate back
- 		Then I should see page title as "Test Page for selenium–cucumber"	
+ 		Then I should see page title as "Test Page for seleniumï¿½cucumber"	
 		
  		Then I refresh page
- 		Then I should see page title as "Test Page for selenium–cucumber"	
+ 		Then I should see page title as "Test Page for seleniumï¿½cucumber"	
 		
 	Scenario: switch to new window
         Then I click on link having text "selenium-cucumber website"
         Then I switch to new window
         Then element having id "access" should be present
-        Then I should see page title as "Selenium-Cucumber | Code Less… Test More…"
+        Then I should see page title as "Selenium-Cucumber | Code Lessï¿½ Test Moreï¿½"
         Then I close new window
        
     Scenario: switch to privious window
         Then I switch to previous window
-        Then I should see page title as "Test Page for selenium–cucumber"
+        Then I should see page title as "Test Page for seleniumï¿½cucumber"
 
 	Scenario: Zoom in/out web page
 		
@@ -70,7 +70,7 @@ Feature: Navigation Steps
    
    Then I click on link having text "selenium-cucumber website"
    
-   Then I switch to window having title "Selenium-Cucumber | Code Less… Test More…"
+   Then I switch to window having title "Selenium-Cucumber | Code Lessï¿½ Test Moreï¿½"
    Then I click on link having text "Source Code"
    Then I close new window
    
