@@ -3,7 +3,7 @@ Feature: Javasciprt Handling Steps
         As a user I should able to handle javascript pop-up 
 
 	Scenario: Open test page
- 		Given I navigate to "http://www.googledrive.com/host/0B9vZ2s1ustr6eTZDbWlTcThveXM" 
+ 		Given I navigate to "http://selenium-cucumber.github.io/" 
  	
  	Scenario: accept alert
 

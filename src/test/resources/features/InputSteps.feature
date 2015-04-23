@@ -2,7 +2,7 @@ Feature: Input Step
         As a user I should able to give inputs
  
  	Scenario: Open test page
- 		Given I navigate to "http://www.googledrive.com/host/0B9vZ2s1ustr6eTZDbWlTcThveXM"
+ 		Given I navigate to "http://selenium-cucumber.github.io/"
  	
  	Scenario: Enter text into textfield
  	
