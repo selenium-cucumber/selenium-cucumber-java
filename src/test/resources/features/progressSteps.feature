@@ -2,7 +2,7 @@ Feature: Progress Steps
         As a user I should able to wait
  
  	Scenario: Open test page
- 		Given I navigate to "file:///D:/sc_ruby/selenium-cucumber-ruby/tests/test_page.html"
+ 		Given I navigate to "http://selenium-cucumber.github.io/"
 
  	Scenario: wait for elements to display
  		

@@ -2,14 +2,14 @@ Feature: Assertion Steps
         As a user I should able to verify using assert steps //Should have attribute steps are not present here
 
  Scenario: Open test page
-   Given I navigate to "http://www.googledrive.com/host/0B9vZ2s1ustr6eTZDbWlTcThveXM"
+   Given I navigate to "http://selenium-cucumber.github.io/"
 
  	Scenario: verify page title
-		Then I should see page title as "Test Page for selenium–cucumber"
+		Then I should see page title as "Test Page for seleniumï¿½cucumber"
 		Then I should not see page title as "wrong title"
 
 	Scenario: verify partial page title
-		Then I should see page title having partial text as "selenium–cucumber"
+		Then I should see page title having partial text as "seleniumï¿½cucumber"
 		Then I should not see page title having partial text as "Wrong title"
 
 	@allow-rescue
@@ -18,7 +18,7 @@ Feature: Assertion Steps
 
 	@allow-rescue
 	Scenario: verify page title - negative test	
-		Then I should not see page title as "Test Page for selenium–cucumber"
+		Then I should not see page title as "Test Page for seleniumï¿½cucumber"
 
 	@allow-rescue
 	Scenario: verify partial page title - negative test
@@ -26,7 +26,7 @@ Feature: Assertion Steps
 
 	@allow-rescue
 	Scenario: verify partial page title - negative test
-		Then I should not see page title having partial text as "selenium–cucumber"
+		Then I should not see page title having partial text as "seleniumï¿½cucumber"
 
 	Scenario: verify element text
 
