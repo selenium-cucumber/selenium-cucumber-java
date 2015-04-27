@@ -244,7 +244,7 @@ To assert that radio button not selected use any of the following steps :
 	Then radio button having xpath "(.*?)" should be unselected
 	Then radio button having css "(.*?)" should be unselected
 
-To assert that radio button group selected by text use any of the following steps : By which ???
+To assert that radio button group selected by text use any of the following steps :
 
 	Then option "(.*?)" by text from radio button group having id "(.*?)" should be selected
 	Then option "(.*?)" by text from radio button group having name "(.*?)" should be selected
@@ -252,7 +252,7 @@ To assert that radio button group selected by text use any of the following step
 	Then option "(.*?)" by text from radio button group having xpath "(.*?)" should be selected
 	Then option "(.*?)" by text from radio button group having css "(.*?)" should be selected
 	
-To assert that radio button group selected by value use any of the following steps : Not Implemented
+To assert that radio button group selected by value use any of the following steps :
 
 	Then option "(.*?)" by value from radio button group having id "(.*?)" should be selected
 	Then option "(.*?)" by value from radio button group having name "(.*?)" should be selected
@@ -260,7 +260,7 @@ To assert that radio button group selected by value use any of the following ste
 	Then option "(.*?)" by value from radio button group having xpath "(.*?)" should be selected
 	Then option "(.*?)" by value from radio button group having css "(.*?)" should be selected
 
-To assert that radio button group not selected by text use any of the following steps : Not Implemented
+To assert that radio button group not selected by text use any of the following steps :
 
 	Then option "(.*?)" by text from radio button group having id "(.*?)" should be unselected
 	Then option "(.*?)" by text from radio button group having name "(.*?)" should be unselected
@@ -396,8 +396,32 @@ To select option by value from multiselect dropdown use following steps :
 	Then I select "(.*?)" option by value from multiselect dropdown having class "(.*?)"
 	Then I select "(.*?)" option by value from multiselect dropdown having xpath "(.*?)"
 	Then I select "(.*?)" option by value from multiselect dropdown having css "(.*?)"
+
+To deselect option by text from multiselect dropdown use following steps :
+
+	Then I deselect "(.*?)" option by text from multiselect dropdown having id "(.*?)"
+	Then I deselect "(.*?)" option by text from multiselect dropdown having name "(.*?)"
+	Then I deselect "(.*?)" option by text from multiselect dropdown having class "(.*?)"
+	Then I deselect "(.*?)" option by text from multiselect dropdown having xpath "(.*?)"
+	Then I deselect "(.*?)" option by text from multiselect dropdown having css "(.*?)"
 	
-To select all options from multiselect use following steps : Not Implemented
+To deselect option by index from multiselect dropdown use following steps :
+
+	Then I deselect (\d+) option by index from multiselect dropdown having id "(.*?)"
+	Then I deselect (\d+) option by index from multiselect dropdown having name "(.*?)"
+	Then I deselect (\d+) option by index from multiselect dropdown having class "(.*?)"
+	Then I deselect (\d+) option by index from multiselect dropdown having xpath "(.*?)"
+	Then I deselect (\d+) option by index from multiselect dropdown having css "(.*?)"
+		
+To deselect option by value from multiselect dropdown use following steps :
+
+	Then I deselect "(.*?)" option by value from multiselect dropdown having id "(.*?)"
+	Then I deselect "(.*?)" option by value from multiselect dropdown having name "(.*?)"
+	Then I deselect "(.*?)" option by value from multiselect dropdown having class "(.*?)"
+	Then I deselect "(.*?)" option by value from multiselect dropdown having xpath "(.*?)"
+	Then I deselect "(.*?)" option by value from multiselect dropdown having css "(.*?)"
+	
+To select all options from multiselect use following steps : *Not Implemented*
 
 	Then I select all options from multiselect dropdown having id "(.*?)"
 	Then I select all options from multiselect dropdown having name "(.*?)"
@@ -405,13 +429,13 @@ To select all options from multiselect use following steps : Not Implemented
 	Then I select all options from multiselect dropdown having xpath "(.*?)"
 	Then I select all options from multiselect dropdown having css "(.*?)"
 	
-To unselect all options from multiselect use following steps :
+To deselect all options from multiselect use following steps :
 
-	Then I unselect all options from mutliselect dropdown having id "(.*?)"
-	Then I unselect all options from mutliselect dropdown having name "(.*?)"
-	Then I unselect all options from mutliselect dropdown having class "(.*?)"
-	Then I unselect all options from mutliselect dropdown having xpath "(.*?)"
-	Then I unselect all options from mutliselect dropdown having css "(.*?)"
+	Then I deselect all options from mutliselect dropdown having id "(.*?)"
+	Then I deselect all options from mutliselect dropdown having name "(.*?)"
+	Then I deselect all options from mutliselect dropdown having class "(.*?)"
+	Then I deselect all options from mutliselect dropdown having xpath "(.*?)"
+	Then I deselect all options from mutliselect dropdown having css "(.*?)"
 
 #### Steps For Checkboxes
 

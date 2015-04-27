@@ -2,7 +2,7 @@ Feature: Progress Steps
         As a user I should able to wait
  
  	Scenario: Open test page
- 		Given I navigate to "http://www.googledrive.com/host/0B9vZ2s1ustr6eTZDbWlTcThveXM"
+ 		Given I navigate to "http://selenium-cucumber.github.io/"
 
  	Scenario: wait for elements to display
  		
@@ -13,5 +13,5 @@ Feature: Progress Steps
 
   Scenario: wait for elements to enabled
  		Then element having id "disabledBt" should be disabled
- 		Then I wait 15 seconds for element having id "disabledBt" to enable
+ 		Then I wait 15 seconds for element having id "disabledBt" to be enabled
  		Then element having id "disabledBt" should be enabled

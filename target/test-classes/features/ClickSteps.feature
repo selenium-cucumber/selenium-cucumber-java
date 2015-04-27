@@ -2,7 +2,7 @@ Feature: Click On Elements
         As a user I should able to click on elements
  
  	Scenario: Open test page 
-		Given I navigate to "http://www.googledrive.com/host/0B9vZ2s1ustr6eTZDbWlTcThveXM"
+		Given I navigate to "http://selenium-cucumber.github.io/"
  		
 	Scenario: click on elements
  	
@@ -23,4 +23,4 @@ Feature: Click On Elements
 	Scenario: click on links having partial text
 
 		Then I click on link having partial text "Home"
-		Then I should see page title as "Selenium-Cucumber | Code Less… Test More…" #(This step is failing)
+		Then I should see page title as "Selenium-Cucumber | Code Lessâ€¦ Test Moreâ€¦"

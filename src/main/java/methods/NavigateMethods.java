@@ -42,27 +42,19 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 	}
 	
 	/** Method to return key by OS wise
-	 * @return Keys : Return cntrl or command key as per OS
+	 * @return Keys : Return control or command key as per OS
 	 */
-	public Keys get_key()
+	public Keys getKey()
 	{
 		String os = System.getProperty("os.name").toLowerCase();
 		if(os.contains("win"))
 			return Keys.CONTROL;
-		/*else if (os.contains("nux") || os.contains("nix"))
-			return "Linux";*/
+		else if (os.contains("nux") || os.contains("nix"))
+			return Keys.CONTROL;
 		else if (os.contains("mac"))
 			return Keys.COMMAND;
 		else
 			return null;
-			  /*os = Selenium::WebDriver::Platform.os
-			  if os.to_s == 'windows'
-			    return 'control'
-			  elsif os.to_s == 'macosx'
-			    return 'command'
-			  else
-			    raise 'Invalid OS'
-			  end*/
 	}
 	
 	/** Method to zoom in/out page
@@ -72,11 +64,11 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 	{
 		WebElement Sel= driver.findElement(getelementbytype("tagName","html"));
 		if(inOut.equals("ADD"))
-			Sel.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
+			Sel.sendKeys(Keys.chord(getKey(), Keys.ADD));
 		else if(inOut.equals("SUBTRACT"))
-			Sel.sendKeys(Keys.chord(Keys.CONTROL, Keys.SUBTRACT));
+			Sel.sendKeys(Keys.chord(getKey(), Keys.SUBTRACT));
 		else if(inOut.equals("reset"))
-			Sel.sendKeys(Keys.chord(Keys.CONTROL, Keys.NUMPAD0));
+			Sel.sendKeys(Keys.chord(getKey(), Keys.NUMPAD0));
 	}
 	
 	/** Method to zoom in/out web page until web element displays
@@ -93,7 +85,7 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 			if (element.isDisplayed())
 				break;
 			else
-				action.keyDown(get_key()).sendKeys(inOut).keyUp(get_key()).perform();
+				action.keyDown(getKey()).sendKeys(inOut).keyUp(getKey()).perform();
 		}
 	}
 	
@@ -120,7 +112,6 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 	{
 		Actions action = new Actions(driver);
 		element = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
-		
 		action.moveToElement(element).perform();
 	}
 	
@@ -131,10 +122,8 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 	public void scrollToElement(String accessType, String accessName)
 	{
 		element = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
-		
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].scrollIntoView();", element);
-		
 	}
 	
 	/** Method to scroll page to top or end
@@ -156,7 +145,6 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
     public void switchToNewWindow()
     {
     	old_win = driver.getWindowHandle();
-    	
     	for(String winHandle : driver.getWindowHandles())
     		lastWinHandle = winHandle;
     	driver.switchTo().window(lastWinHandle);
@@ -166,7 +154,6 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
     public void switchToOldWindow()
     {
     	driver.switchTo().window(old_win);
-    	//System.out.println("++"+driver.switchTo().window(old_win).getTitle());
     }
     
     /** Method to switch to window by title
@@ -174,13 +161,13 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
      * @throws Exception */
     public void switchToWindowByTitle(String windowTitle) throws Exception
     {
-    	System.out.println("++"+windowTitle+"++");
+    	//System.out.println("++"+windowTitle+"++");
     	old_win = driver.getWindowHandle();
     	boolean winFound = false;
     	for(String winHandle : driver.getWindowHandles())
     	{
     		String str = driver.switchTo().window(winHandle).getTitle();
-    		System.out.println("**"+str+"**");
+    		//System.out.println("**"+str+"**");
     		if (str.equals(windowTitle))
     		{
     			winFound = true;
@@ -195,54 +182,23 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
     public void closeNewWindow()
     {
     	driver.close();
-    	//System.out.println("Closed driver");
-    }
-    
-    /** Method to switch frame using frame index
-     * @param index : Integer : Switch to frame by index
-     * */
-    public void switchFrameByIndex(int index)
-    {
-    	driver.switchTo().frame(index);
-    }
-      
-    /** Method to switch frame using frame name or id
-     * @param nameorid : String : Switch to frame by Name or ID
-     * */
-    public void switchFrameByNameorId(String nameorid)
-    {
-    	driver.switchTo().frame(nameorid);
     }
     
     /** Method to switch frame using web element frame
-     * @param accessType : String : Locator type (id, name, class, xpath, css)
+     * @param accessType : String : Locator type (index, id, name, class, xpath, css)
 	 * @param accessName : String : Locator value
      * */
-    public void switchFrameByWebElement(String accessType, String accessName)
+    public void switchFrame(String accessType, String accessName)
     {
-    	element = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
-    	driver.switchTo().frame(element);
-    }
-    
-    public void switchFrameByMethods(String method, String value)
-    {
-    	switch(method)
+    	if(accessType.equalsIgnoreCase("index"))
+    		driver.switchTo().frame(accessName);
+    	else
     	{
-    		case "index" : switchFrameByIndex(Integer.parseInt(value));
-    						break;
-    		case "name	 or id" :
-    					switchFrameByNameorId(value);
-    					break;
-    		case "id" :
-    		case "name" :
-    		case "xpath" :
-    		case "css" :
-    		case "class" : 
-    						switchFrameByWebElement(method,value);
-						break;
+    		element = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
+    		driver.switchTo().frame(element);
     	}
     }
-
+    
     /** method to switch to default content*/
     public void switchToDefaultContent()
     {

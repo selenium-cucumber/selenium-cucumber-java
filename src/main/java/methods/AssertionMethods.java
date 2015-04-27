@@ -1,5 +1,7 @@
 package methods;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -27,15 +29,10 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 	*/
 	public void checkTitle(String title,boolean testCase) throws TestCaseFailed
 	{
-		System.out.println("Title "+ title+"\n TestCase "+testCase);
 		String pageTitle = getPageTitle();
 		
-		/*System.out.println("**"+pageTitle+"**"+title+"**");
-		System.out.println("++"+ pageTitle.equals(title));*/
-
-		if (testCase)
+		if(testCase)
 		{
-			//System.out.println("In if \n----"+pageTitle.equals(title));
 			if(!pageTitle.equals(title))
 				throw new TestCaseFailed("Page Title Not Matched, Actual Page Title : "+pageTitle);
 		}
@@ -253,9 +250,29 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 	}
 
 	//method to assert option from radio button group is selected/unselected
-	public void isOptionFromRadioButtonGroupSelected(String accessType,String by,String option,String accessName,boolean shouldBeSelected)
+	public void isOptionFromRadioButtonGroupSelected(String accessType,String by,String option,String accessName,boolean shouldBeSelected) throws TestCaseFailed
 	{
-		WebElement radioButtonGroup = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
+		List<WebElement> radioButtonGroup = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getelementbytype(accessType, accessName)));
+		
+		for (WebElement rb : radioButtonGroup) {
+			if(by.equals("value"))
+			{
+				if(rb.getAttribute("value").equals(option))
+				{
+					if((!rb.isSelected()) && shouldBeSelected)
+						throw new TestCaseFailed("Radio Button not selected");
+					else if(rb.isSelected() && !shouldBeSelected)
+						throw new TestCaseFailed("Radio Button is selected");
+				}
+			}
+			else if(rb.getText().equals(option))
+			{
+				if((!rb.isSelected()) && shouldBeSelected)
+					throw new TestCaseFailed("Radio Button not selected");
+				else if(rb.isSelected() && !shouldBeSelected)
+					throw new TestCaseFailed("Radio Button is selected");
+			}
+		}
 	}
 	
 	/** method to get javascript pop-up alert text
@@ -276,24 +293,6 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 			throw new TestCaseFailed("Text on alert pop up not matched");
 	}
 	
-	  /*radio_button_group = WAIT.until{ $driver.find_elements(:"#{access_type}" => "#{access_name}") }
-
-	  getter = ->(rb, by) { by == 'value' ? rb.attribute('value') : rb.text }
-
-	  ele = radio_button_group.find { |rb| getter.call(rb, by) == option }
-
-	  if !ele.selected? && should_be_selected
-	    raise TestCaseFailed, 'Radio button is not selected'
-	  elsif ele.selected? && !should_be_selected
-	    raise TestCaseFailed, 'Radio button is selected'
-	  end
-	end*/
-	
-	/*method to get javascript pop-up alert text
-	def get_alert_text
-	  $driver.switch_to.alert.text
-	end*/
-	
 	/** Method to verify if the particular option is Selected from Dropdown
 	 * @param accessType : String : Locator type (id, name, class, xpath, css)
 	 * @param by : String : Select element from dropdown by text or value
@@ -308,7 +307,7 @@ public class AssertionMethods extends SelectElementByType implements BaseTest
 		WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
 		selectList = new Select(dropdown);
 		
-		String actualValue=null;
+		String actualValue="";
 		if(by.equals("text"))
 			actualValue = selectList.getFirstSelectedOption().getText();
 		else

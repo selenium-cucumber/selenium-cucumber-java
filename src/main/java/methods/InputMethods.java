@@ -42,7 +42,6 @@ public class InputMethods extends SelectElementByType implements BaseTest
 	 */
 	public void selectelementfromdropdownbytype (Select select_list, String bytype, String option)
 	{
-		System.out.println("**"+bytype+"++"+option);
 		if(bytype.equals("selectByIndex"))
 		{
 			int index = Integer.parseInt(option);
@@ -60,11 +59,17 @@ public class InputMethods extends SelectElementByType implements BaseTest
 	@param option : String : Option to select
 	@param accessName : String : Locator value
 	*/
-	public void selectOptionFromDropdown(String accessType, String by, String option, String accessName)
+	public void selectOptionFromDropdown(String accessType, String optionBy, String option, String accessName)
 	{
 		dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
 		selectList = new Select(dropdown);
-		selectelementfromdropdownbytype(selectList,by,option);
+		
+		if(optionBy.equals("selectByIndex"))
+			selectList.selectByIndex(Integer.parseInt(option)-1);
+		else if (optionBy.equals("value"))
+			selectList.selectByValue(option);
+		else if (optionBy.equals("text"))
+			selectList.selectByVisibleText(option);
 	}
 	
 	//method to select all option from dropdwon list
@@ -85,6 +90,23 @@ public class InputMethods extends SelectElementByType implements BaseTest
 		dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
 		selectList = new Select(dropdown);
 		selectList.deselectAll();
+	}
+	
+	/** Method to unselect option from dropdwon list
+	@param accessType : String : Locator type (id, name, class, xpath, css)
+	@param accessName : String : Locator value
+	*/
+	public void deselectOptionFromDropdown(String accessType, String optionBy, String option, String accessName) 
+	{
+		dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
+		selectList = new Select(dropdown);
+		
+		if(optionBy.equals("selectByIndex"))
+			selectList.deselectByIndex(Integer.parseInt(option)-1);
+		else if (optionBy.equals("value"))
+			selectList.deselectByValue(option);
+		else if (optionBy.equals("text"))
+			selectList.deselectByVisibleText(option);
 	}
 	
 	/** Method to check check-box
@@ -134,34 +156,23 @@ public class InputMethods extends SelectElementByType implements BaseTest
 	@param by : String : Name of by type
 	@param option : String : Option to select
 	@param accessName : String : Locator value
+	 * @param accessName2 
 	*/
-	public void selectOptionFromRadioButtonGroup(String accessType, String option, String accessName)
+	public void selectOptionFromRadioButtonGroup(String accessType, String option, String by, String accessName)
 	{
 		List<WebElement> radioButtonGroup = driver.findElements(getelementbytype(accessType, accessName));
-		String getoption = null;
-		
-		/*System.out.println("cnt : "+radioButtonGroup.size());
-		for(int i =0; i < radioButtonGroup.size() ; i++ ){
-			System.out.println("In loop i: "+i);
-			System.out.println(radioButtonGroup.get(i).isSelected());
-		}*/
-		
-		for(WebElement temp : radioButtonGroup)
+		for(WebElement rb : radioButtonGroup)
 		{
-			System.out.println("+++"+temp.getAttribute("value"));
-			getoption = temp.getAttribute("value");
-			
-			System.out.println("Element : "+getoption);
-			if(getoption.equals(option) && !temp.isSelected())
-				temp.click();
+			if(by.equals("value"))
+			{
+				if(rb.getAttribute("value").equals(option) && !rb.isSelected())
+					rb.click();
+			}
+			else if(by.equals("text"))
+			{
+				if(rb.getText().equals(option) && !rb.isSelected())
+					rb.click();
+			}
 		}
-		
 	}
-	//	List<WebElement> radioButtonGroup = CucumberRunner.driver.findElement(eletype.getelementbytype(access_type, access_name));
-		
-
-	/*  getter = ->(rb, by) { by == 'value' ? rb.attribute('value') : rb.text }
-	  ele = radio_button_group.find { |rb| getter.call(rb, by) == option }
-	  ele.click unless ele.selected?
-	}*/
 }

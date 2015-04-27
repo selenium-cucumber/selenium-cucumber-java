@@ -1,263 +1,454 @@
 -------------------------------------------------------------------------------
 Test set: stepDefintions.RunCukeTest
 -------------------------------------------------------------------------------
-Tests run: 251, Failures: 0, Errors: 48, Skipped: 41, Time elapsed: 215.682 sec <<< FAILURE!
-Then I should see page title as "Test Page for selenium?cucumber"(Scenario: verify page title)  Time elapsed: 0.002 sec  <<< ERROR!
-methods.TestCaseFailed: Page Title Not Matched, Actual Page Title : Test Page for selenium–cucumber
-	at methods.AssertionMethods.checkTitle(AssertionMethods.java:40)
-	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:201)
-	at ?.Then I should see page title as "Test Page for selenium?cucumber"(features/AssertSteps.feature:8)
-
-Scenario: verify page title  Time elapsed: 0.003 sec  <<< ERROR!
-methods.TestCaseFailed: Page Title Not Matched, Actual Page Title : Test Page for selenium–cucumber
-	at methods.AssertionMethods.checkTitle(AssertionMethods.java:40)
-	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:201)
-	at ?.Then I should see page title as "Test Page for selenium?cucumber"(features/AssertSteps.feature:8)
-
-Then I should see page title having partial text as "selenium?cucumber"(Scenario: verify partial page title)  Time elapsed: 0 sec  <<< ERROR!
-methods.TestCaseFailed: Partial Page Title Not Present, Actual Page Title : Test Page for selenium–cucumber
-	at methods.AssertionMethods.checkPartialTitle(AssertionMethods.java:59)
-	at stepDefintions.PredefinedStepDefinitions.check_partial_text(PredefinedStepDefinitions.java:209)
-	at ?.Then I should see page title having partial text as "selenium?cucumber"(features/AssertSteps.feature:12)
-
-Scenario: verify partial page title  Time elapsed: 0.001 sec  <<< ERROR!
-methods.TestCaseFailed: Partial Page Title Not Present, Actual Page Title : Test Page for selenium–cucumber
-	at methods.AssertionMethods.checkPartialTitle(AssertionMethods.java:59)
-	at stepDefintions.PredefinedStepDefinitions.check_partial_text(PredefinedStepDefinitions.java:209)
-	at ?.Then I should see page title having partial text as "selenium?cucumber"(features/AssertSteps.feature:12)
-
+Tests run: 253, Failures: 0, Errors: 68, Skipped: 45, Time elapsed: 101.812 sec <<< FAILURE!
 Then I should see page title as "wrong title"(Scenario: verify page title - negative test)  Time elapsed: 0.001 sec  <<< ERROR!
-methods.TestCaseFailed: Page Title Not Matched, Actual Page Title : Test Page for selenium–cucumber
-	at methods.AssertionMethods.checkTitle(AssertionMethods.java:40)
-	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:201)
-	at ?.Then I should see page title as "wrong title"(features/AssertSteps.feature:17)
+methods.TestCaseFailed: Page Title Not Matched, Actual Page Title : Test Page for selenium-cucumber
+	at methods.AssertionMethods.checkTitle(AssertionMethods.java:37)
+	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:182)
+	at ?.Then I should see page title as "wrong title"(features/AssertSteps.feature:16)
 
-Scenario: verify page title - negative test  Time elapsed: 0.001 sec  <<< ERROR!
-methods.TestCaseFailed: Page Title Not Matched, Actual Page Title : Test Page for selenium–cucumber
-	at methods.AssertionMethods.checkTitle(AssertionMethods.java:40)
-	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:201)
-	at ?.Then I should see page title as "wrong title"(features/AssertSteps.feature:17)
+Scenario: verify page title - negative test  Time elapsed: 0.002 sec  <<< ERROR!
+methods.TestCaseFailed: Page Title Not Matched, Actual Page Title : Test Page for selenium-cucumber
+	at methods.AssertionMethods.checkTitle(AssertionMethods.java:37)
+	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:182)
+	at ?.Then I should see page title as "wrong title"(features/AssertSteps.feature:16)
+
+Then I should not see page title as "Test Page for selenium-cucumber"(Scenario: verify page title - negative test)  Time elapsed: 0 sec  <<< ERROR!
+methods.TestCaseFailed: Page Title Matched, Actual Page Title : Test Page for selenium-cucumber
+	at methods.AssertionMethods.checkTitle(AssertionMethods.java:42)
+	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:182)
+	at ?.Then I should not see page title as "Test Page for selenium-cucumber"(features/AssertSteps.feature:19)
+
+Scenario: verify page title - negative test  Time elapsed: 0 sec  <<< ERROR!
+methods.TestCaseFailed: Page Title Matched, Actual Page Title : Test Page for selenium-cucumber
+	at methods.AssertionMethods.checkTitle(AssertionMethods.java:42)
+	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:182)
+	at ?.Then I should not see page title as "Test Page for selenium-cucumber"(features/AssertSteps.feature:19)
 
 Then I should see page title having partial text as "Wrong title"(Scenario: verify partial page title - negative test)  Time elapsed: 0 sec  <<< ERROR!
-methods.TestCaseFailed: Partial Page Title Not Present, Actual Page Title : Test Page for selenium–cucumber
-	at methods.AssertionMethods.checkPartialTitle(AssertionMethods.java:59)
-	at stepDefintions.PredefinedStepDefinitions.check_partial_text(PredefinedStepDefinitions.java:209)
-	at ?.Then I should see page title having partial text as "Wrong title"(features/AssertSteps.feature:25)
+methods.TestCaseFailed: Partial Page Title Not Present, Actual Page Title : Test Page for selenium-cucumber
+	at methods.AssertionMethods.checkPartialTitle(AssertionMethods.java:56)
+	at stepDefintions.PredefinedStepDefinitions.check_partial_text(PredefinedStepDefinitions.java:190)
+	at ?.Then I should see page title having partial text as "Wrong title"(features/AssertSteps.feature:22)
 
 Scenario: verify partial page title - negative test  Time elapsed: 0 sec  <<< ERROR!
-methods.TestCaseFailed: Partial Page Title Not Present, Actual Page Title : Test Page for selenium–cucumber
-	at methods.AssertionMethods.checkPartialTitle(AssertionMethods.java:59)
-	at stepDefintions.PredefinedStepDefinitions.check_partial_text(PredefinedStepDefinitions.java:209)
-	at ?.Then I should see page title having partial text as "Wrong title"(features/AssertSteps.feature:25)
+methods.TestCaseFailed: Partial Page Title Not Present, Actual Page Title : Test Page for selenium-cucumber
+	at methods.AssertionMethods.checkPartialTitle(AssertionMethods.java:56)
+	at stepDefintions.PredefinedStepDefinitions.check_partial_text(PredefinedStepDefinitions.java:190)
+	at ?.Then I should see page title having partial text as "Wrong title"(features/AssertSteps.feature:22)
 
-Then element having id "dbClick" should have text as "Double-click this"(Scenario: verify element text - negative test 1)  Time elapsed: 0.001 sec  <<< ERROR!
+Then I should not see page title having partial text as "selenium-cucumber"(Scenario: verify partial page title - negative test)  Time elapsed: 0 sec  <<< ERROR!
+methods.TestCaseFailed: Partial Page Title Present, Actual Page Title : Test Page for selenium-cucumber
+	at methods.AssertionMethods.checkPartialTitle(AssertionMethods.java:61)
+	at stepDefintions.PredefinedStepDefinitions.check_partial_text(PredefinedStepDefinitions.java:190)
+	at ?.Then I should not see page title having partial text as "selenium-cucumber"(features/AssertSteps.feature:25)
+
+Scenario: verify partial page title - negative test  Time elapsed: 0.014 sec  <<< ERROR!
+methods.TestCaseFailed: Partial Page Title Present, Actual Page Title : Test Page for selenium-cucumber
+	at methods.AssertionMethods.checkPartialTitle(AssertionMethods.java:61)
+	at stepDefintions.PredefinedStepDefinitions.check_partial_text(PredefinedStepDefinitions.java:190)
+	at ?.Then I should not see page title having partial text as "selenium-cucumber"(features/AssertSteps.feature:25)
+
+Then element having id "dbClick" should have text as "Double-click this"(Scenario: verify element text - negative test 1)  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Text Not Matched
-	at methods.AssertionMethods.checkElementText(AssertionMethods.java:93)
-	at stepDefintions.PredefinedStepDefinitions.check_element_text(PredefinedStepDefinitions.java:217)
-	at ?.Then element having id "dbClick" should have text as "Double-click this"(features/AssertSteps.feature:48)
+	at methods.AssertionMethods.checkElementText(AssertionMethods.java:90)
+	at stepDefintions.PredefinedStepDefinitions.check_element_text(PredefinedStepDefinitions.java:198)
+	at ?.Then element having id "dbClick" should have text as "Double-click this"(features/AssertSteps.feature:41)
 
 Scenario: verify element text - negative test 1  Time elapsed: 0.001 sec  <<< ERROR!
 methods.TestCaseFailed: Text Not Matched
-	at methods.AssertionMethods.checkElementText(AssertionMethods.java:93)
-	at stepDefintions.PredefinedStepDefinitions.check_element_text(PredefinedStepDefinitions.java:217)
-	at ?.Then element having id "dbClick" should have text as "Double-click this"(features/AssertSteps.feature:48)
+	at methods.AssertionMethods.checkElementText(AssertionMethods.java:90)
+	at stepDefintions.PredefinedStepDefinitions.check_element_text(PredefinedStepDefinitions.java:198)
+	at ?.Then element having id "dbClick" should have text as "Double-click this"(features/AssertSteps.feature:41)
 
 Then element having name "javascript_alert_msg" should not have text as "Click the button to display a confirm box."(Scenario: verify element text - negative test 2)  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Text Matched
-	at methods.AssertionMethods.checkElementText(AssertionMethods.java:98)
-	at stepDefintions.PredefinedStepDefinitions.check_element_text(PredefinedStepDefinitions.java:217)
-	at ?.Then element having name "javascript_alert_msg" should not have text as "Click the button to display a confirm box."(features/AssertSteps.feature:52)
+	at methods.AssertionMethods.checkElementText(AssertionMethods.java:95)
+	at stepDefintions.PredefinedStepDefinitions.check_element_text(PredefinedStepDefinitions.java:198)
+	at ?.Then element having name "javascript_alert_msg" should not have text as "Click the button to display a confirm box."(features/AssertSteps.feature:44)
 
-Scenario: verify element text - negative test 2  Time elapsed: 0.001 sec  <<< ERROR!
+Scenario: verify element text - negative test 2  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Text Matched
-	at methods.AssertionMethods.checkElementText(AssertionMethods.java:98)
-	at stepDefintions.PredefinedStepDefinitions.check_element_text(PredefinedStepDefinitions.java:217)
-	at ?.Then element having name "javascript_alert_msg" should not have text as "Click the button to display a confirm box."(features/AssertSteps.feature:52)
+	at methods.AssertionMethods.checkElementText(AssertionMethods.java:95)
+	at stepDefintions.PredefinedStepDefinitions.check_element_text(PredefinedStepDefinitions.java:198)
+	at ?.Then element having name "javascript_alert_msg" should not have text as "Click the button to display a confirm box."(features/AssertSteps.feature:44)
 
 Then element having id "frm" should have partial text as "selenium"(Scenario: Partial text present - negative test)  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Text Not Matched
-	at methods.AssertionMethods.checkElementPartialText(AssertionMethods.java:115)
-	at stepDefintions.PredefinedStepDefinitions.check_element_partial_text(PredefinedStepDefinitions.java:225)
-	at ?.Then element having id "frm" should have partial text as "selenium"(features/AssertSteps.feature:58)
+	at methods.AssertionMethods.checkElementPartialText(AssertionMethods.java:112)
+	at stepDefintions.PredefinedStepDefinitions.check_element_partial_text(PredefinedStepDefinitions.java:206)
+	at ?.Then element having id "frm" should have partial text as "selenium"(features/AssertSteps.feature:50)
 
 Scenario: Partial text present - negative test  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Text Not Matched
-	at methods.AssertionMethods.checkElementPartialText(AssertionMethods.java:115)
-	at stepDefintions.PredefinedStepDefinitions.check_element_partial_text(PredefinedStepDefinitions.java:225)
-	at ?.Then element having id "frm" should have partial text as "selenium"(features/AssertSteps.feature:58)
+	at methods.AssertionMethods.checkElementPartialText(AssertionMethods.java:112)
+	at stepDefintions.PredefinedStepDefinitions.check_element_partial_text(PredefinedStepDefinitions.java:206)
+	at ?.Then element having id "frm" should have partial text as "selenium"(features/AssertSteps.feature:50)
 
 Then element having id "frm" should not have partial text as "last"(Scenario: Partial text not present - negative test)  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Text Matched
-	at methods.AssertionMethods.checkElementPartialText(AssertionMethods.java:120)
-	at stepDefintions.PredefinedStepDefinitions.check_element_partial_text(PredefinedStepDefinitions.java:225)
-	at ?.Then element having id "frm" should not have partial text as "last"(features/AssertSteps.feature:64)
+	at methods.AssertionMethods.checkElementPartialText(AssertionMethods.java:117)
+	at stepDefintions.PredefinedStepDefinitions.check_element_partial_text(PredefinedStepDefinitions.java:206)
+	at ?.Then element having id "frm" should not have partial text as "last"(features/AssertSteps.feature:56)
 
-Scenario: Partial text not present - negative test  Time elapsed: 0 sec  <<< ERROR!
+Scenario: Partial text not present - negative test  Time elapsed: 0.004 sec  <<< ERROR!
 methods.TestCaseFailed: Text Matched
-	at methods.AssertionMethods.checkElementPartialText(AssertionMethods.java:120)
-	at stepDefintions.PredefinedStepDefinitions.check_element_partial_text(PredefinedStepDefinitions.java:225)
-	at ?.Then element having id "frm" should not have partial text as "last"(features/AssertSteps.feature:64)
+	at methods.AssertionMethods.checkElementPartialText(AssertionMethods.java:117)
+	at stepDefintions.PredefinedStepDefinitions.check_element_partial_text(PredefinedStepDefinitions.java:206)
+	at ?.Then element having id "frm" should not have partial text as "last"(features/AssertSteps.feature:56)
 
 Then element having id "submit" should be disabled(Scenario: verify element accesibility - negative test 1)  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Element Enabled
-	at methods.AssertionMethods.checkElementEnable(AssertionMethods.java:151)
-	at stepDefintions.PredefinedStepDefinitions.check_element_enable(PredefinedStepDefinitions.java:246)
-	at ?.Then element having id "submit" should be disabled(features/AssertSteps.feature:80)
+	at methods.AssertionMethods.checkElementEnable(AssertionMethods.java:148)
+	at stepDefintions.PredefinedStepDefinitions.check_element_enable(PredefinedStepDefinitions.java:227)
+	at ?.Then element having id "submit" should be disabled(features/AssertSteps.feature:69)
 
 Scenario: verify element accesibility - negative test 1  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Element Enabled
-	at methods.AssertionMethods.checkElementEnable(AssertionMethods.java:151)
-	at stepDefintions.PredefinedStepDefinitions.check_element_enable(PredefinedStepDefinitions.java:246)
-	at ?.Then element having id "submit" should be disabled(features/AssertSteps.feature:80)
+	at methods.AssertionMethods.checkElementEnable(AssertionMethods.java:148)
+	at stepDefintions.PredefinedStepDefinitions.check_element_enable(PredefinedStepDefinitions.java:227)
+	at ?.Then element having id "submit" should be disabled(features/AssertSteps.feature:69)
 
 Then element having id "disabledBt_id" should be enabled(Scenario: verify element accesibility - negative test 2)  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Element Not Enabled
-	at methods.AssertionMethods.checkElementEnable(AssertionMethods.java:146)
-	at stepDefintions.PredefinedStepDefinitions.check_element_enable(PredefinedStepDefinitions.java:246)
-	at ?.Then element having id "disabledBt_id" should be enabled(features/AssertSteps.feature:84)
+	at methods.AssertionMethods.checkElementEnable(AssertionMethods.java:143)
+	at stepDefintions.PredefinedStepDefinitions.check_element_enable(PredefinedStepDefinitions.java:227)
+	at ?.Then element having id "disabledBt_id" should be enabled(features/AssertSteps.feature:72)
 
 Scenario: verify element accesibility - negative test 2  Time elapsed: 0.001 sec  <<< ERROR!
 methods.TestCaseFailed: Element Not Enabled
-	at methods.AssertionMethods.checkElementEnable(AssertionMethods.java:146)
-	at stepDefintions.PredefinedStepDefinitions.check_element_enable(PredefinedStepDefinitions.java:246)
-	at ?.Then element having id "disabledBt_id" should be enabled(features/AssertSteps.feature:84)
-
-Then element having id "hiddenElement" should not be present(Scenario: verify element visibility)  Time elapsed: 0 sec  <<< ERROR!
-methods.TestCaseFailed: Element Present
-	at methods.AssertionMethods.checkElementPresence(AssertionMethods.java:222)
-	at stepDefintions.PredefinedStepDefinitions.check_element_presence(PredefinedStepDefinitions.java:254)
-	at ?.Then element having id "hiddenElement" should not be present(features/AssertSteps.feature:88)
-
-Scenario: verify element visibility  Time elapsed: 0 sec  <<< ERROR!
-methods.TestCaseFailed: Element Present
-	at methods.AssertionMethods.checkElementPresence(AssertionMethods.java:222)
-	at stepDefintions.PredefinedStepDefinitions.check_element_presence(PredefinedStepDefinitions.java:254)
-	at ?.Then element having id "hiddenElement" should not be present(features/AssertSteps.feature:88)
+	at methods.AssertionMethods.checkElementEnable(AssertionMethods.java:143)
+	at stepDefintions.PredefinedStepDefinitions.check_element_enable(PredefinedStepDefinitions.java:227)
+	at ?.Then element having id "disabledBt_id" should be enabled(features/AssertSteps.feature:72)
 
 Then checkbox having class "chk3_class" should be checked(Scenario: verify checkbox checked or not - negative test 1)  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Checkbox is not checked
-	at methods.AssertionMethods.isCheckboxChecked(AssertionMethods.java:236)
-	at stepDefintions.PredefinedStepDefinitions.is_checkbox_checked(PredefinedStepDefinitions.java:263)
-	at ?.Then checkbox having class "chk3_class" should be checked(features/AssertSteps.feature:113)
+	at methods.AssertionMethods.isCheckboxChecked(AssertionMethods.java:233)
+	at stepDefintions.PredefinedStepDefinitions.is_checkbox_checked(PredefinedStepDefinitions.java:244)
+	at ?.Then checkbox having class "chk3_class" should be checked(features/AssertSteps.feature:95)
 
 Scenario: verify checkbox checked or not - negative test 1  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Checkbox is not checked
-	at methods.AssertionMethods.isCheckboxChecked(AssertionMethods.java:236)
-	at stepDefintions.PredefinedStepDefinitions.is_checkbox_checked(PredefinedStepDefinitions.java:263)
-	at ?.Then checkbox having class "chk3_class" should be checked(features/AssertSteps.feature:113)
+	at methods.AssertionMethods.isCheckboxChecked(AssertionMethods.java:233)
+	at stepDefintions.PredefinedStepDefinitions.is_checkbox_checked(PredefinedStepDefinitions.java:244)
+	at ?.Then checkbox having class "chk3_class" should be checked(features/AssertSteps.feature:95)
 
 Then checkbox having class "chk5_class" should be unchecked(Scenario: verify checkbox checked or not - negative test 2)  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Checkbox is checked
-	at methods.AssertionMethods.isCheckboxChecked(AssertionMethods.java:238)
-	at stepDefintions.PredefinedStepDefinitions.is_checkbox_checked(PredefinedStepDefinitions.java:263)
-	at ?.Then checkbox having class "chk5_class" should be unchecked(features/AssertSteps.feature:117)
+	at methods.AssertionMethods.isCheckboxChecked(AssertionMethods.java:235)
+	at stepDefintions.PredefinedStepDefinitions.is_checkbox_checked(PredefinedStepDefinitions.java:244)
+	at ?.Then checkbox having class "chk5_class" should be unchecked(features/AssertSteps.feature:98)
 
-Scenario: verify checkbox checked or not - negative test 2  Time elapsed: 0.001 sec  <<< ERROR!
+Scenario: verify checkbox checked or not - negative test 2  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Checkbox is checked
-	at methods.AssertionMethods.isCheckboxChecked(AssertionMethods.java:238)
-	at stepDefintions.PredefinedStepDefinitions.is_checkbox_checked(PredefinedStepDefinitions.java:263)
-	at ?.Then checkbox having class "chk5_class" should be unchecked(features/AssertSteps.feature:117)
+	at methods.AssertionMethods.isCheckboxChecked(AssertionMethods.java:235)
+	at stepDefintions.PredefinedStepDefinitions.is_checkbox_checked(PredefinedStepDefinitions.java:244)
+	at ?.Then checkbox having class "chk5_class" should be unchecked(features/AssertSteps.feature:98)
 
 Then radio button having id "rdb2" should be selected(Scenario: verify radio button selected or not - negative test 1)  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Radio Button not selected
-	at methods.AssertionMethods.isRadioButtonSelected(AssertionMethods.java:250)
-	at stepDefintions.PredefinedStepDefinitions.is_radio_button_selected(PredefinedStepDefinitions.java:272)
-	at ?.Then radio button having id "rdb2" should be selected(features/AssertSteps.feature:126)
+	at methods.AssertionMethods.isRadioButtonSelected(AssertionMethods.java:247)
+	at stepDefintions.PredefinedStepDefinitions.is_radio_button_selected(PredefinedStepDefinitions.java:253)
+	at ?.Then radio button having id "rdb2" should be selected(features/AssertSteps.feature:105)
 
-Scenario: verify radio button selected or not - negative test 1  Time elapsed: 0.001 sec  <<< ERROR!
+Scenario: verify radio button selected or not - negative test 1  Time elapsed: 0 sec  <<< ERROR!
 methods.TestCaseFailed: Radio Button not selected
-	at methods.AssertionMethods.isRadioButtonSelected(AssertionMethods.java:250)
-	at stepDefintions.PredefinedStepDefinitions.is_radio_button_selected(PredefinedStepDefinitions.java:272)
-	at ?.Then radio button having id "rdb2" should be selected(features/AssertSteps.feature:126)
+	at methods.AssertionMethods.isRadioButtonSelected(AssertionMethods.java:247)
+	at stepDefintions.PredefinedStepDefinitions.is_radio_button_selected(PredefinedStepDefinitions.java:253)
+	at ?.Then radio button having id "rdb2" should be selected(features/AssertSteps.feature:105)
 
-Then radio button having id "rdb1" should be unselected(Scenario: verify radio button selected or not - negative test 2)  Time elapsed: 0 sec  <<< ERROR!
+Then radio button having id "rdb1" should be unselected(Scenario: verify radio button selected or not - negative test 2)  Time elapsed: 0.001 sec  <<< ERROR!
 methods.TestCaseFailed: Radio Button is selected
-	at methods.AssertionMethods.isRadioButtonSelected(AssertionMethods.java:252)
-	at stepDefintions.PredefinedStepDefinitions.is_radio_button_selected(PredefinedStepDefinitions.java:272)
-	at ?.Then radio button having id "rdb1" should be unselected(features/AssertSteps.feature:130)
+	at methods.AssertionMethods.isRadioButtonSelected(AssertionMethods.java:249)
+	at stepDefintions.PredefinedStepDefinitions.is_radio_button_selected(PredefinedStepDefinitions.java:253)
+	at ?.Then radio button having id "rdb1" should be unselected(features/AssertSteps.feature:108)
 
 Scenario: verify radio button selected or not - negative test 2  Time elapsed: 0.001 sec  <<< ERROR!
 methods.TestCaseFailed: Radio Button is selected
-	at methods.AssertionMethods.isRadioButtonSelected(AssertionMethods.java:252)
-	at stepDefintions.PredefinedStepDefinitions.is_radio_button_selected(PredefinedStepDefinitions.java:272)
-	at ?.Then radio button having id "rdb1" should be unselected(features/AssertSteps.feature:130)
+	at methods.AssertionMethods.isRadioButtonSelected(AssertionMethods.java:249)
+	at stepDefintions.PredefinedStepDefinitions.is_radio_button_selected(PredefinedStepDefinitions.java:253)
+	at ?.Then radio button having id "rdb1" should be unselected(features/AssertSteps.feature:108)
 
-Then I select "rdb2" option by id from radio button group having class "rdb2_class"(Scenario: selecting radio button from group)  Time elapsed: 0 sec  <<< ERROR!
-java.lang.Exception: Invalid option by - id
-	at methods.MiscMethods.validateOptionBy(MiscMethods.java:33)
-	at stepDefintions.PredefinedStepDefinitions.select_option_from_radio_btn_group(PredefinedStepDefinitions.java:404)
-	at ?.Then I select "rdb2" option by id from radio button group having class "rdb2_class"(features/InputSteps.feature:85)
+Then option "M" by value from radio button group having name "radio_gender" should be unselected(Scenario: verify radio button group selected or not - negative test)  Time elapsed: 0 sec  <<< ERROR!
+methods.TestCaseFailed: Radio Button is selected
+	at methods.AssertionMethods.isOptionFromRadioButtonGroupSelected(AssertionMethods.java:265)
+	at stepDefintions.PredefinedStepDefinitions.is_option_from_radio_button_group_selected(PredefinedStepDefinitions.java:262)
+	at ?.Then option "M" by value from radio button group having name "radio_gender" should be unselected(features/AssertSteps.feature:115)
 
-Scenario: selecting radio button from group  Time elapsed: 0 sec  <<< ERROR!
-java.lang.Exception: Invalid option by - id
-	at methods.MiscMethods.validateOptionBy(MiscMethods.java:33)
-	at stepDefintions.PredefinedStepDefinitions.select_option_from_radio_btn_group(PredefinedStepDefinitions.java:404)
-	at ?.Then I select "rdb2" option by id from radio button group having class "rdb2_class"(features/InputSteps.feature:85)
+Scenario: verify radio button group selected or not - negative test  Time elapsed: 0.001 sec  <<< ERROR!
+methods.TestCaseFailed: Radio Button is selected
+	at methods.AssertionMethods.isOptionFromRadioButtonGroupSelected(AssertionMethods.java:265)
+	at stepDefintions.PredefinedStepDefinitions.is_option_from_radio_button_group_selected(PredefinedStepDefinitions.java:262)
+	at ?.Then option "M" by value from radio button group having name "radio_gender" should be unselected(features/AssertSteps.feature:115)
 
-Then I should see page title as "Test Page for selenium?cucumber"(Scenario: navigating back/forward and refresh page)  Time elapsed: 0 sec  <<< ERROR!
-methods.TestCaseFailed: Page Title Not Matched, Actual Page Title : Test Page for selenium–cucumber
-	at methods.AssertionMethods.checkTitle(AssertionMethods.java:40)
-	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:201)
-	at ?.Then I should see page title as "Test Page for selenium?cucumber"(features/navigationSteps.feature:13)
+Given I navigate to "http://selenium-cucumber.github.io/"(Scenario: Open test page)  Time elapsed: 0.001 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at methods.NavigateMethods.navigateTo(NavigateMethods.java:24)
+	at stepDefintions.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:17)
+	at ?.Given I navigate to "http://selenium-cucumber.github.io/"(features/javaScriptSteps.feature:6)
 
-Scenario: navigating back/forward and refresh page  Time elapsed: 0.001 sec  <<< ERROR!
-methods.TestCaseFailed: Page Title Not Matched, Actual Page Title : Test Page for selenium–cucumber
-	at methods.AssertionMethods.checkTitle(AssertionMethods.java:40)
-	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:201)
-	at ?.Then I should see page title as "Test Page for selenium?cucumber"(features/navigationSteps.feature:13)
+Scenario: Open test page  Time elapsed: 0.002 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at methods.NavigateMethods.navigateTo(NavigateMethods.java:24)
+	at stepDefintions.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:17)
+	at ?.Given I navigate to "http://selenium-cucumber.github.io/"(features/javaScriptSteps.feature:6)
 
-Then I should see page title as "Selenium-Cucumber | Code Less? Test More?"(Scenario: switch to new window)  Time elapsed: 0 sec  <<< ERROR!
-methods.TestCaseFailed: Page Title Not Matched, Actual Page Title : Selenium-Cucumber | Code Less… Test More…
-	at methods.AssertionMethods.checkTitle(AssertionMethods.java:40)
-	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:201)
-	at ?.Then I should see page title as "Selenium-Cucumber | Code Less? Test More?"(features/navigationSteps.feature:28)
+Then I click on element having id "try_it"(Scenario: accept alert)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
+	at stepDefintions.PredefinedStepDefinitions.click(PredefinedStepDefinitions.java:429)
+	at ?.Then I click on element having id "try_it"(features/javaScriptSteps.feature:10)
+
+Scenario: accept alert  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
+	at stepDefintions.PredefinedStepDefinitions.click(PredefinedStepDefinitions.java:429)
+	at ?.Then I click on element having id "try_it"(features/javaScriptSteps.feature:10)
+
+Then I click on element having id "try_it"(Scenario: dismiss alert)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
+	at stepDefintions.PredefinedStepDefinitions.click(PredefinedStepDefinitions.java:429)
+	at ?.Then I click on element having id "try_it"(features/javaScriptSteps.feature:16)
+
+Scenario: dismiss alert  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
+	at stepDefintions.PredefinedStepDefinitions.click(PredefinedStepDefinitions.java:429)
+	at ?.Then I click on element having id "try_it"(features/javaScriptSteps.feature:16)
+
+Given I navigate to "http://selenium-cucumber.github.io/"(Scenario: Open test page)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at methods.NavigateMethods.navigateTo(NavigateMethods.java:24)
+	at stepDefintions.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:17)
+	at ?.Given I navigate to "http://selenium-cucumber.github.io/"(features/navigationSteps.feature:5)
+
+Scenario: Open test page  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at methods.NavigateMethods.navigateTo(NavigateMethods.java:24)
+	at stepDefintions.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:17)
+	at ?.Given I navigate to "http://selenium-cucumber.github.io/"(features/navigationSteps.feature:5)
+
+Then I click on link having text "selenium-cucumber gem"(Scenario: navigating back/forward and refresh page)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:401)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
+	at stepDefintions.PredefinedStepDefinitions.click_link(PredefinedStepDefinitions.java:452)
+	at ?.Then I click on link having text "selenium-cucumber gem"(features/navigationSteps.feature:8)
+
+Scenario: navigating back/forward and refresh page  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:401)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
+	at stepDefintions.PredefinedStepDefinitions.click_link(PredefinedStepDefinitions.java:452)
+	at ?.Then I click on link having text "selenium-cucumber gem"(features/navigationSteps.feature:8)
+
+Then I click on link having text "selenium-cucumber website"(Scenario: switch to new window)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:401)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
+	at stepDefintions.PredefinedStepDefinitions.click_link(PredefinedStepDefinitions.java:452)
+	at ?.Then I click on link having text "selenium-cucumber website"(features/navigationSteps.feature:20)
 
 Scenario: switch to new window  Time elapsed: 0 sec  <<< ERROR!
-methods.TestCaseFailed: Page Title Not Matched, Actual Page Title : Selenium-Cucumber | Code Less… Test More…
-	at methods.AssertionMethods.checkTitle(AssertionMethods.java:40)
-	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:201)
-	at ?.Then I should see page title as "Selenium-Cucumber | Code Less? Test More?"(features/navigationSteps.feature:28)
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:401)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
+	at stepDefintions.PredefinedStepDefinitions.click_link(PredefinedStepDefinitions.java:452)
+	at ?.Then I click on link having text "selenium-cucumber website"(features/navigationSteps.feature:20)
 
-Then I should see page title as "Test Page for selenium?cucumber"(Scenario: switch to privious window)  Time elapsed: 0 sec  <<< ERROR!
-methods.TestCaseFailed: Page Title Not Matched, Actual Page Title : Test Page for selenium–cucumber
-	at methods.AssertionMethods.checkTitle(AssertionMethods.java:40)
-	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:201)
-	at ?.Then I should see page title as "Test Page for selenium?cucumber"(features/navigationSteps.feature:33)
+Then I switch to previous window(Scenario: switch to privious window)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null value in entry: name=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.<init>(SingletonImmutableBiMap.java:39)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:57)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:80)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.window(RemoteWebDriver.java:890)
+	at methods.NavigateMethods.switchToOldWindow(NavigateMethods.java:156)
+	at stepDefintions.PredefinedStepDefinitions.switch_to_old_window(PredefinedStepDefinitions.java:54)
+	at ?.Then I switch to previous window(features/navigationSteps.feature:27)
 
 Scenario: switch to privious window  Time elapsed: 0 sec  <<< ERROR!
-methods.TestCaseFailed: Page Title Not Matched, Actual Page Title : Test Page for selenium–cucumber
-	at methods.AssertionMethods.checkTitle(AssertionMethods.java:40)
-	at stepDefintions.PredefinedStepDefinitions.check_title(PredefinedStepDefinitions.java:201)
-	at ?.Then I should see page title as "Test Page for selenium?cucumber"(features/navigationSteps.feature:33)
+java.lang.NullPointerException: null value in entry: name=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.<init>(SingletonImmutableBiMap.java:39)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:57)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:80)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.window(RemoteWebDriver.java:890)
+	at methods.NavigateMethods.switchToOldWindow(NavigateMethods.java:156)
+	at stepDefintions.PredefinedStepDefinitions.switch_to_old_window(PredefinedStepDefinitions.java:54)
+	at ?.Then I switch to previous window(features/navigationSteps.feature:27)
 
-Then I hover over element having id "pop_alert"(Scenario: Hover over elelment)  Time elapsed: 0 sec  <<< ERROR!
-org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for presence of element located by: By.id: pop_alert
+Then I zoom in page(Scenario: Zoom in/out web page)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
 Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
 System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Session ID: 96ae8ca4-7b1f-4390-a039-89372c14564c
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=37.0.1}]
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:79)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at methods.NavigateMethods.hoverOverElement(NavigateMethods.java:122)
-	at stepDefintions.PredefinedStepDefinitions.hover_over_element(PredefinedStepDefinitions.java:188)
-	at ?.Then I hover over element having id "pop_alert"(features/navigationSteps.feature:49)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"pop_alert"}
-Command duration or timeout: 20.03 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByTagName(RemoteWebDriver.java:417)
+	at org.openqa.selenium.By$ByTagName.findElement(By.java:330)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at methods.NavigateMethods.zoomInOut(NavigateMethods.java:65)
+	at stepDefintions.PredefinedStepDefinitions.zoom_in(PredefinedStepDefinitions.java:116)
+	at ?.Then I zoom in page(features/navigationSteps.feature:31)
+
+Scenario: Zoom in/out web page  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
 Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
 System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-*** Element info: {Using=id, value=pop_alert}
-Session ID: 96ae8ca4-7b1f-4390-a039-89372c14564c
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=37.0.1}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByTagName(RemoteWebDriver.java:417)
+	at org.openqa.selenium.By$ByTagName.findElement(By.java:330)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at methods.NavigateMethods.zoomInOut(NavigateMethods.java:65)
+	at stepDefintions.PredefinedStepDefinitions.zoom_in(PredefinedStepDefinitions.java:116)
+	at ?.Then I zoom in page(features/navigationSteps.feature:31)
+
+Then I scroll to element having id "demo"(Scenario: Scroll web page)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
 	at org.openqa.selenium.By$ById.findElement(By.java:214)
@@ -267,88 +458,17 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
 	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
-	at methods.NavigateMethods.hoverOverElement(NavigateMethods.java:122)
-	at stepDefintions.PredefinedStepDefinitions.hover_over_element(PredefinedStepDefinitions.java:188)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at cucumber.runtime.Utils$1.call(Utils.java:34)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
-	at cucumber.runtime.Utils.invoke(Utils.java:30)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:35)
-	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
-	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
-	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
-	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
-	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
-	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"pop_alert"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
-System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10271)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
+	at methods.NavigateMethods.scrollToElement(NavigateMethods.java:124)
+	at stepDefintions.PredefinedStepDefinitions.scroll_to_element(PredefinedStepDefinitions.java:159)
+	at ?.Then I scroll to element having id "demo"(features/navigationSteps.feature:36)
 
-Scenario: Hover over elelment  Time elapsed: 0.015 sec  <<< ERROR!
-org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for presence of element located by: By.id: pop_alert
+Scenario: Scroll web page  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
 Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
 System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Session ID: 96ae8ca4-7b1f-4390-a039-89372c14564c
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=37.0.1}]
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:79)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at methods.NavigateMethods.hoverOverElement(NavigateMethods.java:122)
-	at stepDefintions.PredefinedStepDefinitions.hover_over_element(PredefinedStepDefinitions.java:188)
-	at ?.Then I hover over element having id "pop_alert"(features/navigationSteps.feature:49)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"pop_alert"}
-Command duration or timeout: 20.03 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
-System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-*** Element info: {Using=id, value=pop_alert}
-Session ID: 96ae8ca4-7b1f-4390-a039-89372c14564c
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=37.0.1}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
 	at org.openqa.selenium.By$ById.findElement(By.java:214)
@@ -358,88 +478,81 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
 	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
-	at methods.NavigateMethods.hoverOverElement(NavigateMethods.java:122)
-	at stepDefintions.PredefinedStepDefinitions.hover_over_element(PredefinedStepDefinitions.java:188)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at cucumber.runtime.Utils$1.call(Utils.java:34)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
-	at cucumber.runtime.Utils.invoke(Utils.java:30)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:35)
-	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
-	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
-	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
-	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
-	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
-	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"pop_alert"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
-System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10271)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
+	at methods.NavigateMethods.scrollToElement(NavigateMethods.java:124)
+	at stepDefintions.PredefinedStepDefinitions.scroll_to_element(PredefinedStepDefinitions.java:159)
+	at ?.Then I scroll to element having id "demo"(features/navigationSteps.feature:36)
 
-Then I click on link having text "selenium-cucumber gem "(Scenario: Switching to new window by handle)  Time elapsed: 0.001 sec  <<< ERROR!
-org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for presence of element located by: By.linkText: selenium-cucumber gem 
+Then I hover over element having id "hover_it"(Scenario: Hover over elelment)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
 Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
 System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Session ID: 96ae8ca4-7b1f-4390-a039-89372c14564c
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=37.0.1}]
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:79)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
-	at stepDefintions.PredefinedStepDefinitions.click_link(PredefinedStepDefinitions.java:438)
-	at ?.Then I click on link having text "selenium-cucumber gem "(features/navigationSteps.feature:66)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"link text","selector":"selenium-cucumber gem "}
-Command duration or timeout: 20.08 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.NavigateMethods.hoverOverElement(NavigateMethods.java:114)
+	at stepDefintions.PredefinedStepDefinitions.hover_over_element(PredefinedStepDefinitions.java:169)
+	at ?.Then I hover over element having id "hover_it"(features/navigationSteps.feature:41)
+
+Scenario: Hover over elelment  Time elapsed: 0.001 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
 Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
 System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-*** Element info: {Using=link text, value=selenium-cucumber gem }
-Session ID: 96ae8ca4-7b1f-4390-a039-89372c14564c
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=37.0.1}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.NavigateMethods.hoverOverElement(NavigateMethods.java:114)
+	at stepDefintions.PredefinedStepDefinitions.hover_over_element(PredefinedStepDefinitions.java:169)
+	at ?.Then I hover over element having id "hover_it"(features/navigationSteps.feature:41)
+
+Then I resize browser window size to width 400 and height 400(Scenario: Interacting with browser)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.setSize(RemoteWebDriver.java:801)
+	at methods.NavigateMethods.resizeBrowser(NavigateMethods.java:98)
+	at stepDefintions.PredefinedStepDefinitions.resize_browser(PredefinedStepDefinitions.java:93)
+	at ?.Then I resize browser window size to width 400 and height 400(features/navigationSteps.feature:45)
+
+Scenario: Interacting with browser  Time elapsed: 0.001 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.setSize(RemoteWebDriver.java:801)
+	at methods.NavigateMethods.resizeBrowser(NavigateMethods.java:98)
+	at stepDefintions.PredefinedStepDefinitions.resize_browser(PredefinedStepDefinitions.java:93)
+	at ?.Then I resize browser window size to width 400 and height 400(features/navigationSteps.feature:45)
+
+Then I click on link having text "selenium-cucumber website"(Scenario: Switching to new window by handle)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:401)
 	at org.openqa.selenium.By$ByLinkText.findElement(By.java:242)
@@ -450,87 +563,16 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
 	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
-	at stepDefintions.PredefinedStepDefinitions.click_link(PredefinedStepDefinitions.java:438)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at cucumber.runtime.Utils$1.call(Utils.java:34)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
-	at cucumber.runtime.Utils.invoke(Utils.java:30)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:35)
-	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
-	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
-	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
-	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
-	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
-	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"link text","selector":"selenium-cucumber gem "}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
-System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10271)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
+	at stepDefintions.PredefinedStepDefinitions.click_link(PredefinedStepDefinitions.java:452)
+	at ?.Then I click on link having text "selenium-cucumber website"(features/navigationSteps.feature:49)
 
-Scenario: Switching to new window by handle  Time elapsed: 0.001 sec  <<< ERROR!
-org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for presence of element located by: By.linkText: selenium-cucumber gem 
+Scenario: Switching to new window by handle  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
 Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
 System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Session ID: 96ae8ca4-7b1f-4390-a039-89372c14564c
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=37.0.1}]
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:79)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
-	at stepDefintions.PredefinedStepDefinitions.click_link(PredefinedStepDefinitions.java:438)
-	at ?.Then I click on link having text "selenium-cucumber gem "(features/navigationSteps.feature:66)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"link text","selector":"selenium-cucumber gem "}
-Command duration or timeout: 20.08 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
-System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-*** Element info: {Using=link text, value=selenium-cucumber gem }
-Session ID: 96ae8ca4-7b1f-4390-a039-89372c14564c
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=37.0.1}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:401)
 	at org.openqa.selenium.By$ByLinkText.findElement(By.java:242)
@@ -541,136 +583,242 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
 	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
-	at stepDefintions.PredefinedStepDefinitions.click_link(PredefinedStepDefinitions.java:438)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at cucumber.runtime.Utils$1.call(Utils.java:34)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
-	at cucumber.runtime.Utils.invoke(Utils.java:30)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:35)
-	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
-	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
-	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
-	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
-	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
-	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"link text","selector":"selenium-cucumber gem "}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+	at stepDefintions.PredefinedStepDefinitions.click_link(PredefinedStepDefinitions.java:452)
+	at ?.Then I click on link having text "selenium-cucumber website"(features/navigationSteps.feature:49)
+
+Then I click on link having text "selenium-cucumber website"(Scenario: Switching to new window by Title)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
 Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
 System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10271)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:401)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
+	at stepDefintions.PredefinedStepDefinitions.click_link(PredefinedStepDefinitions.java:452)
+	at ?.Then I click on link having text "selenium-cucumber website"(features/navigationSteps.feature:58)
 
-Then I switch to window having title "Selenium-Cucumber | Code Less? Test More?"(Scenario: Switching to new window by Title)  Time elapsed: 0 sec  <<< ERROR!
-java.lang.Exception: Window having title Selenium-Cucumber | Code Less? Test More? not found
-	at methods.NavigateMethods.switchToWindowByTitle(NavigateMethods.java:191)
-	at stepDefintions.PredefinedStepDefinitions.switch_to_window_by_title(PredefinedStepDefinitions.java:61)
-	at ?.Then I switch to window having title "Selenium-Cucumber | Code Less? Test More?"(features/navigationSteps.feature:73)
-
-Scenario: Switching to new window by Title  Time elapsed: 0 sec  <<< ERROR!
-java.lang.Exception: Window having title Selenium-Cucumber | Code Less? Test More? not found
-	at methods.NavigateMethods.switchToWindowByTitle(NavigateMethods.java:191)
-	at stepDefintions.PredefinedStepDefinitions.switch_to_window_by_title(PredefinedStepDefinitions.java:61)
-	at ?.Then I switch to window having title "Selenium-Cucumber | Code Less? Test More?"(features/navigationSteps.feature:73)
-
-Then I switch to frame having name or id "one"(Scenario: Moving to frames)  Time elapsed: 0 sec  <<< ERROR!
-org.openqa.selenium.NoSuchFrameException: Unable to locate frame: one
-Command duration or timeout: 20.09 seconds
+Scenario: Switching to new window by Title  Time elapsed: 0.001 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
 Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
 System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Session ID: 96ae8ca4-7b1f-4390-a039-89372c14564c
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=37.0.1}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:874)
-	at methods.NavigateMethods.switchFrameByNameorId(NavigateMethods.java:214)
-	at methods.NavigateMethods.switchFrameByMethods(NavigateMethods.java:234)
-	at stepDefintions.PredefinedStepDefinitions.switch_frame_by_element(PredefinedStepDefinitions.java:96)
-	at ?.Then I switch to frame having name or id "one"(features/navigationSteps.feature:83)
-Caused by: org.openqa.selenium.NoSuchFrameException: Unable to locate frame: one
-Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
-System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.switchToFrame(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10340)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12274)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:603)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:401)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.ClickElementsMethods.click(ClickElementsMethods.java:21)
+	at stepDefintions.PredefinedStepDefinitions.click_link(PredefinedStepDefinitions.java:452)
+	at ?.Then I click on link having text "selenium-cucumber website"(features/navigationSteps.feature:58)
 
-Scenario: Moving to frames  Time elapsed: 0 sec  <<< ERROR!
-org.openqa.selenium.NoSuchFrameException: Unable to locate frame: one
-Command duration or timeout: 20.09 seconds
+Then I switch to frame having name "frame_one"(Scenario: Moving to frames)  Time elapsed: 0.001 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
 Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
 System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Session ID: 96ae8ca4-7b1f-4390-a039-89372c14564c
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=37.0.1}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:874)
-	at methods.NavigateMethods.switchFrameByNameorId(NavigateMethods.java:214)
-	at methods.NavigateMethods.switchFrameByMethods(NavigateMethods.java:234)
-	at stepDefintions.PredefinedStepDefinitions.switch_frame_by_element(PredefinedStepDefinitions.java:96)
-	at ?.Then I switch to frame having name or id "one"(features/navigationSteps.feature:83)
-Caused by: org.openqa.selenium.NoSuchFrameException: Unable to locate frame: one
-Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
-System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.switchToFrame(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10340)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12274)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Anup/AppData/Local/Temp/anonymous7417395013870924125webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:603)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:425)
+	at org.openqa.selenium.By$ByName.findElement(By.java:299)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.NavigateMethods.switchFrame(NavigateMethods.java:197)
+	at stepDefintions.PredefinedStepDefinitions.switch_frame_by_element(PredefinedStepDefinitions.java:77)
+	at ?.Then I switch to frame having name "frame_one"(features/navigationSteps.feature:67)
 
-Then element having id "hiddenElement" should not be present(Scenario: wait for elements to display)  Time elapsed: 0 sec  <<< ERROR!
-methods.TestCaseFailed: Element Present
-	at methods.AssertionMethods.checkElementPresence(AssertionMethods.java:222)
-	at stepDefintions.PredefinedStepDefinitions.check_element_presence(PredefinedStepDefinitions.java:254)
-	at ?.Then element having id "hiddenElement" should not be present(features/progressSteps.feature:9)
+Scenario: Moving to frames  Time elapsed: 0.001 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:425)
+	at org.openqa.selenium.By$ByName.findElement(By.java:299)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.NavigateMethods.switchFrame(NavigateMethods.java:197)
+	at stepDefintions.PredefinedStepDefinitions.switch_frame_by_element(PredefinedStepDefinitions.java:77)
+	at ?.Then I switch to frame having name "frame_one"(features/navigationSteps.feature:67)
+
+Given I navigate to "http://selenium-cucumber.github.io/"(Scenario: Open test page)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at methods.NavigateMethods.navigateTo(NavigateMethods.java:24)
+	at stepDefintions.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:17)
+	at ?.Given I navigate to "http://selenium-cucumber.github.io/"(features/progressSteps.feature:5)
+
+Scenario: Open test page  Time elapsed: 0.001 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at methods.NavigateMethods.navigateTo(NavigateMethods.java:24)
+	at stepDefintions.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:17)
+	at ?.Given I navigate to "http://selenium-cucumber.github.io/"(features/progressSteps.feature:5)
+
+Then I wait 15 seconds for element having id "hiddenElement" to display(Scenario: wait for elements to display)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.ProgressMethods.waitForElementToDisplay(ProgressMethods.java:32)
+	at stepDefintions.PredefinedStepDefinitions.wait_for_ele_to_display(PredefinedStepDefinitions.java:476)
+	at ?.Then I wait 15 seconds for element having id "hiddenElement" to display(features/progressSteps.feature:10)
 
 Scenario: wait for elements to display  Time elapsed: 0 sec  <<< ERROR!
-methods.TestCaseFailed: Element Present
-	at methods.AssertionMethods.checkElementPresence(AssertionMethods.java:222)
-	at stepDefintions.PredefinedStepDefinitions.check_element_presence(PredefinedStepDefinitions.java:254)
-	at ?.Then element having id "hiddenElement" should not be present(features/progressSteps.feature:9)
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.ProgressMethods.waitForElementToDisplay(ProgressMethods.java:32)
+	at stepDefintions.PredefinedStepDefinitions.wait_for_ele_to_display(PredefinedStepDefinitions.java:476)
+	at ?.Then I wait 15 seconds for element having id "hiddenElement" to display(features/progressSteps.feature:10)
+
+Then element having id "disabledBt" should be disabled(Scenario: wait for elements to enabled)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.AssertionMethods.isElementEnabled(AssertionMethods.java:128)
+	at methods.AssertionMethods.checkElementEnable(AssertionMethods.java:139)
+	at stepDefintions.PredefinedStepDefinitions.check_element_enable(PredefinedStepDefinitions.java:227)
+	at ?.Then element having id "disabledBt" should be disabled(features/progressSteps.feature:15)
+
+Scenario: wait for elements to enabled  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at methods.AssertionMethods.isElementEnabled(AssertionMethods.java:128)
+	at methods.AssertionMethods.checkElementEnable(AssertionMethods.java:139)
+	at stepDefintions.PredefinedStepDefinitions.check_element_enable(PredefinedStepDefinitions.java:227)
+	at ?.Then element having id "disabledBt" should be disabled(features/progressSteps.feature:15)
+
+Given I navigate to "http://selenium-cucumber.github.io/"(Scenario: Open test page)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at methods.NavigateMethods.navigateTo(NavigateMethods.java:24)
+	at stepDefintions.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:17)
+	at ?.Given I navigate to "http://selenium-cucumber.github.io/"(features/screenshotfeature.feature:5)
+
+Scenario: Open test page  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at methods.NavigateMethods.navigateTo(NavigateMethods.java:24)
+	at stepDefintions.PredefinedStepDefinitions.navigate_to(PredefinedStepDefinitions.java:17)
+	at ?.Given I navigate to "http://selenium-cucumber.github.io/"(features/screenshotfeature.feature:5)
+
+Then I take screenshot(Scenario: take screenshot)  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: FirefoxDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.firefox.FirefoxDriver.getScreenshotAs(FirefoxDriver.java:323)
+	at methods.ScreenShotMethods.takeScreenShot(ScreenShotMethods.java:20)
+	at stepDefintions.PredefinedStepDefinitions.take_screenshot(PredefinedStepDefinitions.java:508)
+	at ?.Then I take screenshot(features/screenshotfeature.feature:8)
+
+Scenario: take screenshot  Time elapsed: 0.001 sec  <<< ERROR!
+org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'VI-D057', ip: '10.10.9.106', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: FirefoxDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.firefox.FirefoxDriver.getScreenshotAs(FirefoxDriver.java:323)
+	at methods.ScreenShotMethods.takeScreenShot(ScreenShotMethods.java:20)
+	at stepDefintions.PredefinedStepDefinitions.take_screenshot(PredefinedStepDefinitions.java:508)
+	at ?.Then I take screenshot(features/screenshotfeature.feature:8)
 

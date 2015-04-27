@@ -70,30 +70,11 @@ public class PredefinedStepDefinitions implements BaseTest
 		
 	// Switch between frame 
 		
-		/*@Then("^I switch to frame having name or id \"(.*?)\"$")
-		public void switch_frame_by_nameorid(String nameorid) {
-		    // Write code here that turns the phrase above into concrete actions
-			navigationObj.switchFrameByNameorid(nameorid);
-		}
-		// Step to switch to frame by index
-		@Then("^I switch to frame having index \"(.*?)\" $") 
-		public void switch_frame_by_index(int index)
-		{
-			navigationObj.switchFrameByIndex(index);
-		}
-		  
-		// Step to switch to frame by name or id
-		@Then("^I switch to frame having name or id \"(.*?)\"$") 
-		public void switch_frame_by_nameorid(String nameorid)
-		{
-			navigationObj.switchFrameByNameorid(nameorid);
-		}*/
-		
 		// Step to switch to frame by web element
 		@Then("^I switch to frame having (.+) \"(.*?)\"$") 
 		public void switch_frame_by_element(String method, String value)
 		{
-			navigationObj.switchFrameByMethods(method, value);
+			navigationObj.switchFrame(method, value);
 		}
 			
 		// step to switch to main content
@@ -194,10 +175,10 @@ public class PredefinedStepDefinitions implements BaseTest
 	 * @param present : 
 	 * @param title :
 	 */
-	@Then("^I should\\s*((?:not)?)\\s+see page title as \"(.*?)\"$")
+	@Then("^I should\\s*((?:not)?)\\s+see page title as \"(.+)\"$")
 	public void check_title(String present,String title) throws TestCaseFailed
 	{
-		System.out.println("Present :" + present.isEmpty());
+		//System.out.println("Present :" + present.isEmpty());
 		assertionObj.checkTitle(title,present.isEmpty());
 	}
 	
@@ -205,7 +186,7 @@ public class PredefinedStepDefinitions implements BaseTest
 	@Then("^I should\\s*((?:not)?)\\s+see page title having partial text as \"(.*?)\"$")
 	public void check_partial_text(String present, String partialTextTitle) throws TestCaseFailed
 	{
-		System.out.println("Present :" + present.isEmpty());
+		//System.out.println("Present :" + present.isEmpty());
 		assertionObj.checkPartialTitle(partialTextTitle, present.isEmpty());
 	}
 		
@@ -302,14 +283,13 @@ public class PredefinedStepDefinitions implements BaseTest
 		assertionObj.checkAlertText(actualValue);
 	}
 		
-	// step to assert dropdown list
+	// step to select dropdown list
 	@Then("^option \"(.*?)\" by (.+) from dropdown having (.+) \"(.*?)\" should be (selected|unselected)$")
 	public void is_option_from_dropdown_selected(String option,String by,String type,String accessName,String state) throws Exception
 	{
 		miscmethodObj.validateLocator(type);
 		boolean flag = state.equals("selected");
 		assertionObj.isOptionFromDropdownSelected(type,by,option,accessName,flag);
-		//ruby : is_option_from_dropdown_selected(type, by, option, access_name, state)
 	}
 	
 	//Input steps
@@ -330,21 +310,55 @@ public class PredefinedStepDefinitions implements BaseTest
 		inputObj.clearText(type, accessName);
 	}
 
-	// select option by text/value from dropdown/multiselect
-	@Then("^I select \"(.*?)\" option by (.+) from\\s*((?:multiselect)?)\\sdropdown having (.+) \"(.*?)\"$")
-	public void select_option_from_dropdown(String option,String optionBy, String present,String type,String accessName) throws Exception
+	// select option by text/value from dropdown
+	@Then("^I select \"(.*?)\" option by (.+) from dropdown having (.+) \"(.*?)\"$")
+	public void select_option_from_dropdown(String option,String optionBy,String type,String accessName) throws Exception
 	{
 		miscmethodObj.validateLocator(type);
 		miscmethodObj.validateOptionBy(optionBy);
 		inputObj.selectOptionFromDropdown(type,optionBy, option, accessName);
 	}
-
-	// select option by index from dropdown/multiselect
-	@Then("^I select (\\d+) option by index from\\s*((?:multiselect)?)\\sdropdown having (.+) \"(.*?)\"$")
-	public void select_option_from_dropdown(String option, String present, String type, String accessName) throws Exception
+	
+	// select option by index from dropdown
+	@Then("^I select (\\d+) option by index from dropdown having (.+) \"(.*?)\"$")
+	public void select_option_from_dropdown_by_index(String option, String type, String accessName) throws Exception
 	{
 		miscmethodObj.validateLocator(type);
 		inputObj.selectOptionFromDropdown(type,"selectByIndex", option, accessName);
+	}
+		
+	// select option by text/value from multiselect
+	@Then("^I select \"(.*?)\" option by (.+) from multiselect dropdown having (.+) \"(.*?)\"$")
+	public void select_option_from_multiselect_dropdown(String option,String optionBy, String type,String accessName) throws Exception
+	{
+		miscmethodObj.validateLocator(type);
+		miscmethodObj.validateOptionBy(optionBy);
+		inputObj.selectOptionFromDropdown(type,optionBy, option, accessName);
+	}
+	
+	// select option by index from multiselect
+	@Then("^I select (\\d+) option by index from multiselect dropdown having (.+) \"(.*?)\"$")
+	public void select_option_from_multiselect_dropdown_by_index(String option, String type, String accessName) throws Exception
+	{
+		miscmethodObj.validateLocator(type);
+		inputObj.selectOptionFromDropdown(type,"selectByIndex", option, accessName);
+	}
+	
+	// deselect option by text/value from multiselect
+	@Then("^I deselect \"(.*?)\" option by (.+) from multiselect dropdown having (.+) \"(.*?)\"$")
+	public void deselect_option_from_multiselect_dropdown(String option,String optionBy, String type,String accessName) throws Exception
+	{
+		miscmethodObj.validateLocator(type);
+		miscmethodObj.validateOptionBy(optionBy);
+		inputObj.deselectOptionFromDropdown(type, optionBy, option, accessName);
+	}
+		
+	// deselect option by index from multiselect
+	@Then("^I deselect (\\d+) option by index from multiselect dropdown having (.+) \"(.*?)\"$")
+	public void deselect_option_from_multiselect_dropdown_by_index(String option, String type, String accessName) throws Exception
+	{
+		miscmethodObj.validateLocator(type);
+		inputObj.deselectOptionFromDropdown(type, "selectByIndex", option, accessName);
 	}
 
 	// step to select option from mutliselect dropdown list
@@ -357,7 +371,7 @@ public class PredefinedStepDefinitions implements BaseTest
 	}*/
 
 	// step to unselect option from mutliselect dropdown list
-	@Then("^I unselect all options from multiselect dropdown having (.+) \"(.*?)\"$")
+	@Then("^I deselect all options from multiselect dropdown having (.+) \"(.*?)\"$")
 	public void unselect_all_option_from_multiselect_dropdown(String type, String accessName) throws Exception
 	{
 		miscmethodObj.validateLocator(type);
@@ -397,12 +411,12 @@ public class PredefinedStepDefinitions implements BaseTest
 	}
 
 	// steps to select option by text from radio button group
-	@Then("^I select \"(.*?)\" option by value from radio button group having (.+) \"(.*?)\"$")
-	public void select_option_from_radio_btn_group(String option, String type, String accessName) throws Exception
+	@Then("^I select \"(.*?)\" option by (.+) from radio button group having (.+) \"(.*?)\"$")
+	public void select_option_from_radio_btn_group(String option,String by, String type, String accessName) throws Exception
 	{
 		miscmethodObj.validateLocator(type);
 		//miscmethodObj.validateOptionBy(optionBy);
-		inputObj.selectOptionFromRadioButtonGroup(type, option, accessName);
+		inputObj.selectOptionFromRadioButtonGroup(type, option, by, accessName);
 	}
 	
 	//Click element Steps 
@@ -463,7 +477,7 @@ public class PredefinedStepDefinitions implements BaseTest
 	}
   
 	// wait for specific element to enable for specific period of time
-	@Then("^I wait (\\d+) seconds for element having (.+) \"(.*?)\" to be clickable$")
+	@Then("^I wait (\\d+) seconds for element having (.+) \"(.*?)\" to be enabled$")
 	public void wait_for_ele_to_click(String duration, String type, String accessName) throws Exception
 	{
 		miscmethodObj.validateLocator(type);
