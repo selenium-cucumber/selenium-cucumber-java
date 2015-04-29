@@ -5,3 +5,6 @@ Feature: Configuration Printing Step
  	
         Given I print configuration
  		Given I navigate to "http://selenium-cucumber.github.io/"
+ 		
+ 		Scenario: close browser
+ 	Then I close browser

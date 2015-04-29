@@ -71,3 +71,6 @@ Feature: Navigation Steps
     Then element having id "frame2_email" should be present
     Then I switch to main content
     Then element having xpath "//iframe[@name='frame_one']" should be present   
+    
+    Scenario: close browser
+ 	Then I close browser

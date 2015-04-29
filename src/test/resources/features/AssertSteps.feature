@@ -122,3 +122,6 @@ Feature: Assertion Steps
     When I click on element having id "try_it"
     Then I should see alert text as "Press a button!"
     Then I accept alert
+    
+    Scenario: close browser
+ 	Then I close browser

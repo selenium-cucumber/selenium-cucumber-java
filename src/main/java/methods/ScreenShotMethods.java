@@ -28,7 +28,9 @@ public class ScreenShotMethods implements BaseTest
 		
 		File currentDirFile = new File("Screenshots");
 		String path = currentDirFile.getAbsolutePath();
-		System.out.println("path: " +path);
+		System.out.println("path: " +path+"+++");
+		
+		System.out.println("****\n"+path+"\\screenshot"+dateFormat.format(cal.getTime())+".png");
 		
 		FileUtils.copyFile(scrFile, new File(path+"\\screenshot"+dateFormat.format(cal.getTime())+".png"));
 		

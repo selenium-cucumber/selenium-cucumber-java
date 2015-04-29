@@ -15,3 +15,6 @@ Feature: Progress Steps
  		Then element having id "disabledBt" should be disabled
  		Then I wait 15 seconds for element having id "disabledBt" to be enabled
  		Then element having id "disabledBt" should be enabled
+ 		
+ 		Scenario: close browser
+ 	Then I close browser

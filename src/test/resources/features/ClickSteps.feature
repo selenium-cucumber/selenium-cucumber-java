@@ -24,3 +24,6 @@ Feature: Click On Elements
 
 		Then I click on link having partial text "Home"
 		Then I should see page title as "Selenium-Cucumber | Code Less… Test More…"
+		
+		Scenario: close browser
+ 	Then I close browser

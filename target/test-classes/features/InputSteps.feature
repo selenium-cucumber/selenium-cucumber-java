@@ -66,3 +66,6 @@ Feature: Input Step
   Scenario: selecting radio button from group
     Then I select "F" option by value from radio button group having name "radio_gender"
     Then radio button having xpath ".//*[@id='frm']/fieldset/p[6]/input[2]" should be selected
+    
+    Scenario: close browser
+ 	Then I close browser

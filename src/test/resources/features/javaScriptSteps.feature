@@ -16,4 +16,7 @@ Feature: Javasciprt Handling Steps
        	Then I click on element having id "try_it"
  		Then I dismiss alert
  		Then element having id "demo" should have text as "You pressed Cancel!"
+ 		
+ 		Scenario: close browser
+ 	Then I close browser
 		
