@@ -5,8 +5,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -31,26 +29,23 @@ public class Env
 			switch (browser.toLowerCase()) {
 			case "ff":
 			case "firefox":
-				System.out.println("Firefox is selected");
-				ProfilesIni allProfiles = new ProfilesIni();
-				FirefoxProfile profile = allProfiles.getProfile("selenium");
-				driver = new FirefoxDriver(profile);
+				//ProfilesIni allProfiles = new ProfilesIni();
+				//FirefoxProfile profile = allProfiles.getProfile("selenium");
+				//driver = new FirefoxDriver(profile);
+				driver = new FirefoxDriver();
 				break;
 
 			case "ch":
 			case "chrome":
-				System.out.println("Google chrome is selected");
 				driver = new ChromeDriver();
 				break;
 
 			case "ie" :
 			case "internetexplorer":
-				System.out.println("Internet Explorer is selected");
 				driver = new InternetExplorerDriver();
 				break;
 
 			case "safari":
-				System.out.println("Safari is selected");
 				driver = new SafariDriver();
 				break;
 				

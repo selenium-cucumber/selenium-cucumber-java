@@ -4,4 +4,7 @@ Feature: Configuration Printing Step
  	Scenario: Print Configuration
  	
         Given I print configuration
- 		Given I navigate to "http://www.googledrive.com/host/0B9vZ2s1ustr6eTZDbWlTcThveXM"
+ 		Given I navigate to "http://selenium-cucumber.github.io/"
+ 		
+ 		Scenario: close browser
+ 	Then I close browser

@@ -3,7 +3,7 @@ Feature: Javasciprt Handling Steps
         As a user I should able to handle javascript pop-up 
 
 	Scenario: Open test page
- 		Given I navigate to "http://www.googledrive.com/host/0B9vZ2s1ustr6eTZDbWlTcThveXM" 
+ 		Given I navigate to "http://selenium-cucumber.github.io/" 
  	
  	Scenario: accept alert
 
@@ -16,4 +16,7 @@ Feature: Javasciprt Handling Steps
        	Then I click on element having id "try_it"
  		Then I dismiss alert
  		Then element having id "demo" should have text as "You pressed Cancel!"
+ 		
+ 		Scenario: close browser
+ 	Then I close browser
 		

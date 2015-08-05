@@ -1,15 +1,16 @@
 package stepDefintions;
 
+import org.junit.runner.RunWith;
+
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
-import org.junit.runner.RunWith;
-
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin = {"pretty"},
+		plugin = {"html:target/cucumberHtmlReport"},
+		//pretty:target/cucumber-json-report.json
 		features = "classpath:features"
 )
+
 public class RunCukeTest {
-	
 }
