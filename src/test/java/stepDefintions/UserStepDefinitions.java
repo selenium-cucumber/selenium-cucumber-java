@@ -1,5 +1,6 @@
 package stepDefintions;
+import env.BaseTest;
 
-public class UserStepDefinitions{
+public class UserStepDefinitions implements BaseTest{
 
 }
