@@ -32,20 +32,20 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-        
-    	<!-- These are the selenium-webdriver dependencies -->	
+
+    	<!-- These are the selenium-webdriver dependencies -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>2.45.0</version>
 		</dependency>
-	
+
 		<dependency>
 	        <groupId>org.seleniumhq.selenium</groupId>
 	        <artifactId>selenium-server</artifactId>
 	        <version>2.45.0</version>
 	    </dependency>
-	    
+
 	    <!-- These are the selenium-cucumber methods dependencies -->
 		<dependency>
 		    <groupId>sample</groupId>
@@ -54,10 +54,10 @@
 		    <type>jar</type>
 		    <scope>system</scope>
 		    <systemPath>${project.basedir}/src/main/resources/selenium-cucumber-methods-1.0.0.jar</systemPath>
-		</dependency>  
+		</dependency>
 	</dependencies>
 
-    
+
     <build>
         <plugins>
             <plugin>
@@ -69,7 +69,7 @@
                     <source>1.7</source>
                     <target>1.7</target>
                     <compilerArgument>-Werror</compilerArgument>
-                    
+
                     <systemPropertyVariables>
                     	<property>
                     		<name>browser</name>

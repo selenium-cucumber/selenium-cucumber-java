@@ -9,16 +9,14 @@ import methods.MiscMethods;
 import methods.NavigateMethods;
 import methods.ProgressMethods;
 import methods.ScreenShotMethods;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public interface BaseTest 
+public interface BaseTest
 {
 	public static WebDriver driver = Env.CreateWebDriver(Env.getBrowserName());
 	public static WebDriverWait wait = new WebDriverWait(driver, 30);
-	
-	
+
 	MiscMethods miscmethodObj = new MiscMethods();
 	NavigateMethods navigationObj = new NavigateMethods();
 	AssertionMethods assertionObj = new AssertionMethods();

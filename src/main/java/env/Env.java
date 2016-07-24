@@ -8,20 +8,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-public class Env 
+public class Env
 {
 	static WebDriver driver = null;
 	static String browserName = null;
-	
+
 	public static String getBrowserName()
 	{
-		browserName = System.getProperty("browser"); 
-		
+		browserName = System.getProperty("browser");
+
 		if(browserName == null)
 			browserName = "ff";
 		return browserName;
 	}
-	
+
 	public static WebDriver CreateWebDriver(String browser)
 	{
 			System.out.println("Browser: " + browser);
@@ -48,13 +48,13 @@ public class Env
 			case "safari":
 				driver = new SafariDriver();
 				break;
-				
+
 			 default:
 				 System.out.println("Invalid browser name "+browser);
 				 System.exit(0);
-					break;	
+					break;
 			}//switch
-				
+
 			driver.manage().deleteAllCookies();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
@@ -63,4 +63,5 @@ public class Env
 
 			return driver;
         }
-	}
+
+}
