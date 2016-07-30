@@ -16,7 +16,7 @@ public class Env {
 		browserName = System.getProperty("browser");
 
 		if (browserName == null)
-			browserName = "ff";
+			browserName = "chrome";
 		return browserName;
 	}
 
