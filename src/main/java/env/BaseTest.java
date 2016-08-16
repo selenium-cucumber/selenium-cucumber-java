@@ -13,19 +13,32 @@ import methods.ScreenShotMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public interface BaseTest 
-{
-	public static WebDriver driver = Env.CreateWebDriver(Env.getBrowserName());
+import webdriver.sqa.ManagedWebDriver;
+
+import com.harmonia.qa.webdriver.tests.base.CommonUtils;
+import com.harmonia.qa.webdriver.utilities.BasicWebDriverManager;
+
+public interface BaseTest {
+
+	public static WebDriver driver = new ManagedWebDriver();
+
 	public static WebDriverWait wait = new WebDriverWait(driver, 30);
-	
-	
+
 	MiscMethods miscmethodObj = new MiscMethods();
+
 	NavigateMethods navigationObj = new NavigateMethods();
+
 	AssertionMethods assertionObj = new AssertionMethods();
+
 	ClickElementsMethods clickObj = new ClickElementsMethods();
+
 	ConfigurationMethods configObj = new ConfigurationMethods();
+
 	InputMethods inputObj = new InputMethods();
+
 	ProgressMethods progressObj = new ProgressMethods();
+
 	JavascriptHandlingMethods javascriptObj = new JavascriptHandlingMethods();
+
 	ScreenShotMethods screenshotObj = new ScreenShotMethods();
 }
