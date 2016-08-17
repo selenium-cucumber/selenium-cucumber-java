@@ -108,6 +108,10 @@ public class UserStepDefinitions implements BaseTest{
 	@FindBy(xpath = "")
 	private WebElement landingHeader;
 
+	//Finds the Edit Profile button
+	@FindBy(xpath = "")
+	private WebElement editProfileButton;
+
 	//////////////
 	// Navigation
 	//////////////
@@ -138,6 +142,12 @@ public class UserStepDefinitions implements BaseTest{
 	@When("^User clicks confirm registration button$")
 	public void user_clicks_confirm_registration_button() throws Throwable {
 		confirmRegistrationButton.click();
+	}
+
+	//Clicks edit profile button
+	@When("^User clicks edit profile button$")
+	public void user_clicks_edit_profile_button() throws Throwable {
+		editProfileButton.click();
 	}
 
 	/////////////
