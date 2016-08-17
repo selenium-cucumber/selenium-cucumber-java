@@ -9,18 +9,20 @@ import methods.MiscMethods;
 import methods.NavigateMethods;
 import methods.ProgressMethods;
 import methods.ScreenShotMethods;
+import net.sf.cglib.proxy.Proxy;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import webdriver.sqa.ManagedWebDriver;
+import webdriver.sqa.ProxiedWebDriver;
 
 import com.harmonia.qa.webdriver.tests.base.CommonUtils;
 import com.harmonia.qa.webdriver.utilities.BasicWebDriverManager;
 
 public interface BaseTest {
 
-	public static WebDriver driver = new ManagedWebDriver();
+	public static WebDriver driver = ProxiedWebDriver.getProxiedWebDriver(BasicWebDriverManager.get().driver());
 
 	public static WebDriverWait wait = new WebDriverWait(driver, 30);
 

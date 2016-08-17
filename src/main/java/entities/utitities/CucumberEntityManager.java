@@ -4,8 +4,6 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.UUID;
 
-import org.junit.Assert;
-
 import com.harmonia.qa.Entities.BaseEntity;
 import com.harmonia.qa.Entities.Utilities.EntityManager;
 
@@ -168,7 +166,9 @@ public class CucumberEntityManager {
 				throw new RuntimeException(e);
 			}
 		}
-		Assert.assertNotNull("No entity field found with name: " + fieldName, f);
+		if (f == null) {
+			throw new RuntimeException("No entity field found with name: " + fieldName);
+		}
 		for (T ent : ents) {
 			try {
 				if (f.get(ent).equals(value)) {

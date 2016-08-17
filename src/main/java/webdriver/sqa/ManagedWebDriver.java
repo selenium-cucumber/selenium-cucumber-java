@@ -6,6 +6,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.harmonia.qa.webdriver.tests.base.CommonUtils;
 import com.harmonia.qa.webdriver.utilities.BasicWebDriverManager;
@@ -13,11 +14,12 @@ import com.harmonia.qa.webdriver.utilities.BasicWebDriverManager;
 import env.Env;
 
 /**
- * Wraps calls to the BasicWebDriverManager in the WebDriver interface.
- *
+ * Wraps calls to the BasicWebDriverManager in the WebDriver interface. TODO
+ * unused, consider for removal
+ * 
  * @author jfoley
  */
-public class ManagedWebDriver implements WebDriver {
+public class ManagedWebDriver extends RemoteWebDriver {
 
 	BasicWebDriverManager manager = BasicWebDriverManager.get();
 
@@ -57,12 +59,12 @@ public class ManagedWebDriver implements WebDriver {
 
 	@Override
 	public void close() {
-		BasicWebDriverManager.get().quit(); //TODO
+		manager.quit(); //TODO
 	}
 
 	@Override
 	public void quit() {
-		BasicWebDriverManager.get().quit();
+		manager.quit();
 	}
 
 	@Override

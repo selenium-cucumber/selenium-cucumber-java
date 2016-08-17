@@ -23,6 +23,7 @@
         <dynamicWaitTimeout>10</dynamicWaitTimeout>
         <ajaxCompletionTimeout>10</ajaxCompletionTimeout>
         <ajaxPollingInterval>5</ajaxPollingInterval>
+        <cucumberReportDir>target/cucumberHtmlReport</cucumberReportDir>
     </properties>
 
     <dependencies>
@@ -50,27 +51,27 @@
             <scope>test</scope>
         </dependency>
         
-    	<!-- These are the selenium-webdriver dependencies -->	
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>2.45.0</version>
-		</dependency>
-	
-		<dependency>
-	        <groupId>org.seleniumhq.selenium</groupId>
-	        <artifactId>selenium-server</artifactId>
-	        <version>2.53.0</version>
-	    </dependency>  
+        <!-- These are the selenium-webdriver dependencies -->    
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.53.0</version>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>2.53.0</version>
+        </dependency>  
 
-	    <!-- SQA dependencies -->
-	    <dependency>
-	        <groupId>com.harmonia.qa</groupId>
-		    <artifactId>automation-base</artifactId>
-		    <version>0.0.12</version>
-	    </dependency>
+        <!-- SQA dependencies -->
+        <dependency>
+            <groupId>com.harmonia.qa</groupId>
+            <artifactId>automation-base</artifactId>
+            <version>0.0.12-ALPHA</version>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
     
     <build>
         <resources>
@@ -81,7 +82,15 @@
         </resources>
 
         <plugins>
-            <plugin>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-clean-plugin</artifactId>
+               <version>2.5</version>
+               <executions>
+
+               </executions>
+           </plugin>
+        <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.2</version>
@@ -92,12 +101,52 @@
                     <compilerArgument>-Werror</compilerArgument>
                     
                     <systemPropertyVariables>
-                    	<property>
-                    		<name>browser</name>
-                    		<value>${browser}</value>
-                     	</property>
+                        <property>
+                            <name>browser</name>
+                            <value>${browser}</value>
+                         </property>
                      </systemPropertyVariables>
                 </configuration>
+            </plugin>
+             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-install-plugin</artifactId>
+               <version>2.5.1</version>
+               <configuration>
+                    <file>${project.basedir}/ExternalLibs/automation-base-0.0.12-ALPHA.jar</file>
+                    <sources>${project.basedir}/ExternalLibs/automation-base-0.0.12-ALPHA-sources.jar</sources>
+                    <pomFile>${project.basedir}/ExternalLibs/automation-base-0.0.12-ALPHA.pom</pomFile>
+               </configuration>
+              <executions>
+                  <execution>
+                     <id>installAutomationBase</id>
+                         <phase>clean</phase>
+                         <goals>
+                             <goal>install-file</goal>
+                         </goals>
+                  </execution>
+              </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                <execution>
+                <!--  prevents exception from multiple threads attempting to create dir in parallel -->
+                    <id>createCucumberReportsDir</id>
+                    <phase>process-resources</phase>
+                    <configuration>
+                        <tasks>
+                            <delete dir="${cucumberReportDir}"/>
+                            <mkdir dir="${cucumberReportDir}"/>
+                        </tasks>
+                    </configuration>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+            </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -106,6 +155,18 @@
                 <configuration>
                     <encoding>UTF-8</encoding>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <!-- Temporarily disabled - Each Cucumber test CLASS (not feature) run in it's own thread 
+                <configuration>
+                    <parallel>classes</parallel>
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <useUnlimitedThreads>true</useUnlimitedThreads>
+                    <threadCountClasses>2</threadCountClasses>
+                </configuration>-->
             </plugin>
         </plugins>
     </build>
