@@ -14,6 +14,7 @@ import env.BaseTest;
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = { "html:target/cucumberHtmlReport" },
 //pretty:target/cucumber-json-report.json
-		features = "classpath:features")
+		features = "classpath:features",
+		tags = { "@run" })
 public class RunCukeTest implements BaseTest {
 }
