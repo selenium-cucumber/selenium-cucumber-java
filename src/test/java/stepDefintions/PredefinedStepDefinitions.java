@@ -184,11 +184,11 @@ public class PredefinedStepDefinitions implements BaseTest {
 	}
 
 	// step to check attribute value
-	@Then("^element having (.+) \"([^\"]*)\" should\\s*((?:not)?)\\s+have attribute \"(.*?)\" with value \"(.*?)\"$")
-	public void check_element_attribute(String type, String accessName, String present, String attrb, String value) throws Exception {
-		miscmethodObj.validateLocator(type);
-		assertionObj.checkElementAttribute(type, attrb, value, accessName, present.isEmpty());
-	}
+    @Then("^element having (.+) \"([^\"]*)\" should\\s*((?:not)?)\\s+have attribute \"(.*?)\" with value \"(.*?)\"$")
+    public void check_element_attribute(String type, String accessName, String present, String attrb, String value) throws Exception {
+    	miscmethodObj.validateLocator(type);
+    	assertionObj.checkElementAttribute(type, attrb, value, accessName, present.isEmpty());
+    }
 
 	// step to check element enabled or not
 	@Then("^element having (.+) \"([^\"]*)\" should\\s*((?:not)?)\\s+be (enabled|disabled)$")

@@ -33,6 +33,9 @@ public class UserStepDefinitions implements BaseTest{
 	//Registration error message text
 	private static final String REGISTRATION_ERROR_MISSING_DATA = "";
 
+	//Logout success message text
+	private static final String LOGOUT_SUCCESS = "";
+
 	//Finds the registration button element
 	@FindBy(xpath = "")
 	private WebElement registrationButton;
@@ -93,6 +96,18 @@ public class UserStepDefinitions implements BaseTest{
 	@FindBy(xpath = "")
 	private WebElement loginErrorMessageArea;
 
+	//Finds the logout success message area
+	@FindBy(xpath = "")
+	private WebElement logoutSuccessMessageArea;
+
+	//Finds the Dashboard page header
+	@FindBy(xpath = "")
+	private WebElement dashboardHeader;
+
+	//Finds the Landing page header
+	@FindBy(xpath = "")
+	private WebElement landingHeader;
+
 	//////////////
 	// Navigation
 	//////////////
@@ -114,7 +129,7 @@ public class UserStepDefinitions implements BaseTest{
 	//////////////
 
 	//Clicks logout
-	@When("^User LogOut from the Application$")
+	@When("^User logs out of the application$")
 	public void user_LogOut_from_the_Application() throws Throwable {
 		logoutButton.click();
 	}
@@ -150,11 +165,18 @@ public class UserStepDefinitions implements BaseTest{
 
 	//Enters credentials from data table in username and password text boxes and clicks login button
 	@When("^User enters Credentials to LogIn$")
-	public void user_enters_testuser__and_Test(DataTable usercredentials) throws Throwable {
+	public void user_logs_in(DataTable usercredentials) throws Throwable {
 		List<List<String>> data = usercredentials.raw();
 		usernameTextBox.sendKeys(data.get(0).get(0));
 		passwordTextBox.sendKeys(data.get(0).get(1));
 		loginButton.click();
+	}
+
+	//navigates to landing page, enters login credentials and clicks login button
+	@When("^User is logged in to the application with username \"(.*)\" and password \"(.*)\"$")
+	public void user_logged_in(DataTable usercredentials) throws Throwable {
+		user_navigates_to_Registration_Page();
+		user_logs_in(usercredentials);
 	}
 
 	////////////////
@@ -183,6 +205,24 @@ public class UserStepDefinitions implements BaseTest{
 	@Then("^Message displayed Registration Error Missing Data$")
 	public void message_displayed_Registration_Error_Missing_Data() throws Throwable {
 		Assert.assertEquals("Registration error message not displayed.", REGISTRATION_ERROR_MISSING_DATA, registrationErrorMessageArea.getText());
+	}
+
+	//Verifies logout success message is displayed
+	@Then("^Message displayed Logout Successful$")
+	public void message_displayed_Logout_Successful() throws Throwable {
+		Assert.assertEquals("Logout success message not displayed.", LOGOUT_SUCCESS, logoutSuccessMessageArea.getText());
+	}
+
+	//Verifies the Dashboard page is displayed
+	@Then("^Dashboard page is displayed$")
+	public void dashboard_page_is_displayed() throws Throwable {
+		Assert.assertTrue("Dashboard page is not displayed.", dashboardHeader.isDisplayed());
+	}
+
+	//Verifies the Landing page is displayed
+	@Then("^Landing page is displayed$")
+	public void landing_page_is_displayed() throws Throwable {
+		Assert.assertTrue("Landing page is not displayed.", landingHeader.isDisplayed());
 	}
 
 
