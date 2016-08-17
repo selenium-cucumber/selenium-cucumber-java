@@ -16,6 +16,7 @@ public class Hooks {
 	 * @param scenario the scenario that is tested
 	 */
 	@Before("@HomePageBefore")
+	//TODO
 	public void beforeScenario(Scenario scenario) {
 		System.out.println("In hooks Before"); //TODO remove debug
 		System.out.println(scenario.getName());
