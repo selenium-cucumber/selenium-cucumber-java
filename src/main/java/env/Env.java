@@ -57,9 +57,9 @@ public class Env
 				
 			driver.manage().deleteAllCookies();
 			driver.manage().window().maximize();
-			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-			driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+			driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 			return driver;
         }
