@@ -13,7 +13,7 @@
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>1.2.2</version>
+            <version>1.2.5</version>
             <scope>test</scope>
         </dependency>
 
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>1.2.2</version>
+            <version>1.2.5</version>
             <scope>test</scope>
         </dependency>
 
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
         
@@ -37,13 +37,13 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>2.45.0</version>
+			<version>3.0.0</version>
 		</dependency>
 	
 		<dependency>
 	        <groupId>org.seleniumhq.selenium</groupId>
 	        <artifactId>selenium-server</artifactId>
-	        <version>2.45.0</version>
+	        <version>3.0.0</version>
 	    </dependency>
 	    
 	    <!-- These are the selenium-cucumber methods dependencies -->
@@ -55,6 +55,12 @@
 		    <scope>system</scope>
 		    <systemPath>${project.basedir}/src/main/resources/selenium-cucumber-methods-1.0.0.jar</systemPath>
 		</dependency>  
+		
+		<dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>21.0</version>
+      </dependency>
 	</dependencies>
 
     
@@ -74,6 +80,10 @@
                     	<property>
                     		<name>browser</name>
                     		<value>${browser}</value>
+                     	</property>
+                     	<property>
+                    		<name>cloud_config</name>
+                    		<value>${cloud_config}</value>
                      	</property>
                      </systemPropertyVariables>
                 </configuration>
