@@ -38,7 +38,7 @@ public class NavigateMethods extends SelectElementByType implements BaseTest
 	/** Method to quite webdriver instance */
 	public void closeDriver()
 	{
-		driver.quit();
+		driver.close();
 	}
 	
 	/** Method to return key by OS wise
