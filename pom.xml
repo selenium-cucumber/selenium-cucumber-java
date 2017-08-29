@@ -1,93 +1,114 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>selenium-cucumber</groupId>
-    <artifactId>selenium-cucumber-java</artifactId>
-    <version>0.0.1</version>
-    <packaging>jar</packaging>
-    <name>selenium-cucumber-java</name>
+	<groupId>selenium-cucumber</groupId>
+	<artifactId>selenium-cucumber-java</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+	<name>selenium-cucumber-java</name>
 
-    <dependencies>
-        <!-- These are the cucumber dependencies -->
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>1.2.5</version>
-            <scope>test</scope>
-        </dependency>
+	<dependencies>
+		<!-- These are the cucumber dependencies -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
 
-        <!-- These are the cucumber-junit dependencies -->
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>1.2.5</version>
-            <scope>test</scope>
-        </dependency>
+		<!-- These are the cucumber-junit dependencies -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
 
-        <!-- These are the junit dependencies -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-        
-    	<!-- These are the selenium-webdriver dependencies -->	
+		<!-- These are the junit dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- These are the selenium-webdriver dependencies -->	
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>3.5.2</version>
 		</dependency>
-	
+
 		<dependency>
-	        <groupId>org.seleniumhq.selenium</groupId>
-	        <artifactId>selenium-server</artifactId>
-	        <version>3.5.2</version>
-	    </dependency>
-	    
-	    <!-- These are the selenium-cucumber methods dependencies -->
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>3.5.2</version>
+		</dependency>
+
+		<!-- These are the selenium-cucumber methods dependencies -->
 		<dependency>
-		    <groupId>sample</groupId>
-		    <artifactId>com.sample</artifactId>
-		    <version>1.0.0</version>
-		    <type>jar</type>
-		    <scope>system</scope>
-		    <systemPath>${project.basedir}/src/main/resources/selenium-cucumber-methods-1.0.0.jar</systemPath>
+			<groupId>sample</groupId>
+			<artifactId>com.sample</artifactId>
+			<version>1.0.0</version>
+			<type>jar</type>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/selenium-cucumber-methods-1.0.0.jar</systemPath>
 		</dependency>  
-		
+
 		<dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>21.0</version>
-      </dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>21.0</version>
+		</dependency>
 	</dependencies>
 
-    
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <compilerArgument>-Werror</compilerArgument>
-                    
-                    <systemPropertyVariables>
-                    	<property>
-                    		<name>browser</name>
-                    		<value>${browser}</value>
-                     	</property>
-                     	<property>
-                    		<name>cloud_config</name>
-                    		<value>${cloud_config}</value>
-                     	</property>
-                     </systemPropertyVariables>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.7</source>
+					<target>1.7</target>
+					<compilerArgument>-Werror</compilerArgument>
+
+					<systemPropertyVariables>
+						<property>
+							<name>browser</name>
+							<value>${browser}</value>
+						</property>
+						<property>
+							<name>cloud_config</name>
+							<value>${cloud_config}</value>
+						</property>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<!--
+	<distributionManagement>
+		<repository>
+			<id>bintray-geekdenz-landcare-selenium-cucumber-java</id>
+			<name>geekdenz-selenium-cucumber-java</name>
+			<url>https://api.bintray.com/maven/geekdenz/landcare/selenium-cucumber-java/;publish=1</url>
+		</repository>
+	</distributionManagement>
+	-->
+	<distributionManagement>
+		<repository>
+			<id>bintray-geekdenz-maven-selenium-cucumber-java</id>
+			<name>geekdenz-selenium-cucumber-java</name>
+			<url>https://api.bintray.com/maven/geekdenz/maven/selenium-cucumber-java/;publish=1</url>
+		</repository>
+		<snapshotRepository>
+			<id>bintray-geekdenz-maven-selenium-cucumber-java</id> <!-- same id with the server in settings.xml -->
+			<name>oss-jfrog-artifactory-snapshots</name>
+			<url>http://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
