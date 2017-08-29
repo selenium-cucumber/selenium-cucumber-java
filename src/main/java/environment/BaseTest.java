@@ -1,4 +1,4 @@
-package env;
+package environment;
 
 import methods.AssertionMethods;
 import methods.ClickElementsMethods;
@@ -17,7 +17,6 @@ public interface BaseTest
 {
 	public static WebDriver driver = Env.CreateWebDriver(Env.getBrowserName());
 	public static WebDriverWait wait = new WebDriverWait(driver, 30);
-	
 	
 	MiscMethods miscmethodObj = new MiscMethods();
 	NavigateMethods navigationObj = new NavigateMethods();

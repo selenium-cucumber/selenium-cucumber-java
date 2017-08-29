@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import methods.TestCaseFailed;
 import cucumber.api.java.en.Then;
-import env.BaseTest;
+import environment.BaseTest;
 
 public class PredefinedStepDefinitions implements BaseTest
 {
