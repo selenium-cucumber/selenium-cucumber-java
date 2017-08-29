@@ -1,4 +1,4 @@
-package env;
+package environment;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

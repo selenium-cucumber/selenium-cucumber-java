@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-import env.BaseTest;
+import environment.BaseTest;
 
 public class InputMethods extends SelectElementByType implements BaseTest
 {

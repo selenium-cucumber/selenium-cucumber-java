@@ -7,7 +7,7 @@ import java.util.Calendar;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import env.BaseTest;
+import environment.BaseTest;
 
 public class ConfigurationMethods implements BaseTest
 {	  

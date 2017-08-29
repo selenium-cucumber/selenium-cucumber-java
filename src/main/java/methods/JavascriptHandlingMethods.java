@@ -1,6 +1,6 @@
 package methods;
 
-import env.BaseTest;
+import environment.BaseTest;
 
 public class JavascriptHandlingMethods implements BaseTest 
 {
