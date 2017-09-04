@@ -1,10 +1,17 @@
 package info.seleniumcucumber.stepdefinitions;
 
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import java.io.IOException;
 
 import methods.TestCaseFailed;
 import cucumber.api.java.en.Then;
 import env.BaseTest;
+import java.io.File;
+import java.util.logging.Logger;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class PredefinedStepDefinitions implements BaseTest
 {
@@ -516,4 +523,23 @@ public class PredefinedStepDefinitions implements BaseTest
   	{
   		configObj.printDesktopConfiguration();
   	}
+	@After
+	public final void takeScreenShot(Scenario scenario) {
+		if (scenario.isFailed()) {
+			TakesScreenshot ts = (TakesScreenshot) driver;
+			File srcFile = ts.getScreenshotAs(OutputType.FILE);
+			try {
+				FileUtils.copyFile(srcFile, new File("" + scenario.toString() + ".png"));
+				System.out.println("URL: " + driver.getCurrentUrl());
+				System.out.println("src: " + driver.getPageSource());
+			} catch (IOException ex) {
+				//Logger.getLogger(SmapScenario.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		}
+	}
+
+	@After
+    public final void tearDown() {
+        //driver.quit();
+    }
 }
