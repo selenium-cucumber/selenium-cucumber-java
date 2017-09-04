@@ -1,4 +1,4 @@
-package stepDefintions;
+package info.seleniumcucumber.stepdefinitions;
 
 import java.io.IOException;
 

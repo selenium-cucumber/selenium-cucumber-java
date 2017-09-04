@@ -4,7 +4,7 @@
 
 	<groupId>selenium-cucumber</groupId>
 	<artifactId>selenium-cucumber-java</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.3</version>
 	<packaging>jar</packaging>
 	<name>selenium-cucumber-java</name>
 
@@ -14,7 +14,6 @@
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>1.2.5</version>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- These are the cucumber-junit dependencies -->
@@ -22,7 +21,6 @@
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.5</version>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- These are the junit dependencies -->
@@ -30,7 +28,6 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- These are the selenium-webdriver dependencies -->	

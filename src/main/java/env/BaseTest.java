@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public interface BaseTest 
 {
-	public static WebDriver driver = Env.CreateWebDriver(Env.getBrowserName());
+	public static WebDriver driver = DriverUtil.getDefaultDriver();
 	public static WebDriverWait wait = new WebDriverWait(driver, 30);
 	
 	
