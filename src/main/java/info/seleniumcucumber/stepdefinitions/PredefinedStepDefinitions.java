@@ -6,8 +6,10 @@ import java.io.IOException;
 
 import methods.TestCaseFailed;
 import cucumber.api.java.en.Then;
+import cucumber.runtime.ScenarioImpl;
 import env.BaseTest;
 import java.io.File;
+import java.util.Collection;
 import java.util.logging.Logger;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -529,7 +531,16 @@ public class PredefinedStepDefinitions implements BaseTest
 			TakesScreenshot ts = (TakesScreenshot) driver;
 			File srcFile = ts.getScreenshotAs(OutputType.FILE);
 			try {
-				FileUtils.copyFile(srcFile, new File("" + scenario.toString() + ".png"));
+				ScenarioImpl impl = (ScenarioImpl) scenario;
+				Collection<String> tags = impl.getSourceTagNames();
+				/*
+				String name = "Scenario";
+				for (String t : tags) {
+					name += "_" + t;
+				}
+*/
+				String name = "Scenario_" + impl.getId().replaceAll("[;-]", "_") + "_" + impl.getName().replace(" ", "_");
+				FileUtils.copyFile(srcFile, new File(name + ".png"));
 				System.out.println("URL: " + driver.getCurrentUrl());
 				System.out.println("src: " + driver.getPageSource());
 			} catch (IOException ex) {
