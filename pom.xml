@@ -4,7 +4,7 @@
 
 	<groupId>selenium-cucumber</groupId>
 	<artifactId>selenium-cucumber-java</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8</version>
 	<packaging>jar</packaging>
 	<name>selenium-cucumber-java</name>
 
@@ -69,8 +69,8 @@
 				<version>3.2</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 					<compilerArgument>-Werror</compilerArgument>
 
 					<systemPropertyVariables>
