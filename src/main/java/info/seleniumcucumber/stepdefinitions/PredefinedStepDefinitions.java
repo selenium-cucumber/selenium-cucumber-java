@@ -539,7 +539,7 @@ public class PredefinedStepDefinitions implements BaseTest
 					name += "_" + t;
 				}
 */
-				String name = "Scenario_" + impl.getId().replaceAll("\\W", "_") + "_" + impl.getName().replace(" ", "_");
+				String name = "Screenshots/" + impl.getId().replaceAll("\\W", "_");
 				FileUtils.copyFile(srcFile, new File(name + ".png"));
 				System.out.println("URL: " + driver.getCurrentUrl());
 				System.out.println("src: " + driver.getPageSource());
