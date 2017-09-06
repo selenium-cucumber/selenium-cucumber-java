@@ -99,8 +99,8 @@ public class DriverUtil {
 
 	public static void closeDriver() {
 		if (driver != null) {
-			driver.close();
 			try {
+				driver.close();
 				driver.quit(); // fails in current geckodriver! TODO: Fixme
 			} catch (NoSuchMethodError nsme) {}
 			driver = null;
