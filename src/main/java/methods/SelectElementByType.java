@@ -1,9 +1,18 @@
 package methods;
 
+import env.DriverUtil;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SelectElementByType 
 {
+	protected WebDriver driver;
+	protected WebDriverWait wait;
+	public SelectElementByType() {
+		driver = DriverUtil.getDefaultDriver();
+		wait = new WebDriverWait(driver, 30);
+	}
 	/**Method to select element 'by' type
 	 * @param type : String : 'By' type
 	 * @param access_name : String : Locator value

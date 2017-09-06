@@ -19,36 +19,19 @@ public class DriverUtil {
     public static long DEFAULT_WAIT = 20;
     private static int DEFAULT_WINDOW_WIDTH = 1920;
     private static int DEFAULT_WINDOW_HEIGHT = 1080;
+	protected static WebDriver driver;
 
     public static WebDriver getDefaultDriver() {
+		if (driver != null) {
+			return driver;
+		}
         System.setProperty("webdriver.chrome.driver", "./chromedriver");
         System.setProperty("webdriver.gecko.driver", "./geckodriver");
-
         DesiredCapabilities capabilities = null; //DesiredCapabilities.phantomjs();
-		//capabilities = DesiredCapabilities.phantomjs();
 		capabilities = DesiredCapabilities.firefox();
-		//ChromeOptions chromeOptions = new ChromeOptions();
-
-		//capabilities.addArguments("--headless", "--disable-gpu");
-		//capabilities.setCapability(PhantomJSDriverService., capabilities);
-		//capabilities. // --local-storage-path=
-		// localStorate/sessionStorage seems to not work with the following:
-		//capabilities.setCapability("phantomjs.cli.args", Collections.singletonList("--local-storage-path=/tmp/phantomjs.localstorage"));
-
         capabilities.setJavascriptEnabled(true);
         capabilities.setCapability("takesScreenshot", true);
-
-        ////capabilities.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "libs/phantomjs-1.9.1-windows/phantomjs.exe");
-        ////capabilities.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "/usr/bin/phantomjs");
-        ////capabilities.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "node_modules/phantomjs/bin/phantomjs");
-        //capabilities.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "./node_modules/phantomjs-prebuilt/bin/phantomjs");
-        //capabilities.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, new String[]{"--web-security=false", "--ssl-protocol=any", "--ignore-ssl-errors=true"});
-        //driver = new HtmlUnitDriver(true);
-        //driver = new ChromeDriver(capabilities);
-        // driver = new PhantomJSDriver(capabilities);
-        // driver = new PhantomJSDriver(capabilities);
-        // driver = new ChromeDriver(capabilities);
-        final WebDriver driver = chooseDriver(capabilities);
+        driver = chooseDriver(capabilities);
         driver.manage().timeouts().setScriptTimeout(DEFAULT_WAIT,
                 TimeUnit.SECONDS);
         driver.manage().window().setSize(new Dimension(DEFAULT_WINDOW_WIDTH,
@@ -113,4 +96,14 @@ public class DriverUtil {
         return (new WebDriverWait(driver, seconds)).until( // ensure element is visible!
                 ExpectedConditions.visibilityOfElementLocated(selection));
     }
+
+	public static void closeDriver() {
+		if (driver != null) {
+			driver.close();
+			try {
+				driver.quit(); // fails in current geckodriver! TODO: Fixme
+			} catch (NoSuchMethodError nsme) {}
+			driver = null;
+		}
+	}
 }

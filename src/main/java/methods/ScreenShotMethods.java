@@ -11,9 +11,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import env.BaseTest;
+import env.DriverUtil;
+import org.openqa.selenium.WebDriver;
 
-public class ScreenShotMethods implements BaseTest
-{
+public class ScreenShotMethods implements BaseTest {
+	protected WebDriver driver = DriverUtil.getDefaultDriver();
 	/** Method to take screen shot and save in ./Screenshots folder*/
 	public void takeScreenShot() throws IOException
 	{

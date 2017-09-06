@@ -1,9 +1,11 @@
 package methods;
 
 import env.BaseTest;
+import env.DriverUtil;
+import org.openqa.selenium.WebDriver;
 
-public class JavascriptHandlingMethods implements BaseTest 
-{
+public class JavascriptHandlingMethods implements BaseTest {
+	protected WebDriver driver = DriverUtil.getDefaultDriver();
 	/**Method to handle alert
 	 * @param decision : String : Accept or dismiss alert
 	 */

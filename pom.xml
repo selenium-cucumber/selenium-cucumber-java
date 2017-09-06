@@ -4,7 +4,7 @@
 
 	<groupId>selenium-cucumber</groupId>
 	<artifactId>selenium-cucumber-java</artifactId>
-	<version>0.0.8</version>
+	<version>0.0.9</version>
 	<packaging>jar</packaging>
 	<name>selenium-cucumber-java</name>
 
@@ -34,13 +34,23 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.5.2</version>
+			<version>3.5.3</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
-			<version>3.5.2</version>
+			<version>3.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-firefox-driver</artifactId>
+			<version>3.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-driver</artifactId>
+			<version>3.5.3</version>
 		</dependency>
 
 		<!-- These are the selenium-cucumber methods dependencies -->
