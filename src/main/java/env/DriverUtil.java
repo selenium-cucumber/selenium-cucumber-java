@@ -103,7 +103,8 @@ public class DriverUtil {
 				driver.close();
 				driver.quit(); // fails in current geckodriver! TODO: Fixme
 			} catch (NoSuchMethodError nsme) { // in case quit fails
-			} catch (NoSuchSessionException nsse) {} // in case close fails
+			} catch (NoSuchSessionException nsse) { // in case close fails
+			} catch (SessionNotCreatedException snce) {} // in case close fails
 			driver = null;
 		}
 	}
