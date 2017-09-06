@@ -4,7 +4,7 @@
 
 	<groupId>selenium-cucumber</groupId>
 	<artifactId>selenium-cucumber-java</artifactId>
-	<version>0.1.2</version>
+	<version>0.1.3</version>
 	<packaging>jar</packaging>
 	<name>selenium-cucumber-java</name>
 
