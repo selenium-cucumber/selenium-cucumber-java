@@ -67,6 +67,10 @@ public class RunCukeTest {
 }
 ```
 
+Maven/Gradle Dependency
+-----------------------
+
+See https://jitpack.io/#geekdenz/selenium-cucumber-java .
 
 License
 -------
