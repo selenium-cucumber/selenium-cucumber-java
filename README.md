@@ -43,6 +43,34 @@ By using selenium-cucumber API's you can write code for your custom steps more e
 
 The selenium-cucumber API's steps are located [here](doc/selenium-cucumber-java-API.md)
 
+Using canned tests in your project
+----------------------------------
+
+In your TestRunner class add a glue option:
+
+```
+package stepDefintions;
+
+import org.junit.runner.RunWith;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+	plugin = {"html:target/cucumberHtmlReport"},
+	features = "classpath:features",
+	glue = {"info.seleniumcucumber.stepdefinitions"}
+)
+
+public class RunCukeTest {
+}
+```
+
+Maven/Gradle Dependency
+-----------------------
+
+See https://jitpack.io/#geekdenz/selenium-cucumber-java .
 
 License
 -------

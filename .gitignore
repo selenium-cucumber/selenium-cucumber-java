@@ -1,1 +1,4 @@
 /target
+settings.xml
+chromedriver
+geckodriver
