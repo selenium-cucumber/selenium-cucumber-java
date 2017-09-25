@@ -15,6 +15,10 @@ Documentation
 * [Predefined steps](doc/canned_steps.md)
 * [selenium-cucumber API's](doc/selenium-cucumber-java-API.md)
 
+Download a Framework
+--------------
+* Maven - https://github.com/selenium-cucumber/selenium-cucumber-java-maven-example
+
 Writing a test
 --------------
 
@@ -70,7 +74,7 @@ public class RunCukeTest {
 Maven/Gradle Dependency
 -----------------------
 
-See https://jitpack.io/#geekdenz/selenium-cucumber-java .
+See https://jitpack.io/#selenium-cucumber/selenium-cucumber-java .
 
 License
 -------
