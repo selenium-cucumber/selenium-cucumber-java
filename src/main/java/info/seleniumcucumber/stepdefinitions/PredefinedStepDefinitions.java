@@ -1,20 +1,20 @@
 package info.seleniumcucumber.stepdefinitions;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
+import java.io.File;
 import java.io.IOException;
 
-import methods.TestCaseFailed;
-import cucumber.api.java.en.Then;
-import cucumber.runtime.ScenarioImpl;
-import env.BaseTest;
-import env.DriverUtil;
-import java.io.File;
-import java.util.Collection;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.en.Then;
+import cucumber.runtime.ScenarioImpl;
+import env.DriverUtil;
+import info.seleniumcucumber.methods.BaseTest;
+import info.seleniumcucumber.methods.TestCaseFailed;
 
 public class PredefinedStepDefinitions implements BaseTest {
 	protected WebDriver driver = DriverUtil.getDefaultDriver();
@@ -533,8 +533,7 @@ public class PredefinedStepDefinitions implements BaseTest {
 			File srcFile = ts.getScreenshotAs(OutputType.FILE);
 			try {
 				ScenarioImpl impl = (ScenarioImpl) scenario;
-				Collection<String> tags = impl.getSourceTagNames();
-				/*
+				/*Collection<String> tags = impl.getSourceTagNames();
 				String name = "Scenario";
 				for (String t : tags) {
 				name += "_" + t;
