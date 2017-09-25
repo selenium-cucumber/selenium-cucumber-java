@@ -34,23 +34,23 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.5.3</version>
+			<version>3.5.2</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
-			<version>3.5.3</version>
+			<version>3.5.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-firefox-driver</artifactId>
-			<version>3.5.3</version>
+			<version>3.5.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-remote-driver</artifactId>
-			<version>3.5.3</version>
+			<version>3.5.2</version>
 		</dependency>
 
 		<!-- These are the selenium-cucumber methods dependencies -->
@@ -97,25 +97,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<!--
-	<distributionManagement>
-		<repository>
-			<id>bintray-geekdenz-landcare-selenium-cucumber-java</id>
-			<name>geekdenz-selenium-cucumber-java</name>
-			<url>https://api.bintray.com/maven/geekdenz/landcare/selenium-cucumber-java/;publish=1</url>
-		</repository>
-	</distributionManagement>
-	-->
-	<distributionManagement>
-		<repository>
-			<id>bintray-geekdenz-maven-selenium-cucumber-java</id>
-			<name>geekdenz-selenium-cucumber-java</name>
-			<url>https://api.bintray.com/maven/geekdenz/maven/selenium-cucumber-java/;publish=1</url>
-		</repository>
-		<snapshotRepository>
-			<id>bintray-geekdenz-maven-selenium-cucumber-java</id> <!-- same id with the server in settings.xml -->
-			<name>oss-jfrog-artifactory-snapshots</name>
-			<url>http://oss.jfrog.org/artifactory/oss-snapshot-local</url>
-		</snapshotRepository>
-	</distributionManagement>
 </project>
