@@ -1,6 +1,5 @@
-package methods;
+package info.seleniumcucumber.methods;
 
-import env.BaseTest;
 import env.DriverUtil;
 import org.openqa.selenium.WebDriver;
 

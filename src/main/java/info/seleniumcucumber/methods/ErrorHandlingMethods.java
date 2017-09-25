@@ -1,4 +1,4 @@
-package methods;
+package info.seleniumcucumber.methods;
 
 import java.util.Arrays;
 

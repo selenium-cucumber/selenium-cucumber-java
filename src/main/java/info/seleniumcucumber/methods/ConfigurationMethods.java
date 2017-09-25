@@ -1,4 +1,4 @@
-package methods;
+package info.seleniumcucumber.methods;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -7,7 +7,6 @@ import java.util.Calendar;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import env.BaseTest;
 import env.DriverUtil;
 import org.openqa.selenium.WebDriver;
 

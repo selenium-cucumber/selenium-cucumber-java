@@ -1,10 +1,9 @@
-package methods;
+package info.seleniumcucumber.methods;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import env.BaseTest;
 
 public class ProgressMethods extends SelectElementByType implements BaseTest
 {

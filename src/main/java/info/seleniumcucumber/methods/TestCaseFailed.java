@@ -1,4 +1,4 @@
-package methods;
+package info.seleniumcucumber.methods;
 
 public class TestCaseFailed extends Exception 
 {

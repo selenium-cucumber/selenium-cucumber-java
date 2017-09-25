@@ -1,17 +1,4 @@
-package env;
-
-import methods.AssertionMethods;
-import methods.ClickElementsMethods;
-import methods.ConfigurationMethods;
-import methods.InputMethods;
-import methods.JavascriptHandlingMethods;
-import methods.MiscMethods;
-import methods.NavigateMethods;
-import methods.ProgressMethods;
-import methods.ScreenShotMethods;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+package info.seleniumcucumber.methods;
 
 public interface BaseTest 
 {
