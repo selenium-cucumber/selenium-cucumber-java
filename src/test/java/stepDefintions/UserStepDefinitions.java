@@ -1,5 +1,5 @@
 package stepDefintions;
-import env.BaseTest;
+import info.seleniumcucumber.methods.BaseTest;
 
 public class UserStepDefinitions implements BaseTest {
 
