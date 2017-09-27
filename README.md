@@ -40,12 +40,6 @@ Go to your project directory from terminal and hit following commands
 * `mvn test "-Dbrowser=chrome" (to use any other browser)`
 * `mvn test "-Dcloud_config=saucelab_windows_chrome52" (to run test on cloud test platforms)`
 
-selenium-cucumber-java API's
------------------------
-By using selenium-cucumber API's you can write code for your custom steps more efficiently.
-
-The selenium-cucumber API's steps are located [here](doc/selenium-cucumber-java-API.md)
-
 Using canned tests in your project
 ----------------------------------
 
