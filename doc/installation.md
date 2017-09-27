@@ -9,7 +9,8 @@
 # Setting up selenium-cucumber-java
 - Install Java and set path.
 - Install Maven and set path.
-- Clone repository “https://github.com/selenium-cucumber/selenium-cucumber-java” or download zip.
+- Clone respective repository or download zip.
+	- maven : https://github.com/selenium-cucumber/selenium-cucumber-java-maven-example
 
 # Running features
 - Goto project directory.
@@ -21,7 +22,7 @@
 -- ie
 -- safari
 - Use mvn test -Dcucumber.options="classpath:features/my_first.feature" to run specific feature if you have multiple feature files.
-- Use mvn test -Dcucumber.options="–plugin html:target/result.html" to generate a HTML report.
-- Use mvn test -Dcucumber.options="–plugin json:target/result.json" to generate a JSON report.
+- Use mvn test -Dcucumber.options="–-plugin html:target/result-html" to generate a HTML report.
+- Use mvn test -Dcucumber.options="–-plugin json:target/result-json" to generate a JSON report.
 
 - Now Write your own tests in feature file using <a href="https://github.com/selenium-cucumber/selenium-cucumber-java/blob/master/doc/canned_steps.md">Predefined Steps</a> .
