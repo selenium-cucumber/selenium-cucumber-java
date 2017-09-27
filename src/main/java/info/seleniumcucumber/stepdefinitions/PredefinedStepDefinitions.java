@@ -541,8 +541,6 @@ public class PredefinedStepDefinitions implements BaseTest {
 				*/
 				String name = "Screenshots/" + impl.getId().replaceAll("\\W", "_");
 				FileUtils.copyFile(srcFile, new File(name + ".png"));
-				System.out.println("URL: " + driver.getCurrentUrl());
-				System.out.println("src: " + driver.getPageSource());
 			} catch (IOException ex) {
 				//Logger.getLogger(SmapScenario.class.getName()).log(Level.SEVERE, null, ex);
 			}
