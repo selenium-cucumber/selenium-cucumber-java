@@ -526,29 +526,29 @@ public class PredefinedStepDefinitions implements BaseTest {
 	{
 		configObj.printDesktopConfiguration();
 	}
-	@After
-	public final void takeScreenShot(Scenario scenario) {
-		if (scenario.isFailed()) {
-			TakesScreenshot ts = (TakesScreenshot) driver;
-			File srcFile = ts.getScreenshotAs(OutputType.FILE);
-			try {
-				ScenarioImpl impl = (ScenarioImpl) scenario;
-				/*Collection<String> tags = impl.getSourceTagNames();
-				String name = "Scenario";
-				for (String t : tags) {
-				name += "_" + t;
-				}
-				*/
-				String name = "Screenshots/" + impl.getId().replaceAll("\\W", "_");
-				FileUtils.copyFile(srcFile, new File(name + ".png"));
-			} catch (IOException ex) {
-				//Logger.getLogger(SmapScenario.class.getName()).log(Level.SEVERE, null, ex);
-			}
-		}
-	}
+	// @After
+	// public final void takeScreenShot(Scenario scenario) {
+	// 	if (scenario.isFailed()) {
+	// 		TakesScreenshot ts = (TakesScreenshot) driver;
+	// 		File srcFile = ts.getScreenshotAs(OutputType.FILE);
+	// 		try {
+	// 			ScenarioImpl impl = (ScenarioImpl) scenario;
+	// 			Collection<String> tags = impl.getSourceTagNames();
+	// 			String name = "Scenario";
+	// 			for (String t : tags) {
+	// 			name += "_" + t;
+	// 			}
+				
+	// 			String name = "Screenshots/" + impl.getId().replaceAll("\\W", "_");
+	// 			FileUtils.copyFile(srcFile, new File(name + ".png"));
+	// 		} catch (IOException ex) {
+	// 			//Logger.getLogger(SmapScenario.class.getName()).log(Level.SEVERE, null, ex);
+	// 		}
+	// 	}
+	// }
 	
-	@After
-	public final void tearDown() {
-		DriverUtil.closeDriver();
-	}
+	// @After
+	// public final void tearDown() {
+	// 	DriverUtil.closeDriver();
+	// }
 }
