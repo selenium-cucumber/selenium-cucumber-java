@@ -1,6 +1,6 @@
 /target
 settings.xml
 chromedriver
-geckodriver
+#geckodriver
 .idea/
 selenium-cucumber-java.iml
