@@ -30,6 +30,7 @@ public class DriverUtil {
 		}
         //System.setProperty("webdriver.chrome.driver", "webdrivers/chromedriver.exe");
         //System.setProperty("webdriver.gecko.driver", "./geckodriver");
+		System.setProperty("webdriver.gecko.driver", "/Users/m716052/workspace/demows/selenium-cucumber-java/geckodriver")
         DesiredCapabilities capabilities = null;
 		capabilities = DesiredCapabilities.firefox();
         capabilities.setJavascriptEnabled(true);
