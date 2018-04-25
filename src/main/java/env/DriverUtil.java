@@ -1,12 +1,9 @@
 package env;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchSessionException;
-import org.openqa.selenium.SessionNotCreatedException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -14,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.ErrorHandler;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -21,26 +19,52 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * Created by tom on 24/02/17.
  */
 public class DriverUtil {
-    public static long DEFAULT_WAIT = 20;
-    protected static WebDriver driver;
+	public static long DEFAULT_WAIT = 20;
+	protected static WebDriver driver;
 
-    public static WebDriver getDefaultDriver() {
-		if (driver != null) {
-			return driver;
-		}
-        //System.setProperty("webdriver.chrome.driver", "webdrivers/chromedriver.exe");
-        //System.setProperty("webdriver.gecko.driver", "./geckodriver");
+	public static WebDriver getDefaultDriver() {
+		try {
+			if (driver != null) {
+				return driver;
+			}
+
+		//System.setProperty("webdriver.chrome.driver", "webdrivers/chromedriver.exe");
+		//System.setProperty("webdriver.gecko.driver", "./geckodriver");
 		//System.setProperty("webdriver.gecko.driver", "/Users/m716052/workspace/demows/selenium-cucumber-java/geckodriver");
-        DesiredCapabilities capabilities = null;
-		capabilities = DesiredCapabilities.firefox();
-        capabilities.setJavascriptEnabled(true);
-        capabilities.setCapability("takesScreenshot", true);
-        driver = chooseDriver(capabilities);
-        driver.manage().timeouts().setScriptTimeout(DEFAULT_WAIT,
-                TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        return driver;
-    }
+
+		DesiredCapabilities capabilities = null;
+		capabilities = DesiredCapabilities.chrome();
+		capabilities.setPlatform(Platform.LINUX);
+
+		capabilities.setJavascriptEnabled(true);
+		capabilities.setCapability("takesScreenshot", true);
+		//driver = chooseDriver(capabilities);
+		driver = new RemoteWebDriver(new URL("http://11.142.8.35:4444/wd/hub"), capabilities);
+		driver.manage().timeouts().setScriptTimeout(DEFAULT_WAIT,
+				TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		return driver;
+
+
+		//
+//		DesiredCapabilities capabilities = null;
+//		capabilities = DesiredCapabilities.firefox();
+//		capabilities.setJavascriptEnabled(true);
+//		capabilities.setCapability("takesScreenshot", true);
+//		driver = chooseDriver(capabilities);
+//		driver.manage().timeouts().setScriptTimeout(DEFAULT_WAIT,
+//				TimeUnit.SECONDS);
+//		driver.manage().window().maximize();
+//		return driver;
+		//
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+
+	return driver;
+}
 
     /**
      * By default to web driver will be PhantomJS
