@@ -25,6 +25,8 @@ public class Env
 	static String cloudPlatformConfigFile = null;
 	static String currentPath = System.getProperty("user.dir");
 	static Properties prop = new Properties();
+	static String cloudPlatformConfigFile1 = null;
+	
 	
 	public static String getBrowserName()
 	{
