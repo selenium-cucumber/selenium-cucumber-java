@@ -38,7 +38,8 @@ Running test
 Go to your project directory from terminal and hit following commands
 * `mvn test (defualt will run on local firefox browser)`
 * `mvn test "-Dbrowser=chrome" (to use any other browser)`
-* `mvn test "-Dcloud_config=saucelab_windows_chrome52" (to run test on cloud test platforms)`
+* `mvn test "-Dcloud_config=saucelab_windows_chrome52" (to run test on SauceLabs cloud platform)`
+* `mvn test "-Dcloud_config=browserstack_windows_chrome67" (to run test on BrowserStack cloud platform)`
 
 Using canned tests in your project
 ----------------------------------
