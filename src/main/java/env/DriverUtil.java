@@ -60,7 +60,7 @@ public class DriverUtil {
 				}
 				capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 				System.out.println("********************* before driver created");
-				ChromeDriver driver = new ChromeDriver();
+				ChromeDriver driver = new ChromeDriver(capabilities);
 				System.out.println("********************* after driver created");
 				ErrorHandler handler = new ErrorHandler();
 				handler.setIncludeServerErrors(false);
@@ -76,7 +76,7 @@ public class DriverUtil {
 					options.addArguments("-headless", "-safe-mode");
 				}
 				capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options);
-				final FirefoxDriver firefox = new FirefoxDriver();
+				final FirefoxDriver firefox = new FirefoxDriver(capabilities);
 				return firefox;
 		}
     }
