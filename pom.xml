@@ -29,6 +29,13 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
+		
+		<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.4</version>
+</dependency>
+		
 
 		<!-- These are the selenium-webdriver dependencies -->	
 		<dependency>
