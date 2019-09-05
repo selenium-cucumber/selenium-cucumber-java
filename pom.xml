@@ -41,7 +41,13 @@
     <artifactId>commons-io</artifactId>
     <version>2.4</version>
 </dependency>
-		
+		<!-- https://mvnrepository.com/artifact/org.owasp.antisamy/antisamy -->
+<dependency>
+    <groupId>org.owasp.antisamy</groupId>
+    <artifactId>antisamy</artifactId>
+    <version>1.4.3</version>
+</dependency>
+
 
 		<!-- These are the selenium-webdriver dependencies -->	
 		<dependency>
