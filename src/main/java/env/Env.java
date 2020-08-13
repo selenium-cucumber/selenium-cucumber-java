@@ -20,7 +20,7 @@ import org.openqa.selenium.safari.SafariDriver;
 public class Env 
 {
 	static WebDriver driver = null;
-	static String browserName = null;
+	static String browserName = "zJd-55qmsY6LD53CRTqnCr_g-";
 	static String cloudBrowserConfigFile = null;
 	static String cloudPlatformConfigFile = null;
 	static String currentPath = System.getProperty("user.dir");
