@@ -288,7 +288,7 @@ To assert that link is not present use following steps :
 	Then link having text "(.*?)" should not be present
 	Then link having partial text "(.*?)" should not be present
 
-#### Steps For Asserting Javascript Pop-Up Alert 
+#### Steps For Asserting JavaScript Pop-Up Alert 
 
 To assert text on javascipt pop-up alert use following step :
 
@@ -544,7 +544,7 @@ To wait for specific element to enable use following steps : why it is clickable
 	Then I wait (\d+) seconds for element having xpath "(.*?)" to enable
 	Then I wait (\d+) seconds for element having css "(.*?)" to enable
 
-Javascript Handling Steps
+JavaScript Handling Steps
 -------------------------
 To handle javascript pop-up use following steps :
 
